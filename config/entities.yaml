@@ -1,0 +1,291 @@
+# entities.yaml
+# Wygenerowane na podstawie docs/entities.md
+
+entities:
+  - name: Podstawowa kopalnia
+    tier: 1
+    type: wydobycie
+    cost: [ {item: Iron Plate, qty: 5} ]
+    function: Wydobywa rudę (0,2/s)
+    operation_cost: 10 kW
+    tech_requirement: Początkowa
+
+  - name: Kopalnia automatyczna
+    tier: 1
+    type: wydobycie
+    cost: [ {item: Iron Plate, qty: 10}, {item: Gear Wheel, qty: 5} ]
+    function: Wydobywa rudę (1/s)
+    operation_cost: 50 kW
+    tech_requirement: Efektywne górnictwo
+
+  - name: Separator rud
+    tier: 1
+    type: wydobycie
+    cost: [ {item: Iron Plate, qty: 15}, {item: Gear Wheel, qty: 10}, {item: Electronic Circuit, qty: 5} ]
+    function: Przetwarza rudę w koncentrat (+20%)
+    operation_cost: 30 kW
+    tech_requirement: Wzbogacanie rudy
+
+  - name: Piec kamienny
+    tier: 1
+    type: przetwarzanie
+    cost: [ {item: Stone, qty: 5} ]
+    function: 1 ruda → 1 płytka
+    operation_cost: Paliwo stałe (węgiel)
+    tech_requirement: Początkowa
+
+  - name: Przenośnik Tier 1
+    tier: 1
+    type: transport
+    cost: [ {item: Iron Plate, qty: 1}, {item: Gear Wheel, qty: 1} ]
+    function: Transport przedmiotów (5/s)
+    operation_cost: Brak
+    tech_requirement: Początkowa
+
+  - name: Magazyn podstawowy
+    tier: 1
+    type: magazyn
+    cost: [ {item: Iron Plate, qty: 5} ]
+    function: Przechowuje 100 jedn. surowców
+    operation_cost: Brak
+    tech_requirement: Początkowa
+
+  - name: Hutnia wielkopiecowa
+    tier: 2
+    type: przetwarzanie
+    cost: [ {item: Iron Plate, qty: 30}, {item: Stone, qty: 10}, {item: Electronic Circuit, qty: 5} ]
+    function: Przetwarza rudę na sztabki szybciej (+2/s)
+    operation_cost: 90 kW
+    tech_requirement: Paternie metalurgiczne
+
+  - name: Przenośnik Tier 2
+    tier: 2
+    type: transport
+    cost: [ {item: Iron Plate, qty: 1}, {item: Electronic Circuit, qty: 1} ]
+    function: Transport przedmiotów (10/s)
+    operation_cost: Brak
+    tech_requirement: Paternie metalurgiczne
+
+  - name: Magazyn zaawansowany
+    tier: 2
+    type: magazyn
+    cost: [ {item: Iron Plate, qty: 10}, {item: Electronic Circuit, qty: 2} ]
+    function: Przechowuje 500 jedn. surowców
+    operation_cost: Brak
+    tech_requirement: Paternie metalurgiczne
+
+  - name: Generator termosolar
+    tier: 2
+    type: energia
+    cost: [ {item: Iron Plate, qty: 10}, {item: Copper Plate, qty: 5}, {item: Electronic Circuit, qty: 2} ]
+    function: Pasywna produkcja energii (+5 jedn./s)
+    operation_cost: Brak
+    tech_requirement: Moduły energetyczne
+
+  - name: Akumulator energetyczny
+    tier: 2
+    type: energia
+    cost: [ {item: Iron Plate, qty: 5}, {item: Copper Plate, qty: 2} ]
+    function: Magazynuje energię (500 kW)
+    operation_cost: Brak
+    tech_requirement: Moduły energetyczne
+
+  - name: Assembler Tier 1
+    tier: 3
+    type: produkcja
+    cost: [ {item: Iron Plate, qty: 15}, {item: Gear Wheel, qty: 5}, {item: Electronic Circuit, qty: 3} ]
+    function: Automatycznie wytwarza komponenty (1/s)
+    operation_cost: 75 kW
+    tech_requirement: Moduły prędkości
+
+  - name: Reaktor biomasowy
+    tier: 3
+    type: energia
+    cost: [ {item: Iron Plate, qty: 20}, {item: Copper Plate, qty: 10}, {item: Electronic Circuit, qty: 5} ]
+    function: Produkcja energii z biomasy (+8 jedn./s)
+    operation_cost: Biomasa
+    tech_requirement: Moduły wydajności
+
+  - name: Laboratorium podstawowe
+    tier: 3
+    type: badania
+    cost: [ {item: Iron Plate, qty: 10}, {item: Electronic Circuit, qty: 10}, {item: Copper Plate, qty: 5} ]
+    function: Konsumpcja pakietów badań (1/s)
+    operation_cost: 60 kW
+    tech_requirement: Początkowa
+
+  - name: Laboratorium Super
+    tier: 3
+    type: badania
+    cost: [ {item: Iron Plate, qty: 20}, {item: Electronic Circuit, qty: 15}, {item: Steel Plate, qty: 10} ]
+    function: Przyspieszone badania (+15%)
+    operation_cost: 120 kW
+    tech_requirement: Przyspieszone badania
+
+  - name: Zakład chemiczny
+    tier: 4
+    type: chemia
+    cost: [ {item: Iron Plate, qty: 30}, {item: Gear Wheel, qty: 10}, {item: Pipe, qty: 5}, {item: Electronic Circuit, qty: 5} ]
+    function: Produkcja chemikaliów (+3 jedn./s)
+    operation_cost: 210 kW
+    tech_requirement: Katalizatory chemiczne
+
+  - name: Walcer metali
+    tier: 4
+    type: przetwarzanie
+    cost: [ {item: Iron Plate, qty: 50}, {item: Steel Plate, qty: 20}, {item: Gear Wheel, qty: 10}, {item: Advanced Circuit, qty: 5} ]
+    function: Automatyczna obróbka metalu (+5 sztabek/s)
+    operation_cost: 180 kW
+    tech_requirement: Stop wzbogacony
+
+  - name: Magazyn Tier 3
+    tier: 4
+    type: magazyn
+    cost: [ {item: Steel Plate, qty: 20}, {item: Advanced Circuit, qty: 5} ]
+    function: Przechowuje 2000 jedn. surowców
+    operation_cost: Brak
+    tech_requirement: Stop wzbogacony
+
+  - name: Reaktor jądrowy (podstawowy)
+    tier: 5
+    type: energia
+    cost: [ {item: Steel Plate, qty: 100}, {item: Advanced Circuit, qty: 50}, {item: Pipe, qty: 20}, {item: Heat Exchanger, qty: 10} ]
+    function: Produkcja energii (+50 jedn./s)
+    operation_cost: Paliwo jądrowe
+    tech_requirement: Reaktor jądrowy (podstawowy)
+
+  - name: Autonomiczne moduły chłodzenia
+    tier: 5
+    type: energia
+    cost: [ {item: Steel Plate, qty: 30}, {item: Advanced Circuit, qty: 20}, {item: Pipe, qty: 15} ]
+    function: +20% czasu pracy reaktora
+    operation_cost: 50 kW
+    tech_requirement: Autonomiczne moduły chłodzenia
+
+  - name: Reaktor jądrowy (zaawansowany)
+    tier: 5
+    type: energia
+    cost: [ {item: Steel Plate, qty: 200}, {item: Advanced Circuit, qty: 100}, {item: Heat Exchanger, qty: 50} ]
+    function: Produkcja energii (+100 jedn./s)
+    operation_cost: Paliwo jądrowe
+    tech_requirement: Reaktor jądrowy (zaawansowany)
+
+  - name: Elektrownia jądrowa
+    tier: 5
+    type: energia
+    cost: [ {item: Steel Plate, qty: 300}, {item: Advanced Circuit, qty: 150}, {item: Heat Exchanger, qty: 100} ]
+    function: Integruje reaktory (+200 jedn./s)
+    operation_cost: Paliwo jądrowe
+    tech_requirement: Elektrownia jądrowa
+
+  - name: Moduł autonomiczny
+    tier: 5
+    type: automatyzacja
+    cost: [ {item: Steel Plate, qty: 50}, {item: Advanced Circuit, qty: 30}, {item: Electric Engine, qty: 20} ]
+    function: Automatyzuje dowolny proces idle
+    operation_cost: 150 kW
+    tech_requirement: Moduły autonomiczne
+
+  - name: Panel słoneczny
+    tier: 6
+    type: energia
+    cost: [ {item: Steel Plate, qty: 15}, {item: Electronic Circuit, qty: 10}, {item: Copper Plate, qty: 5} ]
+    function: Produkcja energii w dzień (+10 jedn./s)
+    operation_cost: Brak
+    tech_requirement: Ogniwa słoneczne
+
+  - name: Farma paneli słonecznych
+    tier: 6
+    type: produkcja
+    cost: [ {item: Steel Plate, qty: 50}, {item: Electronic Circuit, qty: 30}, {item: Advanced Circuit, qty: 20} ]
+    function: Produkcja paneli słonecznych (+2/s)
+    operation_cost: 100 kW
+    tech_requirement: Farma paneli słonecznych
+
+  - name: Sonda geotermiczna
+    tier: 6
+    type: energia
+    cost: [ {item: Steel Plate, qty: 30}, {item: Pipe, qty: 15}, {item: Electronic Circuit, qty: 10} ]
+    function: Zwiększa efektywność wydobycia ciepła o 25%
+    operation_cost: 40 kW
+    tech_requirement: Geotermiczne sondy
+
+  - name: Instalacja geotermalna
+    tier: 6
+    type: energia
+    cost: [ {item: Steel Plate, qty: 80}, {item: Pipe, qty: 40}, {item: Advanced Circuit, qty: 30} ]
+    function: Pasywna energia geotermalna (+40 jedn./s)
+    operation_cost: Brak
+    tech_requirement: Geotermiczne sondy
+
+  - name: AI Core
+    tier: 6
+    type: ai
+    cost: [ {item: Steel Plate, qty: 100}, {item: Advanced Circuit, qty: 50}, {item: Processor Unit, qty: 30} ]
+    function: +20% do wszystkich bonusów idle
+    operation_cost: 200 kW
+    tech_requirement: Sztuczna inteligencja idle (AI Core)
+
+  - name: Serwer AI
+    tier: 6
+    type: ai
+    cost: [ {item: Steel Plate, qty: 200}, {item: Advanced Circuit, qty: 100}, {item: Processor Unit, qty: 50} ]
+    function: Automatyzuje badania (+25% szybkości)
+    operation_cost: 350 kW
+    tech_requirement: Serwer AI
+
+  - name: Silos rakietowy
+    tier: 7
+    type: rakiety
+    cost: [ {item: Steel Plate, qty: 500}, {item: Concrete, qty: 100}, {item: Electric Engine, qty: 100}, {item: Advanced Circuit, qty: 100} ]
+    function: Wystrzeliwuje rakiety
+    operation_cost: 5 MW podczas startu
+    tech_requirement: Technologia rakietowa
+
+  - name: Fabryka modułów orbitalnych
+    tier: 7
+    type: kosmiczne
+    cost: [ {item: Steel Plate, qty: 100}, {item: Advanced Circuit, qty: 50}, {item: Electric Engine, qty: 30} ]
+    function: Produkuje moduły orbitalne (1/min)
+    operation_cost: 400 kW
+    tech_requirement: Moduły orbitalne
+
+  - name: Stacja komunikacji satelitarnej
+    tier: 7
+    type: kosmiczne
+    cost: [ {item: Steel Plate, qty: 200}, {item: Advanced Circuit, qty: 150}, {item: Electric Engine, qty: 100}, {item: Processor Unit, qty: 50} ]
+    function: +15% badań pasywnie
+    operation_cost: 300 kW
+    tech_requirement: Stacja komunikacji satelitarnej
+
+  - name: System podtrzymywania życia
+    tier: 8
+    type: kosmiczne
+    cost: [ {item: Composite Materials, qty: 300}, {item: Advanced Circuit, qty: 200}, {item: Processor Unit, qty: 100} ]
+    function: +20% do wszystkich efektywności
+    operation_cost: 500 kW
+    tech_requirement: System podtrzymywania życia
+
+  - name: Automatyczne dokowanie
+    tier: 8
+    type: kosmiczne
+    cost: [ {item: Composite Materials, qty: 400}, {item: Advanced Circuit, qty: 300}, {item: Electric Engine, qty: 200}, {item: Processor Unit, qty: 100} ]
+    function: +25% do wszystkich procesów kosmicznych
+    operation_cost: 600 kW
+    tech_requirement: Automatyczne dokowanie
+
+  - name: Moduł badawczy orbitalny
+    tier: 8
+    type: kosmiczne
+    cost: [ {item: Composite Materials, qty: 300}, {item: Advanced Circuit, qty: 250}, {item: Processor Unit, qty: 150} ]
+    function: Generuje purple packs (+5/s)
+    operation_cost: 800 kW
+    tech_requirement: Moduł badawczy orbitalny
+
+  - name: Stacja kosmiczna
+    tier: 8
+    type: kosmiczne
+    cost: [ {item: Composite Materials, qty: 1000}, {item: Advanced Circuit, qty: 500}, {item: Processor Unit, qty: 300}, {item: Superconductor, qty: 200} ]
+    function: +100 jedn./s energii, +50 purple packs/s
+    operation_cost: 2 MW
+    tech_requirement: Stacja kosmiczna

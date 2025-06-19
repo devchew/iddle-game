@@ -34,6 +34,24 @@ Poniżej rozszerzone drzewo technologii dla gry idle, z podziałem na:
    * Science Packs: 25 czerwonych
    * Funkcja: przetwarza rudę w koncentrat (+20% surowca)
 
+3. **Piec kamienny**
+
+   * Wymaganie: Początkowa
+   * Science Packs: brak
+   * Funkcja: 1 ruda → 1 płytka
+
+4. **Przenośnik Tier 1**
+
+   * Wymaganie: Początkowa
+   * Science Packs: brak
+   * Funkcja: transport przedmiotów (5/s)
+
+5. **Magazyn podstawowy**
+
+   * Wymaganie: Początkowa
+   * Science Packs: brak
+   * Funkcja: przechowuje 100 jedn. surowców
+
 ---
 
 ## Tier 2
@@ -65,6 +83,24 @@ Poniżej rozszerzone drzewo technologii dla gry idle, z podziałem na:
    * Wymaganie: Moduły energetyczne
    * Science Packs: 30 czerwonych
    * Funkcja: pasywna produkcja energii z ciepła (+5 jedn./s)
+
+3. **Przenośnik Tier 2**
+
+   * Wymaganie: Paternie metalurgiczne
+   * Science Packs: 20 czerwonych
+   * Funkcja: transport przedmiotów (10/s)
+
+4. **Magazyn zaawansowany**
+
+   * Wymaganie: Paternie metalurgiczne
+   * Science Packs: 20 czerwonych
+   * Funkcja: przechowuje 500 jedn. surowców
+
+5. **Akumulator energetyczny**
+
+   * Wymaganie: Moduły energetyczne
+   * Science Packs: 20 czerwonych
+   * Funkcja: magazynuje energię (500 kW)
 
 ---
 
@@ -104,6 +140,12 @@ Poniżej rozszerzone drzewo technologii dla gry idle, z podziałem na:
    * Science Packs: 60 czerwonych, 60 zielonych
    * Funkcja: pasywna produkcja energii z biomasy (+8 jedn./s)
 
+3. **Assembler Tier 1**
+
+   * Wymaganie: Moduły prędkości
+   * Science Packs: 30 czerwonych, 30 zielonych
+   * Funkcja: automatyczna produkcja komponentów (1/s)
+
 ---
 
 ## Tier 4
@@ -135,6 +177,12 @@ Poniżej rozszerzone drzewo technologii dla gry idle, z podziałem na:
    * Wymaganie: Stop wzbogacony
    * Science Packs: 90 czerwonych, 90 zielonych
    * Funkcja: automatyczna obróbka metalu, +5 sztabek/s
+
+3. **Magazyn Tier 3**
+
+   * Wymaganie: Stop wzbogacony
+   * Science Packs: 70 czerwonych, 70 zielonych
+   * Funkcja: przechowuje 2000 jedn. surowców
 
 ---
 
@@ -200,7 +248,7 @@ Poniżej rozszerzone drzewo technologii dla gry idle, z podziałem na:
 
 ### B. Odblokowania (Budowle i Maszyny)
 
-1. **Farmaz paneli słonecznych**
+1. **Farma paneli słonecznych**
 
    * Wymaganie: Ogniwa słoneczne
    * Science Packs: 220 czerwonych, 220 zielonych, 120 szarych, 60 niebieskich
@@ -250,7 +298,13 @@ Poniżej rozszerzone drzewo technologii dla gry idle, z podziałem na:
    * Science Packs: 350 czerwonych, 350 zielonych, 250 szarych, 200 niebieskich
    * Funkcja: wystrzeliwuje ładunki orbitalne (wymaga modułów orbitalnych)
 
-2. **Stacja komunikacji satelitarnej**
+2. **Fabryka modułów orbitalnych**
+
+   * Wymaganie: Moduły orbitalne
+   * Science Packs: 400 czerwonych, 400 zielonych, 300 szarych, 250 niebieskich
+   * Funkcja: produkuje moduły orbitalne (1/min)
+
+3. **Stacja komunikacji satelitarnej**
 
    * Wymaganie: Moduły orbitalne
    * Science Packs: 400 czerwonych, 400 zielonych, 300 szarych, 250 niebieskich
