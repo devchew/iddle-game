@@ -1,0 +1,9 @@
+{
+  "name": "copy-yaml-files",
+  "inputs": [
+    { "resourcePath": "./entities.yaml" },
+    { "resourcePath": "./research-tree.yaml" }
+  ],
+  "output": "${resArtifactFolder}",
+  "type": "copyFiles"
+}
