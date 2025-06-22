@@ -1,0 +1,324 @@
+tiers:
+- tier: 1
+  upgrades:
+  - id: efficient-mining
+    name: Efektywne górnictwo
+    science_packs: { czerwony: 10 }
+    effect: "+10% wydajności koparek"
+  - id: ore-enrichment
+    name: Wzbogacanie rudy
+    requirement: efficient-mining
+    science_packs: { czerwony: 15 }
+    effect: "+5% zysku z jednostki rudy"
+  unlocks:
+  - id: automatic-mine
+    name: Kopalnia automatyczna
+    requirement: efficient-mining
+    science_packs: { czerwony: 20 }
+    function: "kopalnia pracująca bez nadzoru, +1 rudy/s"
+  - id: ore-separator
+    name: Separator rud
+    requirement: ore-enrichment
+    science_packs: { czerwony: 25 }
+    function: "przetwarza rudę w koncentrat (+20% surowca)"
+  - id: stone-furnace
+    name: Piec kamienny
+    requirement: initial
+    science_packs: {}
+    function: "1 ruda → 1 płytka"
+  - id: conveyor-tier-1
+    name: Przenośnik Tier 1
+    requirement: initial
+    science_packs: {}
+    function: "transport przedmiotów (5/s)"
+  - id: basic-storage
+    name: Magazyn podstawowy
+    requirement: initial
+    science_packs: {}
+    function: "przechowuje 100 jedn. surowców"
+- tier: 2
+  upgrades:
+  - id: metallurgical-patterns
+    name: Paternie metalurgiczne
+    requirement: ore-enrichment
+    science_packs: { czerwony: 20 }
+    effect: "+15% przerobu rudy na sztabki"
+  - id: energy-modules
+    name: Moduły energetyczne
+    requirement: efficient-mining
+    science_packs: { czerwony: 20 }
+    effect: "+10% produkcji energii pasywnej"
+  unlocks:
+  - id: blast-furnace
+    name: Hutnia wielkopiecowa
+    requirement: metallurgical-patterns
+    science_packs: { czerwony: 30 }
+    function: "przetwarza sztabki szybciej, +2 sztabki/s"
+  - id: thermosolar-generator
+    name: Generator termosolar
+    requirement: energy-modules
+    science_packs: { czerwony: 30 }
+    function: "pasywna produkcja energii z ciepła (+5 jedn./s)"
+  - id: conveyor-tier-2
+    name: Przenośnik Tier 2
+    requirement: metallurgical-patterns
+    science_packs: { czerwony: 20 }
+    function: "transport przedmiotów (10/s)"
+  - id: advanced-storage
+    name: Magazyn zaawansowany
+    requirement: metallurgical-patterns
+    science_packs: { czerwony: 20 }
+    function: "przechowuje 500 jedn. surowców"
+  - id: energy-accumulator
+    name: Akumulator energetyczny
+    requirement: energy-modules
+    science_packs: { czerwony: 20 }
+    function: "magazynuje energię (500 kW)"
+- tier: 3
+  upgrades:
+  - id: speed-modules
+    name: Moduły prędkości
+    requirement: metallurgical-patterns
+    science_packs: { czerwony: 30, zielony: 30 }
+    effect: "+10% prędkości procesów"
+  - id: productivity-modules
+    name: Moduły wydajności
+    requirement: speed-modules
+    science_packs: { czerwony: 40, zielony: 40 }
+    effect: "-5% zużycia surowca"
+  - id: accelerated-research
+    name: Przyspieszone badania
+    requirement: speed-modules
+    science_packs: { czerwony: 50, zielony: 50 }
+    effect: "+20% szybkości badań"
+  unlocks:
+  - id: super-laboratory
+    name: Laboratorium Super
+    requirement: accelerated-research
+    science_packs: { czerwony: 70, zielony: 70 }
+    function: "zwiększa pojemność badań i przyspiesza je o dodatkowe +15%"
+  - id: biomass-reactor
+    name: Reaktor biomasowy
+    requirement: productivity-modules
+    science_packs: { czerwony: 60, zielony: 60 }
+    function: "pasywna produkcja energii z biomasy (+8 jedn./s)"
+  - id: assembler-tier-1
+    name: Assembler Tier 1
+    requirement: speed-modules
+    science_packs: { czerwony: 30, zielony: 30 }
+    function: "automatyczna produkcja komponentów (1/s)"
+- tier: 4
+  upgrades:
+  - id: chemical-catalysts
+    name: Katalizatory chemiczne
+    requirement: productivity-modules
+    science_packs: { czerwony: 60, zielony: 60 }
+    effect: "+15% wydajności procesów chemicznych"
+  - id: enriched-alloy
+    name: Stop wzbogacony
+    requirement: chemical-catalysts
+    science_packs: { czerwony: 70, zielony: 70 }
+    effect: "+10% wytrzymałości i efektywności maszyn"
+  unlocks:
+  - id: chemical-plant
+    name: Zakład chemiczny
+    requirement: chemical-catalysts
+    science_packs: { czerwony: 80, zielony: 80 }
+    function: "produkuje katalizatory i chemikalia (+3 jednostki/s)"
+  - id: metal-roller
+    name: Walcer metali
+    requirement: enriched-alloy
+    science_packs: { czerwony: 90, zielony: 90 }
+    function: "automatyczna obróbka metalu, +5 sztabek/s"
+  - id: storage-tier-3
+    name: Magazyn Tier 3
+    requirement: enriched-alloy
+    science_packs: { czerwony: 70, zielony: 70 }
+    function: "przechowuje 2000 jedn. surowców"
+- tier: 5
+  upgrades:
+  - id: basic-nuclear-reactor
+    name: Reaktor jądrowy (podstawowy)
+    requirement: enriched-alloy
+    science_packs: { czerwony: 100, zielony: 100, szary: 50 }
+    effect: "Umożliwia wydajną produkcję energii z reakcji atomowych"
+  - id: autonomous-cooling-modules
+    name: Autonomiczne moduły chłodzenia
+    requirement: basic-nuclear-reactor
+    science_packs: { czerwony: 120, zielony: 100, szary: 60 }
+    effect: "+20% czasu pracy reaktora jądrowego"
+  - id: advanced-nuclear-reactor
+    name: Reaktor jądrowy (zaawansowany)
+    requirement: autonomous-cooling-modules
+    science_packs: { czerwony: 150, zielony: 150, szary: 100 }
+    effect: "Podwojona wydajność produkcji energii"
+  - id: nuclear-power-plant
+    name: Elektrownia jądrowa
+    requirement: advanced-nuclear-reactor
+    science_packs: { czerwony: 200, zielony: 200, szary: 150 }
+    effect: "Zintegrowana produkcja energii na skalę przemysłową"
+  - id: autonomous-modules
+    name: Moduły autonomiczne
+    requirement: advanced-nuclear-reactor
+    science_packs: { czerwony: 180, zielony: 180, szary: 120 }
+    effect: "Automatyzacja procesów idle dla zwiększenia wydajności"
+  unlocks:
+  - id: basic-nuclear-reactor
+    name: Reaktor jądrowy (podstawowy)
+    requirement: basic-nuclear-reactor
+    science_packs: { czerwony: 100, zielony: 100, szary: 50 }
+    function: "produkcja energii +50 jedn./s z paliwa jądrowego"
+  - id: autonomous-cooling-modules
+    name: Autonomiczne moduły chłodzenia
+    requirement: autonomous-cooling-modules
+    science_packs: { czerwony: 120, zielony: 100, szary: 60 }
+    function: "+20% czasu pracy reaktora, zmniejszony pobór energii"
+  - id: advanced-nuclear-reactor
+    name: Reaktor jądrowy (zaawansowany)
+    requirement: advanced-nuclear-reactor
+    science_packs: { czerwony: 150, zielony: 150, szary: 100 }
+    function: "produkcja energii +100 jedn./s z paliwa jądrowego"
+  - id: nuclear-power-plant
+    name: Elektrownia jądrowa
+    requirement: nuclear-power-plant
+    science_packs: { czerwony: 200, zielony: 200, szary: 150 }
+    function: "zintegrowany kompleks energetyczny, +200 jedn./s"
+  - id: autonomous-module
+    name: Moduł autonomiczny
+    requirement: autonomous-modules
+    science_packs: { czerwony: 180, zielony: 180, szary: 120 }
+    function: "automatyzacja dowolnego procesu idle"
+- tier: 6
+  upgrades:
+  - id: solar-cells
+    name: Ogniwa słoneczne
+    requirement: autonomous-modules
+    science_packs: { czerwony: 150, zielony: 150, szary: 80 }
+    effect: "Odnawialne źródło energii bazujące na świetle"
+  - id: solar-panel-farm
+    name: Farma paneli słonecznych
+    requirement: solar-cells
+    science_packs: { czerwony: 180, zielony: 180, szary: 100 }
+    effect: "Zautomatyzowana produkcja paneli słonecznych"
+  - id: geothermal-probes
+    name: Geotermiczne sondy
+    requirement: autonomous-modules
+    science_packs: { czerwony: 200, zielony: 200, szary: 120 }
+    effect: "Wykorzystanie energii geotermalnej z głębi planety"
+  - id: idle-artificial-intelligence
+    name: Sztuczna inteligencja idle (AI Core)
+    requirement: autonomous-modules
+    science_packs: { czerwony: 250, zielony: 250, szary: 150, niebieski: 50 }
+    effect: "+20% do wszystkich bonusów idle"
+  - id: ai-server
+    name: Serwer AI
+    requirement: idle-artificial-intelligence
+    science_packs: { czerwony: 300, zielony: 300, szary: 200, niebieski: 100 }
+    effect: "Automatyzacja badań i zwiększenie ich efektywności"
+  unlocks:
+  - id: solar-panel
+    name: Panel słoneczny
+    requirement: solar-cells
+    science_packs: { czerwony: 150, zielony: 150, szary: 80 }
+    function: "produkcja energii w dzień (+10 jedn./s)"
+  - id: solar-panel-farm
+    name: Farma paneli słonecznych
+    requirement: solar-panel-farm
+    science_packs: { czerwony: 180, zielony: 180, szary: 100 }
+    function: "produkcja paneli słonecznych (+2/s)"
+  - id: geothermal-probe
+    name: Sonda geotermiczna
+    requirement: geothermal-probes
+    science_packs: { czerwony: 200, zielony: 200, szary: 120 }
+    function: "zwiększa efektywność wydobycia ciepła o 25%"
+  - id: geothermal-installation
+    name: Instalacja geotermalna
+    requirement: geothermal-probes
+    science_packs: { czerwony: 220, zielony: 220, szary: 150 }
+    function: "pasywna energia geotermalna (+40 jedn./s)"
+  - id: ai-core
+    name: AI Core
+    requirement: idle-artificial-intelligence
+    science_packs: { czerwony: 250, zielony: 250, szary: 150, niebieski: 50 }
+    function: "+20% do wszystkich bonusów idle"
+  - id: ai-server
+    name: Serwer AI
+    requirement: ai-server
+    science_packs: { czerwony: 300, zielony: 300, szary: 200, niebieski: 100 }
+    function: "automatyzuje badania (+25% szybkości)"
+- tier: 7
+  upgrades:
+  - id: rocket-technology
+    name: Technologia rakietowa
+    requirement: ai-server
+    science_packs: { czerwony: 400, zielony: 400, szary: 300, niebieski: 200 }
+    effect: "Umożliwia budowę i wystrzeliwanie rakiet w kosmos"
+  - id: orbital-modules
+    name: Moduły orbitalne
+    requirement: rocket-technology
+    science_packs: { czerwony: 450, zielony: 450, szary: 350, niebieski: 250 }
+    effect: "Produkcja komponentów i modułów dla stacji orbitalnych"
+  - id: satellite-communication-station
+    name: Stacja komunikacji satelitarnej
+    requirement: orbital-modules
+    science_packs: { czerwony: 500, zielony: 500, szary: 400, niebieski: 300 }
+    effect: "Komunikacja z pojazdami kosmicznymi i stacjami orbitalnymi"
+  unlocks:
+  - id: rocket-silo
+    name: Silos rakietowy
+    requirement: rocket-technology
+    science_packs: { czerwony: 400, zielony: 400, szary: 300, niebieski: 200 }
+    function: "wystrzeliwuje rakiety w kosmos"
+  - id: orbital-module-factory
+    name: Fabryka modułów orbitalnych
+    requirement: orbital-modules
+    science_packs: { czerwony: 450, zielony: 450, szary: 350, niebieski: 250 }
+    function: "produkuje moduły orbitalne (1/min)"
+  - id: satellite-communication-station
+    name: Stacja komunikacji satelitarnej
+    requirement: satellite-communication-station
+    science_packs: { czerwony: 500, zielony: 500, szary: 400, niebieski: 300 }
+    function: "+15% badań pasywnie"
+- tier: 8
+  upgrades:
+  - id: life-support-system
+    name: System podtrzymywania życia
+    requirement: satellite-communication-station
+    science_packs: { czerwony: 600, zielony: 600, szary: 500, niebieski: 400, fioletowy: 100 }
+    effect: "Systemy podtrzymujące życie dla załogowych stacji kosmicznych"
+  - id: automatic-docking
+    name: Automatyczne dokowanie
+    requirement: life-support-system
+    science_packs: { czerwony: 700, zielony: 700, szary: 600, niebieski: 500, fioletowy: 200 }
+    effect: "Dokowanie pojazdów kosmicznych bez interwencji człowieka"
+  - id: orbital-research-module
+    name: Moduł badawczy orbitalny
+    requirement: automatic-docking
+    science_packs: { czerwony: 800, zielony: 800, szary: 700, niebieski: 600, fioletowy: 300 }
+    effect: "Zaawansowane badania naukowe w warunkach mikrograwitacji"
+  - id: space-station
+    name: Stacja kosmiczna
+    requirement: orbital-research-module
+    science_packs: { czerwony: 1000, zielony: 1000, szary: 800, niebieski: 700, fioletowy: 500 }
+    effect: "Kompleksowa stacja kosmiczna dla badań i produkcji energii"
+  unlocks:
+  - id: life-support-system
+    name: System podtrzymywania życia
+    requirement: life-support-system
+    science_packs: { czerwony: 600, zielony: 600, szary: 500, niebieski: 400, fioletowy: 100 }
+    function: "+20% do wszystkich efektywności"
+  - id: automatic-docking
+    name: Automatyczne dokowanie
+    requirement: automatic-docking
+    science_packs: { czerwony: 700, zielony: 700, szary: 600, niebieski: 500, fioletowy: 200 }
+    function: "+25% do wszystkich procesów kosmicznych"
+  - id: orbital-research-module
+    name: Moduł badawczy orbitalny
+    requirement: orbital-research-module
+    science_packs: { czerwony: 800, zielony: 800, szary: 700, niebieski: 600, fioletowy: 300 }
+    function: "generuje purple packs (+5/s)"
+  - id: space-station
+    name: Stacja kosmiczna
+    requirement: space-station
+    science_packs: { czerwony: 1000, zielony: 1000, szary: 800, niebieski: 700, fioletowy: 500 }
+    function: "+100 jedn./s energii, +50 purple packs/s"
