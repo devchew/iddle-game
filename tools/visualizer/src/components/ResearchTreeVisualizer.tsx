@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Tree from "react-d3-tree";
-import { Box, Typography, Modal, Paper, Chip } from "@mui/material";
-import type { Entity } from "@iddle-factory/config/types";
+import { Box, Typography, Modal, Paper, Chip, Grid } from "@mui/material";
+import type { Entity } from "@iddle-factory/config";
 import { type TreeNode } from "../utils/dataTransformers";
 
 const modalStyle = {
@@ -64,7 +64,6 @@ const EntityListModal: React.FC<EntityListModalProps> = ({
 							<Typography variant="subtitle1">{entity.name}</Typography>
 							<Box sx={{ display: "flex", gap: 1, mt: 1 }}>
 								<Chip label={`Type: ${entity.type}`} size="small" />
-								<Chip label={`Tier: ${entity.tier}`} size="small" />
 							</Box>
 						</Paper>
 					))}
@@ -85,27 +84,52 @@ const EntityModal: React.FC<EntityModalProps> = ({ open, entity, onClose }) => {
 				</Typography>
 				<Box sx={{ mb: 2 }}>
 					<Chip label={`Type: ${entity.type}`} sx={{ mr: 1 }} />
-					<Chip label={`Tier: ${entity.tier}`} />
 				</Box>
+				
 				<Typography variant="subtitle1" gutterBottom>
-					Function: {entity.function}
+					Craft Time: {entity.craft_time} seconds
 				</Typography>
 				<Typography variant="subtitle2" gutterBottom>
-					Operation Cost: {entity.operation_cost}
+					Craft Amount: {entity.craft_amount}
 				</Typography>
-				<Typography variant="subtitle2" gutterBottom>
-					Tech Requirement: {entity.tech_requirement}
-				</Typography>
-				<Typography variant="h6" sx={{ mt: 2 }}>
-					Cost
-				</Typography>
-				<ul>
-					{entity.cost.map((cost, index) => (
-						<li key={index}>
-							{cost.itemId}: {cost.qty}
-						</li>
-					))}
-				</ul>
+
+				{entity.operation_cost.length > 0 && (
+					<>
+						<Typography variant="h6" sx={{ mt: 2 }}>
+							Operation Cost
+						</Typography>
+						<Grid container spacing={1}>
+							{entity.operation_cost.map((cost, index) => (
+								<Grid item key={index}>
+									<Chip
+										label={`${cost.type}: ${cost.ammount}`}
+										variant="outlined"
+										size="small"
+									/>
+								</Grid>
+							))}
+						</Grid>
+					</>
+				)}
+				
+				{entity.craft_cost.length > 0 && (
+					<>
+						<Typography variant="h6" sx={{ mt: 2 }}>
+							Crafting Cost
+						</Typography>
+						<Grid container spacing={1}>
+							{entity.craft_cost.map((cost, index) => (
+								<Grid item key={index}>
+									<Chip
+										label={`${cost.id}: ${cost.amount}`}
+										variant="outlined"
+										size="small"
+									/>
+								</Grid>
+							))}
+						</Grid>
+					</>
+				)}
 			</Box>
 		</Modal>
 	);
@@ -114,175 +138,82 @@ const EntityModal: React.FC<EntityModalProps> = ({ open, entity, onClose }) => {
 const ResearchTreeVisualizer: React.FC<ResearchTreeVisualizerProps> = ({
 	treeData,
 }) => {
+	const [selectedEntities, setSelectedEntities] = useState<Entity[] | null>(null);
 	const [selectedEntity, setSelectedEntity] = useState<Entity | null>(null);
 	const [modalOpen, setModalOpen] = useState(false);
+	const [entityModalOpen, setEntityModalOpen] = useState(false);
 
-	const [entityListOpen, setEntityListOpen] = useState(false);
-	const [entityList, setEntityList] = useState<Entity[]>([]);
-
-	const handleNodeClick = (nodeData: any) => {
-		if (nodeData.data.entityRefs && nodeData.data.entityRefs.length > 0) {
-			// If there's only one entity, show it directly
-			if (nodeData.data.entityRefs.length === 1) {
-				setSelectedEntity(nodeData.data.entityRefs[0]);
-				setModalOpen(true);
-			} else {
-				// For multiple entities, show entity selection list
-				setEntityList(nodeData.data.entityRefs);
-				setEntityListOpen(true);
-			}
-		}
-	};
-
-	const closeModal = () => {
-		setModalOpen(false);
-		setSelectedEntity(null);
-	};
-
-	// Custom node renderer to show different styles based on node type
-	const renderCustomNodeElement = ({ nodeDatum, toggleNode }: any) => {
+	// Custom node to render with entity information
+	const renderCustomNode = ({ nodeDatum }: { nodeDatum: any }) => {
 		const hasEntities = nodeDatum.attributes?.hasEntities;
-		const nodeType = nodeDatum.attributes?.type;
+		const nodeStyle = hasEntities
+			? { fill: "#4caf50", stroke: "#2e7d32" }
+			: {};
+
+		const handleNodeClick = () => {
+			if (nodeDatum.entityRefs && nodeDatum.entityRefs.length > 0) {
+				setSelectedEntities(nodeDatum.entityRefs);
+				setModalOpen(true);
+			}
+		};
 
 		return (
-			<g onClick={toggleNode}>
+			<g>
 				<circle
-					r={hasEntities ? 15 : 10}
-					fill={
-						hasEntities
-							? "#4CAF50"
-							: nodeType === "upgrade"
-								? "#2196F3"
-								: nodeType === "unlock"
-									? "#FF9800"
-									: "#9E9E9E"
-					}
-					onClick={(e) => {
-						e.stopPropagation();
-						handleNodeClick({ data: nodeDatum });
-					}}
+					r={hasEntities ? 18 : 15}
+					style={nodeStyle}
+					onClick={handleNodeClick}
 				/>
 				<text
-					fill="black"
-					strokeWidth="0.5"
-					x={20}
-					style={{ fontSize: "12px" }}
-					dy=".35em"
-					textAnchor="start"
+					dy="2em"
+					x={0}
+					textAnchor="middle"
+					style={{ fill: "#333", fontSize: "1rem" }}
 				>
 					{nodeDatum.name}
-					{hasEntities && ` (${nodeDatum.attributes.entityCount} entities)`}
 				</text>
+				{hasEntities && (
+					<text
+						dy=".31em"
+						x={0}
+						textAnchor="middle"
+						style={{ fill: "white", fontSize: "0.9rem" }}
+					>
+						{nodeDatum.attributes.entityCount}
+					</text>
+				)}
 			</g>
 		);
 	};
-	const closeEntityList = () => {
-		setEntityListOpen(false);
-	};
 
-	const handleSelectEntity = (entity: Entity) => {
+	const handleEntitySelect = (entity: Entity) => {
 		setSelectedEntity(entity);
-		setEntityListOpen(false);
-		setModalOpen(true);
+		setModalOpen(false);
+		setEntityModalOpen(true);
 	};
 
 	return (
-		<Box sx={{ width: "100%", height: "80vh", position: "relative" }}>
-			<Box
-				sx={{
-					position: "absolute",
-					top: 10,
-					right: 10,
-					zIndex: 10,
-					p: 2,
-					bgcolor: "rgba(255, 255, 255, 0.8)",
-					borderRadius: 1,
-				}}
-			>
-				<Typography variant="subtitle2" gutterBottom>
-					Legend:
-				</Typography>
-				<Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-					<Box
-						sx={{
-							width: 16,
-							height: 16,
-							borderRadius: "50%",
-							bgcolor: "#9E9E9E",
-							mr: 1,
-						}}
-					/>
-					<Typography variant="body2">Research Tier</Typography>
-				</Box>
-				<Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-					<Box
-						sx={{
-							width: 16,
-							height: 16,
-							borderRadius: "50%",
-							bgcolor: "#2196F3",
-							mr: 1,
-						}}
-					/>
-					<Typography variant="body2">Upgrade</Typography>
-				</Box>
-				<Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-					<Box
-						sx={{
-							width: 16,
-							height: 16,
-							borderRadius: "50%",
-							bgcolor: "#FF9800",
-							mr: 1,
-						}}
-					/>
-					<Typography variant="body2">Unlock</Typography>
-				</Box>
-				<Box sx={{ display: "flex", alignItems: "center" }}>
-					<Box
-						sx={{
-							width: 16,
-							height: 16,
-							borderRadius: "50%",
-							bgcolor: "#4CAF50",
-							mr: 1,
-						}}
-					/>
-					<Typography variant="body2">Has Entities (clickable)</Typography>
-				</Box>
-			</Box>
-
-			<Box
-				sx={{
-					width: "100%",
-					height: "100%",
-					border: "1px solid #ddd",
-					borderRadius: 2,
-					overflow: "hidden",
-				}}
-			>
-				<Tree
-					data={treeData}
-					orientation="vertical"
-					translate={{ x: window.innerWidth / 2, y: 100 }}
-					renderCustomNodeElement={renderCustomNodeElement}
-					pathFunc="step"
-					separation={{ siblings: 2, nonSiblings: 2 }}
-					zoom={0.8}
-				/>
-			</Box>
-
-			<EntityModal
-				open={modalOpen}
-				entity={selectedEntity}
-				onClose={closeModal}
+		<Box sx={{ width: "100%", height: "800px", position: "relative" }}>
+			<Tree
+				data={treeData}
+				orientation="vertical"
+				pathFunc="step"
+				translate={{ x: 400, y: 100 }}
+				renderCustomNodeElement={renderCustomNode}
+				separation={{ siblings: 3, nonSiblings: 3 }}
 			/>
-
-			<EntityListModal
-				open={entityListOpen}
-				entities={entityList}
-				onClose={closeEntityList}
-				onSelectEntity={handleSelectEntity}
+			{selectedEntities && (
+				<EntityListModal
+					open={modalOpen}
+					entities={selectedEntities}
+					onClose={() => setModalOpen(false)}
+					onSelectEntity={handleEntitySelect}
+				/>
+			)}
+			<EntityModal
+				open={entityModalOpen}
+				entity={selectedEntity}
+				onClose={() => setEntityModalOpen(false)}
 			/>
 		</Box>
 	);

@@ -6,7 +6,7 @@
 	"types": "dist/index.d.ts",
 	"private": true,
 	"scripts": {
-		"prebuild": "node build.js",
+		"prebuild": "node scripts/build.js",
 		"build": "tsc",
 		"prepublishOnly": "npm run build"
 	},

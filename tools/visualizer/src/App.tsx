@@ -1,9 +1,10 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CssBaseline, Box, Container, Typography } from "@mui/material";
-import { entities, researchTree } from "@iddle-factory/config";
+import { config } from "@iddle-factory/config";
 import ResearchTreeVisualizer from "./components/ResearchTreeVisualizer";
 import EntitySearch from "./components/EntitySearch";
+import EntityDetail from "./components/EntityDetail";
 import Navigation from "./components/Navigation";
 import {
 	transformResearchTree,
@@ -11,11 +12,14 @@ import {
 } from "./utils/dataTransformers";
 
 function App() {
+	// Create research tree object from config for the transformer
+	const researchTree = { tiers: config.tiers };
+
 	// Transform the research tree data for visualization
 	const treeData = transformResearchTree(researchTree);
 
 	// Connect entities to their respective research nodes
-	const connectedTreeData = connectEntitiesToResearchTree(treeData, entities);
+	const connectedTreeData = connectEntitiesToResearchTree(treeData, { entities: config.entities });
 
 	return (
 		<BrowserRouter>
@@ -53,10 +57,33 @@ function App() {
 									</Box>
 								}
 							/>
-							<Route
-								path="entities"
-								element={<EntitySearch entities={entities.entities} />}
-							/>
+							<Route path="entities">
+								<Route index element={
+									<Box>
+										<Typography variant="h4" gutterBottom sx={{ mb: 3 }}>
+											Entities Explorer
+										</Typography>
+										<Box sx={{ display: 'flex', flexDirection: 'column' }}>
+											<EntitySearch entities={config.entities} />
+										</Box>
+									</Box>
+								} />
+								<Route path=":entityId" element={
+									<Box>
+										<Typography variant="h4" gutterBottom sx={{ mb: 3 }}>
+											Entities Explorer
+										</Typography>
+										<Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 3 }}>
+											<Box sx={{ width: { xs: '100%', md: '40%' }, order: { xs: 2, md: 1 } }}>
+												<EntityDetail entities={config.entities} />
+											</Box>
+											<Box sx={{ width: { xs: '100%', md: '60%' }, order: { xs: 1, md: 2 } }}>
+												<EntitySearch entities={config.entities} />
+											</Box>
+										</Box>
+									</Box>
+								} />
+							</Route>
 						</Route>
 					</Routes>
 				</Container>

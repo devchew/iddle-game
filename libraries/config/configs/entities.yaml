@@ -1,0 +1,551 @@
+# entities.yaml
+# Wygenerowane na podstawie docs/entities.md
+
+entities:
+- id: basic-mine
+  name: Podstawowa kopalnia
+  type: building
+  craft_time: 5
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 5
+  operation_cost:
+  - type: fuel
+    ammount: 10
+
+- id: automatic-mine
+  name: Kopalnia automatyczna
+  type: building
+  craft_time: 10
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 10
+  - id: gear-wheel
+    amount: 5
+  operation_cost:
+  - type: fuel
+    ammount: 50
+
+- id: ore-separator
+  name: Separator rud
+  type: building
+  craft_time: 15
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 15
+  - id: gear-wheel
+    amount: 10
+  - id: electronic-circuit
+    amount: 5
+  operation_cost:
+  - type: fuel
+    ammount: 30
+
+- id: stone-furnace
+  name: Piec kamienny
+  type: building
+  craft_time: 5
+  craft_amount: 1
+  craft_cost:
+  - id: stone
+    amount: 5
+  operation_cost:
+  - type: fuel
+    ammount: 15
+
+- id: conveyor-tier-1
+  name: Przenośnik Tier 1
+  type: building
+  craft_time: 1
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 1
+  - id: gear-wheel
+    amount: 1
+  operation_cost: []
+
+- id: basic-storage
+  name: Magazyn podstawowy
+  type: building
+  craft_time: 5
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 5
+  operation_cost: []
+
+- id: blast-furnace
+  name: Hutnia wielkopiecowa
+  type: building
+  craft_time: 30
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 30
+  - id: stone
+    amount: 10
+  - id: electronic-circuit
+    amount: 5
+  operation_cost:
+  - type: fuel
+    ammount: 90
+
+- id: conveyor-tier-2
+  name: Przenośnik Tier 2
+  type: building
+  craft_time: 1
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 1
+  - id: electronic-circuit
+    amount: 1
+  operation_cost: []
+
+- id: advanced-storage
+  name: Magazyn zaawansowany
+  type: building
+  craft_time: 10
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 10
+  - id: electronic-circuit
+    amount: 2
+  operation_cost: []
+
+- id: thermosolar-generator
+  name: Generator termosolar
+  type: building
+  craft_time: 15
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 10
+  - id: copper-plate
+    amount: 5
+  - id: electronic-circuit
+    amount: 2
+  operation_cost: []
+
+- id: energy-accumulator
+  name: Akumulator energetyczny
+  type: building
+  craft_time: 5
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 5
+  - id: copper-plate
+    amount: 2
+  operation_cost: []
+
+- id: assembler-tier-1
+  name: Assembler Tier 1
+  type: building
+  craft_time: 20
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 15
+  - id: gear-wheel
+    amount: 5
+  - id: electronic-circuit
+    amount: 3
+  operation_cost:
+  - type: fuel
+    ammount: 75
+
+- id: biomass-reactor
+  name: Reaktor biomasowy
+  type: building
+  craft_time: 30
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 20
+  - id: copper-plate
+    amount: 10
+  - id: electronic-circuit
+    amount: 5
+  operation_cost:
+  - type: fuel
+    ammount: 20
+
+- id: basic-laboratory
+  name: Laboratorium podstawowe
+  type: building
+  craft_time: 20
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 10
+  - id: electronic-circuit
+    amount: 10
+  - id: copper-plate
+    amount: 5
+  operation_cost:
+  - type: fuel
+    ammount: 60
+
+- id: super-laboratory
+  name: Laboratorium Super
+  type: building
+  craft_time: 40
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 20
+  - id: electronic-circuit
+    amount: 15
+  - id: steel-plate
+    amount: 10
+  operation_cost:
+  - type: fuel
+    ammount: 120
+
+- id: chemical-plant
+  name: Zakład chemiczny
+  type: building
+  craft_time: 45
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 30
+  - id: gear-wheel
+    amount: 10
+  - id: pipe
+    amount: 5
+  - id: electronic-circuit
+    amount: 5
+  operation_cost:
+  - type: fuel
+    ammount: 210
+
+- id: metal-roller
+  name: Walcer metali
+  type: building
+  craft_time: 60
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 50
+  - id: steel-plate
+    amount: 20
+  - id: gear-wheel
+    amount: 10
+  - id: advanced-circuit
+    amount: 5
+  operation_cost:
+  - type: fuel
+    ammount: 180
+
+- id: storage-tier-3
+  name: Magazyn Tier 3
+  type: building
+  craft_time: 30
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 20
+  - id: advanced-circuit
+    amount: 5
+  operation_cost: []
+
+- id: basic-nuclear-reactor
+  name: Reaktor jądrowy (podstawowy)
+  type: building
+  craft_time: 120
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 100
+  - id: advanced-circuit
+    amount: 50
+  - id: pipe
+    amount: 20
+  - id: heat-exchanger
+    amount: 10
+  operation_cost:
+  - type: fuel
+    ammount: 500
+
+- id: autonomous-cooling-modules
+  name: Autonomiczne moduły chłodzenia
+  type: building
+  craft_time: 60
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 30
+  - id: advanced-circuit
+    amount: 20
+  - id: pipe
+    amount: 15
+  operation_cost:
+  - type: fuel
+    ammount: 50
+
+- id: advanced-nuclear-reactor
+  name: Reaktor jądrowy (zaawansowany)
+  type: building
+  craft_time: 180
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 200
+  - id: advanced-circuit
+    amount: 100
+  - id: heat-exchanger
+    amount: 50
+  operation_cost:
+  - type: fuel
+    ammount: 1000
+
+- id: nuclear-power-plant
+  name: Elektrownia jądrowa
+  type: building
+  craft_time: 300
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 300
+  - id: advanced-circuit
+    amount: 150
+  - id: heat-exchanger
+    amount: 100
+  operation_cost:
+  - type: fuel
+    ammount: 2000
+
+- id: autonomous-module
+  name: Moduł autonomiczny
+  type: building
+  craft_time: 90
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 50
+  - id: advanced-circuit
+    amount: 30
+  - id: electric-engine
+    amount: 20
+  operation_cost:
+  - type: fuel
+    ammount: 150
+
+- id: solar-panel
+  name: Panel słoneczny
+  type: building
+  craft_time: 30
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 15
+  - id: electronic-circuit
+    amount: 10
+  - id: copper-plate
+    amount: 5
+  operation_cost: []
+
+- id: solar-panel-farm
+  name: Farma paneli słonecznych
+  type: building
+  craft_time: 90
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 50
+  - id: electronic-circuit
+    amount: 30
+  - id: advanced-circuit
+    amount: 20
+  operation_cost:
+  - type: fuel
+    ammount: 100
+
+- id: geothermal-probe
+  name: Sonda geotermiczna
+  type: building
+  craft_time: 45
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 30
+  - id: pipe
+    amount: 15
+  - id: electronic-circuit
+    amount: 10
+  operation_cost:
+  - type: fuel
+    ammount: 40
+
+- id: geothermal-installation
+  name: Instalacja geotermalna
+  type: building
+  craft_time: 120
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 80
+  - id: pipe
+    amount: 40
+  - id: advanced-circuit
+    amount: 30
+  operation_cost: []
+
+- id: ai-core
+  name: AI Core
+  type: building
+  craft_time: 150
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 100
+  - id: advanced-circuit
+    amount: 50
+  - id: processor-unit
+    amount: 30
+  operation_cost:
+  - type: fuel
+    ammount: 200
+
+- id: ai-server
+  name: Serwer AI
+  type: building
+  craft_time: 300
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 200
+  - id: advanced-circuit
+    amount: 100
+  - id: processor-unit
+    amount: 50
+  operation_cost:
+  - type: fuel
+    ammount: 350
+
+- id: rocket-silo
+  name: Silos rakietowy
+  type: building
+  craft_time: 600
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 500
+  - id: concrete
+    amount: 100
+  - id: electric-engine
+    amount: 100
+  - id: advanced-circuit
+    amount: 100
+  operation_cost:
+  - type: fuel
+    ammount: 5000
+
+- id: orbital-module-factory
+  name: Fabryka modułów orbitalnych
+  type: building
+  craft_time: 180
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 100
+  - id: advanced-circuit
+    amount: 50
+  - id: electric-engine
+    amount: 30
+  operation_cost:
+  - type: fuel
+    ammount: 400
+
+- id: satellite-communication-station
+  name: Stacja komunikacji satelitarnej
+  type: building
+  craft_time: 360
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 200
+  - id: advanced-circuit
+    amount: 150
+  - id: electric-engine
+    amount: 100
+  - id: processor-unit
+    amount: 50
+  operation_cost:
+  - type: fuel
+    ammount: 300
+
+- id: life-support-system
+  name: System podtrzymywania życia
+  type: building
+  craft_time: 480
+  craft_amount: 1
+  craft_cost:
+  - id: composite-materials
+    amount: 300
+  - id: advanced-circuit
+    amount: 200
+  - id: processor-unit
+    amount: 100
+  operation_cost:
+  - type: fuel
+    ammount: 500
+
+- id: automatic-docking
+  name: Automatyczne dokowanie
+  type: building
+  craft_time: 600
+  craft_amount: 1
+  craft_cost:
+  - id: composite-materials
+    amount: 400
+  - id: advanced-circuit
+    amount: 300
+  - id: electric-engine
+    amount: 200
+  - id: processor-unit
+    amount: 100
+  operation_cost:
+  - type: fuel
+    ammount: 600
+
+- id: orbital-research-module
+  name: Moduł badawczy orbitalny
+  type: building
+  craft_time: 540
+  craft_amount: 1
+  craft_cost:
+  - id: composite-materials
+    amount: 300
+  - id: advanced-circuit
+    amount: 250
+  - id: processor-unit
+    amount: 150
+  operation_cost:
+  - type: fuel
+    ammount: 800
+
+- id: space-station
+  name: Stacja kosmiczna
+  type: building
+  craft_time: 1200
+  craft_amount: 1
+  craft_cost:
+  - id: composite-materials
+    amount: 1000
+  - id: advanced-circuit
+    amount: 500
+  - id: processor-unit
+    amount: 300
+  - id: superconductor
+    amount: 200
+  operation_cost:
+  - type: fuel
+    ammount: 2000

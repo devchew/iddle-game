@@ -1,0 +1,292 @@
+tiers:
+- id: efficient-mining
+  name: Efektywne górnictwo
+  requirement:
+  - id: initial
+    ammount: 1
+  unlocks:
+  - id: automatic-mine
+
+- id: ore-enrichment
+  name: Wzbogacanie rudy
+  requirement:
+  - id: efficient-mining
+    ammount: 1
+  unlocks:
+  - id: ore-separator
+
+- id: stone-furnace
+  name: Piec kamienny
+  requirement:
+  - id: initial
+    ammount: 1
+
+- id: conveyor-tier-1
+  name: Przenośnik Tier 1
+  requirement:
+  - id: initial
+    ammount: 1
+
+- id: basic-storage
+  name: Magazyn podstawowy
+  requirement:
+  - id: initial
+    ammount: 1
+
+- id: metallurgical-patterns
+  name: Paternie metalurgiczne
+  requirement:
+  - id: ore-enrichment
+    ammount: 1
+  upgrade:
+    id: metallurgical-patterns
+
+- id: energy-modules
+  name: Moduły energetyczne
+  requirement:
+  - id: efficient-mining
+    ammount: 1
+  upgrade:
+    id: energy-modules
+
+- id: blast-furnace
+  name: Hutnia wielkopiecowa
+  requirement:
+  - id: metallurgical-patterns
+    ammount: 1
+
+- id: thermosolar-generator
+  name: Generator termosolar
+  requirement:
+  - id: energy-modules
+    ammount: 1
+
+- id: conveyor-tier-2
+  name: Przenośnik Tier 2
+  requirement:
+  - id: metallurgical-patterns
+    ammount: 1
+
+- id: advanced-storage
+  name: Magazyn zaawansowany
+  requirement:
+  - id: metallurgical-patterns
+    ammount: 1
+
+- id: energy-accumulator
+  name: Akumulator energetyczny
+  requirement:
+  - id: energy-modules
+    ammount: 1
+
+- id: speed-modules
+  name: Moduły prędkości
+  requirement:
+  - id: metallurgical-patterns
+    ammount: 1
+  upgrade:
+    id: speed-modules
+
+- id: productivity-modules
+  name: Moduły wydajności
+  requirement:
+  - id: speed-modules
+    ammount: 1
+  upgrade:
+    id: productivity-modules
+
+- id: accelerated-research
+  name: Przyspieszone badania
+  requirement:
+  - id: speed-modules
+    ammount: 1
+  upgrade:
+    id: accelerated-research
+
+- id: super-laboratory
+  name: Laboratorium Super
+  requirement:
+  - id: accelerated-research
+    ammount: 1
+
+- id: biomass-reactor
+  name: Reaktor biomasowy
+  requirement:
+  - id: productivity-modules
+    ammount: 1
+
+- id: assembler-tier-1
+  name: Assembler Tier 1
+  requirement:
+  - id: speed-modules
+    ammount: 1
+
+- id: chemical-catalysts
+  name: Katalizatory chemiczne
+  requirement:
+  - id: productivity-modules
+    ammount: 1
+  upgrade:
+    id: chemical-catalysts
+
+- id: enriched-alloy
+  name: Stop wzbogacony
+  requirement:
+  - id: chemical-catalysts
+    ammount: 1
+  upgrade:
+    id: enriched-alloy
+
+- id: chemical-plant
+  name: Zakład chemiczny
+  requirement:
+  - id: chemical-catalysts
+    ammount: 1
+
+- id: metal-roller
+  name: Walcer metali
+  requirement:
+  - id: enriched-alloy
+    ammount: 1
+
+- id: storage-tier-3
+  name: Magazyn Tier 3
+  requirement:
+  - id: enriched-alloy
+    ammount: 1
+
+- id: basic-nuclear-reactor
+  name: Reaktor jądrowy (podstawowy)
+  requirement:
+  - id: enriched-alloy
+    ammount: 1
+  upgrade:
+    id: basic-nuclear-reactor
+
+- id: autonomous-cooling-modules
+  name: Autonomiczne moduły chłodzenia
+  requirement:
+  - id: basic-nuclear-reactor
+    ammount: 1
+  upgrade:
+    id: autonomous-cooling-modules
+
+- id: advanced-nuclear-reactor
+  name: Reaktor jądrowy (zaawansowany)
+  requirement:
+  - id: autonomous-cooling-modules
+    ammount: 1
+  upgrade:
+    id: advanced-nuclear-reactor
+
+- id: nuclear-power-plant
+  name: Elektrownia jądrowa
+  requirement:
+  - id: advanced-nuclear-reactor
+    ammount: 1
+  upgrade:
+    id: nuclear-power-plant
+
+- id: autonomous-modules
+  name: Moduły autonomiczne
+  requirement:
+  - id: advanced-nuclear-reactor
+    ammount: 1
+  upgrade:
+    id: autonomous-modules
+
+- id: solar-cells
+  name: Ogniwa słoneczne
+  requirement:
+  - id: autonomous-modules
+    ammount: 1
+  upgrade:
+    id: solar-cells
+
+- id: solar-panel-farm
+  name: Farma paneli słonecznych
+  requirement:
+  - id: solar-cells
+    ammount: 1
+  upgrade:
+    id: solar-panel-farm
+
+- id: geothermal-probes
+  name: Geotermiczne sondy
+  requirement:
+  - id: autonomous-modules
+    ammount: 1
+  upgrade:
+    id: geothermal-probes
+
+- id: idle-artificial-intelligence
+  name: Sztuczna inteligencja idle (AI Core)
+  requirement:
+  - id: autonomous-modules
+    ammount: 1
+  upgrade:
+    id: idle-artificial-intelligence
+
+- id: ai-server
+  name: Serwer AI
+  requirement:
+  - id: idle-artificial-intelligence
+    ammount: 1
+  upgrade:
+    id: ai-server
+
+- id: rocket-technology
+  name: Technologia rakietowa
+  requirement:
+  - id: ai-server
+    ammount: 1
+  upgrade:
+    id: rocket-technology
+
+- id: orbital-modules
+  name: Moduły orbitalne
+  requirement:
+  - id: rocket-technology
+    ammount: 1
+  upgrade:
+    id: orbital-modules
+
+- id: satellite-communication-station
+  name: Stacja komunikacji satelitarnej
+  requirement:
+  - id: orbital-modules
+    ammount: 1
+  upgrade:
+    id: satellite-communication-station
+
+- id: life-support-system
+  name: System podtrzymywania życia
+  requirement:
+  - id: satellite-communication-station
+    ammount: 1
+  upgrade:
+    id: life-support-system
+
+- id: automatic-docking
+  name: Automatyczne dokowanie
+  requirement:
+  - id: life-support-system
+    ammount: 1
+  upgrade:
+    id: automatic-docking
+
+- id: orbital-research-module
+  name: Moduł badawczy orbitalny
+  requirement:
+  - id: automatic-docking
+    ammount: 1
+  upgrade:
+    id: orbital-research-module
+
+- id: space-station
+  name: Stacja kosmiczna
+  requirement:
+  - id: orbital-research-module
+    ammount: 1
+  upgrade:
+    id: space-station

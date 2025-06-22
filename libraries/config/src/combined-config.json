@@ -1,0 +1,2368 @@
+{
+  "entities": [
+    {
+      "id": "basic-mine",
+      "name": "Podstawowa kopalnia",
+      "type": "building",
+      "craft_time": 5,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 5
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 10
+        }
+      ]
+    },
+    {
+      "id": "automatic-mine",
+      "name": "Kopalnia automatyczna",
+      "type": "building",
+      "craft_time": 10,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 10
+        },
+        {
+          "id": "gear-wheel",
+          "amount": 5
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 50
+        }
+      ]
+    },
+    {
+      "id": "ore-separator",
+      "name": "Separator rud",
+      "type": "building",
+      "craft_time": 15,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 15
+        },
+        {
+          "id": "gear-wheel",
+          "amount": 10
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 5
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 30
+        }
+      ]
+    },
+    {
+      "id": "stone-furnace",
+      "name": "Piec kamienny",
+      "type": "building",
+      "craft_time": 5,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "stone",
+          "amount": 5
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 15
+        }
+      ]
+    },
+    {
+      "id": "conveyor-tier-1",
+      "name": "Przenośnik Tier 1",
+      "type": "building",
+      "craft_time": 1,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 1
+        },
+        {
+          "id": "gear-wheel",
+          "amount": 1
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "basic-storage",
+      "name": "Magazyn podstawowy",
+      "type": "building",
+      "craft_time": 5,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 5
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "blast-furnace",
+      "name": "Hutnia wielkopiecowa",
+      "type": "building",
+      "craft_time": 30,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 30
+        },
+        {
+          "id": "stone",
+          "amount": 10
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 5
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 90
+        }
+      ]
+    },
+    {
+      "id": "conveyor-tier-2",
+      "name": "Przenośnik Tier 2",
+      "type": "building",
+      "craft_time": 1,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 1
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 1
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "advanced-storage",
+      "name": "Magazyn zaawansowany",
+      "type": "building",
+      "craft_time": 10,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 10
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 2
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "thermosolar-generator",
+      "name": "Generator termosolar",
+      "type": "building",
+      "craft_time": 15,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 10
+        },
+        {
+          "id": "copper-plate",
+          "amount": 5
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 2
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "energy-accumulator",
+      "name": "Akumulator energetyczny",
+      "type": "building",
+      "craft_time": 5,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 5
+        },
+        {
+          "id": "copper-plate",
+          "amount": 2
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "assembler-tier-1",
+      "name": "Assembler Tier 1",
+      "type": "building",
+      "craft_time": 20,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 15
+        },
+        {
+          "id": "gear-wheel",
+          "amount": 5
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 3
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 75
+        }
+      ]
+    },
+    {
+      "id": "biomass-reactor",
+      "name": "Reaktor biomasowy",
+      "type": "building",
+      "craft_time": 30,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 20
+        },
+        {
+          "id": "copper-plate",
+          "amount": 10
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 5
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 20
+        }
+      ]
+    },
+    {
+      "id": "basic-laboratory",
+      "name": "Laboratorium podstawowe",
+      "type": "building",
+      "craft_time": 20,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 10
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 10
+        },
+        {
+          "id": "copper-plate",
+          "amount": 5
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 60
+        }
+      ]
+    },
+    {
+      "id": "super-laboratory",
+      "name": "Laboratorium Super",
+      "type": "building",
+      "craft_time": 40,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 20
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 15
+        },
+        {
+          "id": "steel-plate",
+          "amount": 10
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 120
+        }
+      ]
+    },
+    {
+      "id": "chemical-plant",
+      "name": "Zakład chemiczny",
+      "type": "building",
+      "craft_time": 45,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 30
+        },
+        {
+          "id": "gear-wheel",
+          "amount": 10
+        },
+        {
+          "id": "pipe",
+          "amount": 5
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 5
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 210
+        }
+      ]
+    },
+    {
+      "id": "metal-roller",
+      "name": "Walcer metali",
+      "type": "building",
+      "craft_time": 60,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 50
+        },
+        {
+          "id": "steel-plate",
+          "amount": 20
+        },
+        {
+          "id": "gear-wheel",
+          "amount": 10
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 5
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 180
+        }
+      ]
+    },
+    {
+      "id": "storage-tier-3",
+      "name": "Magazyn Tier 3",
+      "type": "building",
+      "craft_time": 30,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 20
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 5
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "basic-nuclear-reactor",
+      "name": "Reaktor jądrowy (podstawowy)",
+      "type": "building",
+      "craft_time": 120,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 100
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 50
+        },
+        {
+          "id": "pipe",
+          "amount": 20
+        },
+        {
+          "id": "heat-exchanger",
+          "amount": 10
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 500
+        }
+      ]
+    },
+    {
+      "id": "autonomous-cooling-modules",
+      "name": "Autonomiczne moduły chłodzenia",
+      "type": "building",
+      "craft_time": 60,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 30
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 20
+        },
+        {
+          "id": "pipe",
+          "amount": 15
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 50
+        }
+      ]
+    },
+    {
+      "id": "advanced-nuclear-reactor",
+      "name": "Reaktor jądrowy (zaawansowany)",
+      "type": "building",
+      "craft_time": 180,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 200
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 100
+        },
+        {
+          "id": "heat-exchanger",
+          "amount": 50
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 1000
+        }
+      ]
+    },
+    {
+      "id": "nuclear-power-plant",
+      "name": "Elektrownia jądrowa",
+      "type": "building",
+      "craft_time": 300,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 300
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 150
+        },
+        {
+          "id": "heat-exchanger",
+          "amount": 100
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 2000
+        }
+      ]
+    },
+    {
+      "id": "autonomous-module",
+      "name": "Moduł autonomiczny",
+      "type": "building",
+      "craft_time": 90,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 50
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 30
+        },
+        {
+          "id": "electric-engine",
+          "amount": 20
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 150
+        }
+      ]
+    },
+    {
+      "id": "solar-panel",
+      "name": "Panel słoneczny",
+      "type": "building",
+      "craft_time": 30,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 15
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 10
+        },
+        {
+          "id": "copper-plate",
+          "amount": 5
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "solar-panel-farm",
+      "name": "Farma paneli słonecznych",
+      "type": "building",
+      "craft_time": 90,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 50
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 30
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 20
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 100
+        }
+      ]
+    },
+    {
+      "id": "geothermal-probe",
+      "name": "Sonda geotermiczna",
+      "type": "building",
+      "craft_time": 45,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 30
+        },
+        {
+          "id": "pipe",
+          "amount": 15
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 10
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 40
+        }
+      ]
+    },
+    {
+      "id": "geothermal-installation",
+      "name": "Instalacja geotermalna",
+      "type": "building",
+      "craft_time": 120,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 80
+        },
+        {
+          "id": "pipe",
+          "amount": 40
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 30
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "ai-core",
+      "name": "AI Core",
+      "type": "building",
+      "craft_time": 150,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 100
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 50
+        },
+        {
+          "id": "processor-unit",
+          "amount": 30
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 200
+        }
+      ]
+    },
+    {
+      "id": "ai-server",
+      "name": "Serwer AI",
+      "type": "building",
+      "craft_time": 300,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 200
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 100
+        },
+        {
+          "id": "processor-unit",
+          "amount": 50
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 350
+        }
+      ]
+    },
+    {
+      "id": "rocket-silo",
+      "name": "Silos rakietowy",
+      "type": "building",
+      "craft_time": 600,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 500
+        },
+        {
+          "id": "concrete",
+          "amount": 100
+        },
+        {
+          "id": "electric-engine",
+          "amount": 100
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 100
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 5000
+        }
+      ]
+    },
+    {
+      "id": "orbital-module-factory",
+      "name": "Fabryka modułów orbitalnych",
+      "type": "building",
+      "craft_time": 180,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 100
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 50
+        },
+        {
+          "id": "electric-engine",
+          "amount": 30
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 400
+        }
+      ]
+    },
+    {
+      "id": "satellite-communication-station",
+      "name": "Stacja komunikacji satelitarnej",
+      "type": "building",
+      "craft_time": 360,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 200
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 150
+        },
+        {
+          "id": "electric-engine",
+          "amount": 100
+        },
+        {
+          "id": "processor-unit",
+          "amount": 50
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 300
+        }
+      ]
+    },
+    {
+      "id": "life-support-system",
+      "name": "System podtrzymywania życia",
+      "type": "building",
+      "craft_time": 480,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "composite-materials",
+          "amount": 300
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 200
+        },
+        {
+          "id": "processor-unit",
+          "amount": 100
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 500
+        }
+      ]
+    },
+    {
+      "id": "automatic-docking",
+      "name": "Automatyczne dokowanie",
+      "type": "building",
+      "craft_time": 600,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "composite-materials",
+          "amount": 400
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 300
+        },
+        {
+          "id": "electric-engine",
+          "amount": 200
+        },
+        {
+          "id": "processor-unit",
+          "amount": 100
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 600
+        }
+      ]
+    },
+    {
+      "id": "orbital-research-module",
+      "name": "Moduł badawczy orbitalny",
+      "type": "building",
+      "craft_time": 540,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "composite-materials",
+          "amount": 300
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 250
+        },
+        {
+          "id": "processor-unit",
+          "amount": 150
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 800
+        }
+      ]
+    },
+    {
+      "id": "space-station",
+      "name": "Stacja kosmiczna",
+      "type": "building",
+      "craft_time": 1200,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "composite-materials",
+          "amount": 1000
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 500
+        },
+        {
+          "id": "processor-unit",
+          "amount": 300
+        },
+        {
+          "id": "superconductor",
+          "amount": 200
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 2000
+        }
+      ]
+    },
+    {
+      "id": "iron-ore",
+      "name": "Ruda żelaza",
+      "type": "resource",
+      "craft_time": 0,
+      "craft_amount": 1,
+      "craft_cost": [],
+      "operation_cost": []
+    },
+    {
+      "id": "copper-ore",
+      "name": "Ruda miedzi",
+      "type": "resource",
+      "craft_time": 0,
+      "craft_amount": 1,
+      "craft_cost": [],
+      "operation_cost": []
+    },
+    {
+      "id": "stone",
+      "name": "Kamień",
+      "type": "resource",
+      "craft_time": 0,
+      "craft_amount": 1,
+      "craft_cost": [],
+      "operation_cost": []
+    },
+    {
+      "id": "coal",
+      "name": "Węgiel",
+      "type": "resource",
+      "craft_time": 0,
+      "craft_amount": 1,
+      "craft_cost": [],
+      "operation_cost": []
+    },
+    {
+      "id": "uranium-ore",
+      "name": "Ruda uranu",
+      "type": "resource",
+      "craft_time": 0,
+      "craft_amount": 1,
+      "craft_cost": [],
+      "operation_cost": []
+    },
+    {
+      "id": "iron-plate",
+      "name": "Płytka żelaza",
+      "type": "resource",
+      "craft_time": 3,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-ore",
+          "amount": 1
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 5
+        }
+      ]
+    },
+    {
+      "id": "copper-plate",
+      "name": "Płytka miedzi",
+      "type": "resource",
+      "craft_time": 3,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "copper-ore",
+          "amount": 1
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 5
+        }
+      ]
+    },
+    {
+      "id": "steel-plate",
+      "name": "Płytka stali",
+      "type": "resource",
+      "craft_time": 10,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 5
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 10
+        }
+      ]
+    },
+    {
+      "id": "gear-wheel",
+      "name": "Koło zębate",
+      "type": "resource",
+      "craft_time": 2,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 2
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "electronic-circuit",
+      "name": "Obwód elektroniczny",
+      "type": "resource",
+      "craft_time": 5,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "copper-plate",
+          "amount": 1
+        },
+        {
+          "id": "iron-plate",
+          "amount": 1
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "advanced-circuit",
+      "name": "Zaawansowany obwód",
+      "type": "resource",
+      "craft_time": 10,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "electronic-circuit",
+          "amount": 2
+        },
+        {
+          "id": "copper-plate",
+          "amount": 2
+        },
+        {
+          "id": "plastic-bar",
+          "amount": 1
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "processor-unit",
+      "name": "Procesor",
+      "type": "resource",
+      "craft_time": 15,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "advanced-circuit",
+          "amount": 2
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 5
+        },
+        {
+          "id": "plastic-bar",
+          "amount": 2
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "pipe",
+      "name": "Rura",
+      "type": "resource",
+      "craft_time": 1,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 1
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "electric-engine",
+      "name": "Silnik elektryczny",
+      "type": "resource",
+      "craft_time": 12,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "electronic-circuit",
+          "amount": 2
+        },
+        {
+          "id": "iron-plate",
+          "amount": 3
+        },
+        {
+          "id": "copper-plate",
+          "amount": 3
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "heat-exchanger",
+      "name": "Wymiennik ciepła",
+      "type": "resource",
+      "craft_time": 15,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 5
+        },
+        {
+          "id": "pipe",
+          "amount": 10
+        },
+        {
+          "id": "copper-plate",
+          "amount": 5
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "concrete",
+      "name": "Beton",
+      "type": "resource",
+      "craft_time": 8,
+      "craft_amount": 10,
+      "craft_cost": [
+        {
+          "id": "stone",
+          "amount": 5
+        },
+        {
+          "id": "iron-ore",
+          "amount": 1
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "plastic-bar",
+      "name": "Plastik",
+      "type": "resource",
+      "craft_time": 6,
+      "craft_amount": 2,
+      "craft_cost": [
+        {
+          "id": "coal",
+          "amount": 1
+        },
+        {
+          "id": "petroleum-gas",
+          "amount": 20
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "sulfur",
+      "name": "Siarka",
+      "type": "resource",
+      "craft_time": 4,
+      "craft_amount": 2,
+      "craft_cost": [
+        {
+          "id": "petroleum-gas",
+          "amount": 30
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "composite-materials",
+      "name": "Materiały kompozytowe",
+      "type": "resource",
+      "craft_time": 25,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 2
+        },
+        {
+          "id": "plastic-bar",
+          "amount": 3
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 1
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "superconductor",
+      "name": "Nadprzewodnik",
+      "type": "resource",
+      "craft_time": 40,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "copper-plate",
+          "amount": 5
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 2
+        },
+        {
+          "id": "processor-unit",
+          "amount": 1
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "uranium-235",
+      "name": "Uran-235",
+      "type": "resource",
+      "craft_time": 50,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "uranium-ore",
+          "amount": 10
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 20
+        }
+      ]
+    },
+    {
+      "id": "uranium-238",
+      "name": "Uran-238",
+      "type": "resource",
+      "craft_time": 35,
+      "craft_amount": 5,
+      "craft_cost": [
+        {
+          "id": "uranium-ore",
+          "amount": 10
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 15
+        }
+      ]
+    },
+    {
+      "id": "nuclear-fuel",
+      "name": "Paliwo jądrowe",
+      "type": "resource",
+      "craft_time": 60,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "uranium-235",
+          "amount": 1
+        },
+        {
+          "id": "uranium-238",
+          "amount": 19
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "water",
+      "name": "Woda",
+      "type": "resource",
+      "craft_time": 0,
+      "craft_amount": 100,
+      "craft_cost": [],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 5
+        }
+      ]
+    },
+    {
+      "id": "petroleum-gas",
+      "name": "Gaz petrochemiczny",
+      "type": "resource",
+      "craft_time": 20,
+      "craft_amount": 50,
+      "craft_cost": [
+        {
+          "id": "crude-oil",
+          "amount": 10
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 15
+        }
+      ]
+    },
+    {
+      "id": "crude-oil",
+      "name": "Ropa naftowa",
+      "type": "resource",
+      "craft_time": 0,
+      "craft_amount": 1,
+      "craft_cost": [],
+      "operation_cost": []
+    },
+    {
+      "id": "science-pack-red",
+      "name": "Czerwony pakiet naukowy",
+      "type": "resource",
+      "craft_time": 5,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 1
+        },
+        {
+          "id": "copper-plate",
+          "amount": 1
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "science-pack-green",
+      "name": "Zielony pakiet naukowy",
+      "type": "resource",
+      "craft_time": 8,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "electronic-circuit",
+          "amount": 2
+        },
+        {
+          "id": "gear-wheel",
+          "amount": 1
+        },
+        {
+          "id": "iron-plate",
+          "amount": 2
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "science-pack-gray",
+      "name": "Szary pakiet naukowy",
+      "type": "resource",
+      "craft_time": 12,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "advanced-circuit",
+          "amount": 1
+        },
+        {
+          "id": "steel-plate",
+          "amount": 2
+        },
+        {
+          "id": "gear-wheel",
+          "amount": 3
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "science-pack-blue",
+      "name": "Niebieski pakiet naukowy",
+      "type": "resource",
+      "craft_time": 16,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "processor-unit",
+          "amount": 1
+        },
+        {
+          "id": "electric-engine",
+          "amount": 1
+        },
+        {
+          "id": "plastic-bar",
+          "amount": 3
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 2
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "science-pack-purple",
+      "name": "Fioletowy pakiet naukowy",
+      "type": "resource",
+      "craft_time": 25,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "composite-materials",
+          "amount": 2
+        },
+        {
+          "id": "processor-unit",
+          "amount": 2
+        },
+        {
+          "id": "superconductor",
+          "amount": 1
+        },
+        {
+          "id": "electric-engine",
+          "amount": 2
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "biomass",
+      "name": "Biomasa",
+      "type": "resource",
+      "craft_time": 8,
+      "craft_amount": 2,
+      "craft_cost": [
+        {
+          "id": "water",
+          "amount": 50
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 10
+        }
+      ]
+    },
+    {
+      "id": "rocket-part",
+      "name": "Część rakiety",
+      "type": "resource",
+      "craft_time": 50,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 10
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 5
+        },
+        {
+          "id": "rocket-fuel",
+          "amount": 2
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "rocket-fuel",
+      "name": "Paliwo rakietowe",
+      "type": "resource",
+      "craft_time": 30,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "petroleum-gas",
+          "amount": 100
+        },
+        {
+          "id": "sulfur",
+          "amount": 5
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "satellite",
+      "name": "Satelita",
+      "type": "resource",
+      "craft_time": 120,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "rocket-part",
+          "amount": 10
+        },
+        {
+          "id": "processor-unit",
+          "amount": 10
+        },
+        {
+          "id": "solar-panel",
+          "amount": 5
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "space-module",
+      "name": "Moduł kosmiczny",
+      "type": "resource",
+      "craft_time": 80,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "composite-materials",
+          "amount": 5
+        },
+        {
+          "id": "processor-unit",
+          "amount": 3
+        },
+        {
+          "id": "superconductor",
+          "amount": 1
+        }
+      ],
+      "operation_cost": []
+    }
+  ],
+  "tiers": [
+    {
+      "id": "efficient-mining",
+      "name": "Efektywne górnictwo",
+      "requirement": [
+        {
+          "id": "initial",
+          "ammount": 1
+        }
+      ],
+      "unlocks": [
+        {
+          "id": "automatic-mine"
+        }
+      ]
+    },
+    {
+      "id": "ore-enrichment",
+      "name": "Wzbogacanie rudy",
+      "requirement": [
+        {
+          "id": "efficient-mining",
+          "ammount": 1
+        }
+      ],
+      "unlocks": [
+        {
+          "id": "ore-separator"
+        }
+      ]
+    },
+    {
+      "id": "stone-furnace",
+      "name": "Piec kamienny",
+      "requirement": [
+        {
+          "id": "initial",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "conveyor-tier-1",
+      "name": "Przenośnik Tier 1",
+      "requirement": [
+        {
+          "id": "initial",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "basic-storage",
+      "name": "Magazyn podstawowy",
+      "requirement": [
+        {
+          "id": "initial",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "metallurgical-patterns",
+      "name": "Paternie metalurgiczne",
+      "requirement": [
+        {
+          "id": "ore-enrichment",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "metallurgical-patterns"
+      }
+    },
+    {
+      "id": "energy-modules",
+      "name": "Moduły energetyczne",
+      "requirement": [
+        {
+          "id": "efficient-mining",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "energy-modules"
+      }
+    },
+    {
+      "id": "blast-furnace",
+      "name": "Hutnia wielkopiecowa",
+      "requirement": [
+        {
+          "id": "metallurgical-patterns",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "thermosolar-generator",
+      "name": "Generator termosolar",
+      "requirement": [
+        {
+          "id": "energy-modules",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "conveyor-tier-2",
+      "name": "Przenośnik Tier 2",
+      "requirement": [
+        {
+          "id": "metallurgical-patterns",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "advanced-storage",
+      "name": "Magazyn zaawansowany",
+      "requirement": [
+        {
+          "id": "metallurgical-patterns",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "energy-accumulator",
+      "name": "Akumulator energetyczny",
+      "requirement": [
+        {
+          "id": "energy-modules",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "speed-modules",
+      "name": "Moduły prędkości",
+      "requirement": [
+        {
+          "id": "metallurgical-patterns",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "speed-modules"
+      }
+    },
+    {
+      "id": "productivity-modules",
+      "name": "Moduły wydajności",
+      "requirement": [
+        {
+          "id": "speed-modules",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "productivity-modules"
+      }
+    },
+    {
+      "id": "accelerated-research",
+      "name": "Przyspieszone badania",
+      "requirement": [
+        {
+          "id": "speed-modules",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "accelerated-research"
+      }
+    },
+    {
+      "id": "super-laboratory",
+      "name": "Laboratorium Super",
+      "requirement": [
+        {
+          "id": "accelerated-research",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "biomass-reactor",
+      "name": "Reaktor biomasowy",
+      "requirement": [
+        {
+          "id": "productivity-modules",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "assembler-tier-1",
+      "name": "Assembler Tier 1",
+      "requirement": [
+        {
+          "id": "speed-modules",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "chemical-catalysts",
+      "name": "Katalizatory chemiczne",
+      "requirement": [
+        {
+          "id": "productivity-modules",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "chemical-catalysts"
+      }
+    },
+    {
+      "id": "enriched-alloy",
+      "name": "Stop wzbogacony",
+      "requirement": [
+        {
+          "id": "chemical-catalysts",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "enriched-alloy"
+      }
+    },
+    {
+      "id": "chemical-plant",
+      "name": "Zakład chemiczny",
+      "requirement": [
+        {
+          "id": "chemical-catalysts",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "metal-roller",
+      "name": "Walcer metali",
+      "requirement": [
+        {
+          "id": "enriched-alloy",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "storage-tier-3",
+      "name": "Magazyn Tier 3",
+      "requirement": [
+        {
+          "id": "enriched-alloy",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "basic-nuclear-reactor",
+      "name": "Reaktor jądrowy (podstawowy)",
+      "requirement": [
+        {
+          "id": "enriched-alloy",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "basic-nuclear-reactor"
+      }
+    },
+    {
+      "id": "autonomous-cooling-modules",
+      "name": "Autonomiczne moduły chłodzenia",
+      "requirement": [
+        {
+          "id": "basic-nuclear-reactor",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "autonomous-cooling-modules"
+      }
+    },
+    {
+      "id": "advanced-nuclear-reactor",
+      "name": "Reaktor jądrowy (zaawansowany)",
+      "requirement": [
+        {
+          "id": "autonomous-cooling-modules",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "advanced-nuclear-reactor"
+      }
+    },
+    {
+      "id": "nuclear-power-plant",
+      "name": "Elektrownia jądrowa",
+      "requirement": [
+        {
+          "id": "advanced-nuclear-reactor",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "nuclear-power-plant"
+      }
+    },
+    {
+      "id": "autonomous-modules",
+      "name": "Moduły autonomiczne",
+      "requirement": [
+        {
+          "id": "advanced-nuclear-reactor",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "autonomous-modules"
+      }
+    },
+    {
+      "id": "solar-cells",
+      "name": "Ogniwa słoneczne",
+      "requirement": [
+        {
+          "id": "autonomous-modules",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "solar-cells"
+      }
+    },
+    {
+      "id": "solar-panel-farm",
+      "name": "Farma paneli słonecznych",
+      "requirement": [
+        {
+          "id": "solar-cells",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "solar-panel-farm"
+      }
+    },
+    {
+      "id": "geothermal-probes",
+      "name": "Geotermiczne sondy",
+      "requirement": [
+        {
+          "id": "autonomous-modules",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "geothermal-probes"
+      }
+    },
+    {
+      "id": "idle-artificial-intelligence",
+      "name": "Sztuczna inteligencja idle (AI Core)",
+      "requirement": [
+        {
+          "id": "autonomous-modules",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "idle-artificial-intelligence"
+      }
+    },
+    {
+      "id": "ai-server",
+      "name": "Serwer AI",
+      "requirement": [
+        {
+          "id": "idle-artificial-intelligence",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "ai-server"
+      }
+    },
+    {
+      "id": "rocket-technology",
+      "name": "Technologia rakietowa",
+      "requirement": [
+        {
+          "id": "ai-server",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "rocket-technology"
+      }
+    },
+    {
+      "id": "orbital-modules",
+      "name": "Moduły orbitalne",
+      "requirement": [
+        {
+          "id": "rocket-technology",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "orbital-modules"
+      }
+    },
+    {
+      "id": "satellite-communication-station",
+      "name": "Stacja komunikacji satelitarnej",
+      "requirement": [
+        {
+          "id": "orbital-modules",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "satellite-communication-station"
+      }
+    },
+    {
+      "id": "life-support-system",
+      "name": "System podtrzymywania życia",
+      "requirement": [
+        {
+          "id": "satellite-communication-station",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "life-support-system"
+      }
+    },
+    {
+      "id": "automatic-docking",
+      "name": "Automatyczne dokowanie",
+      "requirement": [
+        {
+          "id": "life-support-system",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "automatic-docking"
+      }
+    },
+    {
+      "id": "orbital-research-module",
+      "name": "Moduł badawczy orbitalny",
+      "requirement": [
+        {
+          "id": "automatic-docking",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "orbital-research-module"
+      }
+    },
+    {
+      "id": "space-station",
+      "name": "Stacja kosmiczna",
+      "requirement": [
+        {
+          "id": "orbital-research-module",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "space-station"
+      }
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "efficient-mining",
+      "name": "Efektywne górnictwo",
+      "effects": [
+        {
+          "id": "basic-mine",
+          "element": "craft_amount",
+          "amount": 0.1
+        },
+        {
+          "id": "automatic-mine",
+          "element": "craft_amount",
+          "amount": 0.1
+        }
+      ]
+    },
+    {
+      "id": "ore-enrichment",
+      "name": "Wzbogacanie rudy",
+      "effects": [
+        {
+          "id": "ore-separator",
+          "element": "craft_amount",
+          "amount": 0.05
+        }
+      ]
+    },
+    {
+      "id": "metallurgical-patterns",
+      "name": "Paternie metalurgiczne",
+      "effects": [
+        {
+          "id": "stone-furnace",
+          "element": "craft_amount",
+          "amount": 0.15
+        },
+        {
+          "id": "blast-furnace",
+          "element": "craft_amount",
+          "amount": 0.15
+        }
+      ]
+    },
+    {
+      "id": "energy-modules",
+      "name": "Moduły energetyczne",
+      "effects": [
+        {
+          "id": "thermosolar-generator",
+          "element": "craft_amount",
+          "amount": 0.1
+        }
+      ]
+    },
+    {
+      "id": "speed-modules",
+      "name": "Moduły prędkości",
+      "effects": [
+        {
+          "id": "assembler-tier-1",
+          "element": "craft_time",
+          "amount": -0.1
+        },
+        {
+          "id": "chemical-plant",
+          "element": "craft_time",
+          "amount": -0.1
+        },
+        {
+          "id": "metal-roller",
+          "element": "craft_time",
+          "amount": -0.1
+        }
+      ]
+    },
+    {
+      "id": "productivity-modules",
+      "name": "Moduły wydajności",
+      "effects": [
+        {
+          "id": "blast-furnace",
+          "element": "craft_cost",
+          "amount": -0.05
+        },
+        {
+          "id": "chemical-plant",
+          "element": "craft_cost",
+          "amount": -0.05
+        }
+      ]
+    },
+    {
+      "id": "accelerated-research",
+      "name": "Przyspieszone badania",
+      "effects": [
+        {
+          "id": "basic-laboratory",
+          "element": "craft_amount",
+          "amount": 0.2
+        },
+        {
+          "id": "super-laboratory",
+          "element": "craft_amount",
+          "amount": 0.2
+        }
+      ]
+    },
+    {
+      "id": "chemical-catalysts",
+      "name": "Katalizatory chemiczne",
+      "effects": [
+        {
+          "id": "chemical-plant",
+          "element": "craft_amount",
+          "amount": 0.15
+        }
+      ]
+    },
+    {
+      "id": "enriched-alloy",
+      "name": "Stop wzbogacony",
+      "effects": [
+        {
+          "id": "metal-roller",
+          "element": "craft_amount",
+          "amount": 0.1
+        },
+        {
+          "id": "storage-tier-3",
+          "element": "craft_amount",
+          "amount": 0.1
+        }
+      ]
+    },
+    {
+      "id": "basic-nuclear-reactor",
+      "name": "Reaktor jądrowy (podstawowy)",
+      "effects": [
+        {
+          "id": "basic-nuclear-reactor",
+          "element": "craft_amount",
+          "amount": 0.1
+        }
+      ]
+    },
+    {
+      "id": "autonomous-cooling-modules",
+      "name": "Autonomiczne moduły chłodzenia",
+      "effects": [
+        {
+          "id": "basic-nuclear-reactor",
+          "element": "craft_time",
+          "amount": 0.2
+        }
+      ]
+    },
+    {
+      "id": "advanced-nuclear-reactor",
+      "name": "Reaktor jądrowy (zaawansowany)",
+      "effects": [
+        {
+          "id": "advanced-nuclear-reactor",
+          "element": "craft_amount",
+          "amount": 0.2
+        }
+      ]
+    },
+    {
+      "id": "nuclear-power-plant",
+      "name": "Elektrownia jądrowa",
+      "effects": [
+        {
+          "id": "nuclear-power-plant",
+          "element": "craft_amount",
+          "amount": 0.25
+        }
+      ]
+    },
+    {
+      "id": "autonomous-modules",
+      "name": "Moduły autonomiczne",
+      "effects": [
+        {
+          "id": "autonomous-module",
+          "element": "craft_amount",
+          "amount": 0.2
+        }
+      ]
+    },
+    {
+      "id": "solar-cells",
+      "name": "Ogniwa słoneczne",
+      "effects": [
+        {
+          "id": "solar-panel",
+          "element": "craft_amount",
+          "amount": 0.15
+        }
+      ]
+    },
+    {
+      "id": "solar-panel-farm",
+      "name": "Farma paneli słonecznych",
+      "effects": [
+        {
+          "id": "solar-panel-farm",
+          "element": "craft_amount",
+          "amount": 0.1
+        }
+      ]
+    },
+    {
+      "id": "geothermal-probes",
+      "name": "Geotermiczne sondy",
+      "effects": [
+        {
+          "id": "geothermal-probe",
+          "element": "craft_amount",
+          "amount": 0.25
+        },
+        {
+          "id": "geothermal-installation",
+          "element": "craft_amount",
+          "amount": 0.15
+        }
+      ]
+    },
+    {
+      "id": "idle-artificial-intelligence",
+      "name": "Sztuczna inteligencja idle (AI Core)",
+      "effects": [
+        {
+          "id": "ai-core",
+          "element": "craft_amount",
+          "amount": 0.2
+        }
+      ]
+    },
+    {
+      "id": "ai-server",
+      "name": "Serwer AI",
+      "effects": [
+        {
+          "id": "ai-server",
+          "element": "craft_amount",
+          "amount": 0.25
+        }
+      ]
+    },
+    {
+      "id": "rocket-technology",
+      "name": "Technologia rakietowa",
+      "effects": [
+        {
+          "id": "rocket-silo",
+          "element": "craft_time",
+          "amount": -0.15
+        }
+      ]
+    },
+    {
+      "id": "orbital-modules",
+      "name": "Moduły orbitalne",
+      "effects": [
+        {
+          "id": "orbital-module-factory",
+          "element": "craft_amount",
+          "amount": 0.2
+        }
+      ]
+    },
+    {
+      "id": "satellite-communication-station",
+      "name": "Stacja komunikacji satelitarnej",
+      "effects": [
+        {
+          "id": "satellite-communication-station",
+          "element": "craft_amount",
+          "amount": 0.15
+        }
+      ]
+    },
+    {
+      "id": "life-support-system",
+      "name": "System podtrzymywania życia",
+      "effects": [
+        {
+          "id": "life-support-system",
+          "element": "craft_amount",
+          "amount": 0.2
+        }
+      ]
+    },
+    {
+      "id": "automatic-docking",
+      "name": "Automatyczne dokowanie",
+      "effects": [
+        {
+          "id": "automatic-docking",
+          "element": "craft_amount",
+          "amount": 0.25
+        }
+      ]
+    },
+    {
+      "id": "orbital-research-module",
+      "name": "Moduł badawczy orbitalny",
+      "effects": [
+        {
+          "id": "orbital-research-module",
+          "element": "craft_amount",
+          "amount": 0.15
+        }
+      ]
+    },
+    {
+      "id": "space-station",
+      "name": "Stacja kosmiczna",
+      "effects": [
+        {
+          "id": "space-station",
+          "element": "craft_amount",
+          "amount": 0.2
+        }
+      ]
+    }
+  ]
+}
