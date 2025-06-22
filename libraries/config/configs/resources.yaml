@@ -1,0 +1,429 @@
+# resources.yaml
+# Contains all resources available in the game
+
+entities:
+# Basic Resources
+- id: iron-ore
+  name: Ruda żelaza
+  type: resource
+  craft_time: 0
+  craft_amount: 1
+  craft_cost: []
+  operation_cost: []
+
+- id: copper-ore
+  name: Ruda miedzi
+  type: resource
+  craft_time: 0
+  craft_amount: 1
+  craft_cost: []
+  operation_cost: []
+
+- id: stone
+  name: Kamień
+  type: resource
+  craft_time: 0
+  craft_amount: 1
+  craft_cost: []
+  operation_cost: []
+
+- id: coal
+  name: Węgiel
+  type: resource
+  craft_time: 0
+  craft_amount: 1
+  craft_cost: []
+  operation_cost: []
+
+- id: uranium-ore
+  name: Ruda uranu
+  type: resource
+  craft_time: 0
+  craft_amount: 1
+  craft_cost: []
+  operation_cost: []
+
+# Processed Resources
+- id: iron-plate
+  name: Płytka żelaza
+  type: resource
+  craft_time: 3
+  craft_amount: 1
+  craft_cost:
+  - id: iron-ore
+    amount: 1
+  operation_cost:
+  - type: fuel
+    ammount: 5
+
+- id: copper-plate
+  name: Płytka miedzi
+  type: resource
+  craft_time: 3
+  craft_amount: 1
+  craft_cost:
+  - id: copper-ore
+    amount: 1
+  operation_cost:
+  - type: fuel
+    ammount: 5
+
+- id: steel-plate
+  name: Płytka stali
+  type: resource
+  craft_time: 10
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 5
+  operation_cost:
+  - type: fuel
+    ammount: 10
+
+# Components
+- id: gear-wheel
+  name: Koło zębate
+  type: resource
+  craft_time: 2
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 2
+  operation_cost: []
+
+- id: electronic-circuit
+  name: Obwód elektroniczny
+  type: resource
+  craft_time: 5
+  craft_amount: 1
+  craft_cost:
+  - id: copper-plate
+    amount: 1
+  - id: iron-plate
+    amount: 1
+  operation_cost: []
+
+- id: advanced-circuit
+  name: Zaawansowany obwód
+  type: resource
+  craft_time: 10
+  craft_amount: 1
+  craft_cost:
+  - id: electronic-circuit
+    amount: 2
+  - id: copper-plate
+    amount: 2
+  - id: plastic-bar
+    amount: 1
+  operation_cost: []
+
+- id: processor-unit
+  name: Procesor
+  type: resource
+  craft_time: 15
+  craft_amount: 1
+  craft_cost:
+  - id: advanced-circuit
+    amount: 2
+  - id: electronic-circuit
+    amount: 5
+  - id: plastic-bar
+    amount: 2
+  operation_cost: []
+
+- id: pipe
+  name: Rura
+  type: resource
+  craft_time: 1
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 1
+  operation_cost: []
+
+- id: electric-engine
+  name: Silnik elektryczny
+  type: resource
+  craft_time: 12
+  craft_amount: 1
+  craft_cost:
+  - id: electronic-circuit
+    amount: 2
+  - id: iron-plate
+    amount: 3
+  - id: copper-plate
+    amount: 3
+  operation_cost: []
+
+- id: heat-exchanger
+  name: Wymiennik ciepła
+  type: resource
+  craft_time: 15
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 5
+  - id: pipe
+    amount: 10
+  - id: copper-plate
+    amount: 5
+  operation_cost: []
+
+- id: concrete
+  name: Beton
+  type: resource
+  craft_time: 8
+  craft_amount: 10
+  craft_cost:
+  - id: stone
+    amount: 5
+  - id: iron-ore
+    amount: 1
+  operation_cost: []
+
+- id: plastic-bar
+  name: Plastik
+  type: resource
+  craft_time: 6
+  craft_amount: 2
+  craft_cost:
+  - id: coal
+    amount: 1
+  - id: petroleum-gas
+    amount: 20
+  operation_cost: []
+
+- id: sulfur
+  name: Siarka
+  type: resource
+  craft_time: 4
+  craft_amount: 2
+  craft_cost:
+  - id: petroleum-gas
+    amount: 30
+  operation_cost: []
+
+# Advanced Materials
+- id: composite-materials
+  name: Materiały kompozytowe
+  type: resource
+  craft_time: 25
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 2
+  - id: plastic-bar
+    amount: 3
+  - id: advanced-circuit
+    amount: 1
+  operation_cost: []
+
+- id: superconductor
+  name: Nadprzewodnik
+  type: resource
+  craft_time: 40
+  craft_amount: 1
+  craft_cost:
+  - id: copper-plate
+    amount: 5
+  - id: advanced-circuit
+    amount: 2
+  - id: processor-unit
+    amount: 1
+  operation_cost: []
+
+- id: uranium-235
+  name: Uran-235
+  type: resource
+  craft_time: 50
+  craft_amount: 1
+  craft_cost:
+  - id: uranium-ore
+    amount: 10
+  operation_cost:
+  - type: fuel
+    ammount: 20
+
+- id: uranium-238
+  name: Uran-238
+  type: resource
+  craft_time: 35
+  craft_amount: 5
+  craft_cost:
+  - id: uranium-ore
+    amount: 10
+  operation_cost:
+  - type: fuel
+    ammount: 15
+
+- id: nuclear-fuel
+  name: Paliwo jądrowe
+  type: resource
+  craft_time: 60
+  craft_amount: 1
+  craft_cost:
+  - id: uranium-235
+    amount: 1
+  - id: uranium-238
+    amount: 19
+  operation_cost: []
+
+# Fluids
+- id: water
+  name: Woda
+  type: resource
+  craft_time: 0
+  craft_amount: 100
+  craft_cost: []
+  operation_cost:
+  - type: fuel
+    ammount: 5
+
+- id: petroleum-gas
+  name: Gaz petrochemiczny
+  type: resource
+  craft_time: 20
+  craft_amount: 50
+  craft_cost:
+  - id: crude-oil
+    amount: 10
+  operation_cost:
+  - type: fuel
+    ammount: 15
+
+- id: crude-oil
+  name: Ropa naftowa
+  type: resource
+  craft_time: 0
+  craft_amount: 1
+  craft_cost: []
+  operation_cost: []
+
+# Science Packs
+- id: science-pack-red
+  name: Czerwony pakiet naukowy
+  type: resource
+  craft_time: 5
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 1
+  - id: copper-plate
+    amount: 1
+  operation_cost: []
+
+- id: science-pack-green
+  name: Zielony pakiet naukowy
+  type: resource
+  craft_time: 8
+  craft_amount: 1
+  craft_cost:
+  - id: science-pack-red
+    amount: 1
+  - id: electronic-circuit
+    amount: 1
+  operation_cost: []
+
+- id: science-pack-gray
+  name: Szary pakiet naukowy
+  type: resource
+  craft_time: 12
+  craft_amount: 1
+  craft_cost:
+  - id: science-pack-green
+    amount: 1
+  - id: advanced-circuit
+    amount: 1
+  operation_cost: []
+
+- id: science-pack-blue
+  name: Niebieski pakiet naukowy
+  type: resource
+  craft_time: 16
+  craft_amount: 1
+  craft_cost:
+  - id: science-pack-gray
+    amount: 1
+  - id: processor-unit
+    amount: 1
+  operation_cost: []
+
+- id: science-pack-purple
+  name: Fioletowy pakiet naukowy
+  type: resource
+  craft_time: 25
+  craft_amount: 1
+  craft_cost:
+  - id: science-pack-blue
+    amount: 1
+  - id: composite-materials
+    amount: 1
+  operation_cost: []
+
+# Biomass Materials
+- id: biomass
+  name: Biomasa
+  type: resource
+  craft_time: 8
+  craft_amount: 2
+  craft_cost:
+  - id: water
+    amount: 50
+  operation_cost:
+  - type: fuel
+    ammount: 10
+
+# Space Components
+- id: rocket-part
+  name: Część rakiety
+  type: resource
+  craft_time: 50
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 10
+  - id: advanced-circuit
+    amount: 5
+  - id: rocket-fuel
+    amount: 2
+  operation_cost: []
+
+- id: rocket-fuel
+  name: Paliwo rakietowe
+  type: resource
+  craft_time: 30
+  craft_amount: 1
+  craft_cost:
+  - id: petroleum-gas
+    amount: 100
+  - id: sulfur
+    amount: 5
+  operation_cost: []
+
+- id: satellite
+  name: Satelita
+  type: resource
+  craft_time: 120
+  craft_amount: 1
+  craft_cost:
+  - id: rocket-part
+    amount: 10
+  - id: processor-unit
+    amount: 10
+  - id: solar-panel
+    amount: 5
+  operation_cost: []
+
+- id: space-module
+  name: Moduł kosmiczny
+  type: resource
+  craft_time: 80
+  craft_amount: 1
+  craft_cost:
+  - id: composite-materials
+    amount: 5
+  - id: processor-unit
+    amount: 3
+  - id: superconductor
+    amount: 1
+  operation_cost: []

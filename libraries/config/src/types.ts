@@ -1,4 +1,4 @@
-export type EntityType = 'building' | 'research' | 'fuel' ;
+export type EntityType = 'building' | 'research' | 'fuel' | 'resource';
 
 export type Entity = {
 	// Unique identifier for the entity
