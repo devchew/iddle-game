@@ -165,9 +165,9 @@ const ResearchTreeVisualizer: React.FC<ResearchTreeVisualizerProps> = ({
 					onClick={handleNodeClick}
 				/>
 				<text
-					dy=".31em"
-					x={25}
-					textAnchor="start"
+					dy="2em"
+					x={0}
+					textAnchor="middle"
 					style={{ fill: "#333", fontSize: "1rem" }}
 				>
 					{nodeDatum.name}
@@ -175,7 +175,7 @@ const ResearchTreeVisualizer: React.FC<ResearchTreeVisualizerProps> = ({
 				{hasEntities && (
 					<text
 						dy=".31em"
-						x={-8}
+						x={0}
 						textAnchor="middle"
 						style={{ fill: "white", fontSize: "0.9rem" }}
 					>
@@ -196,9 +196,9 @@ const ResearchTreeVisualizer: React.FC<ResearchTreeVisualizerProps> = ({
 		<Box sx={{ width: "100%", height: "800px", position: "relative" }}>
 			<Tree
 				data={treeData}
-				orientation="horizontal"
+				orientation="vertical"
 				pathFunc="step"
-				translate={{ x: 200, y: 400 }}
+				translate={{ x: 400, y: 100 }}
 				renderCustomNodeElement={renderCustomNode}
 				separation={{ siblings: 3, nonSiblings: 3 }}
 			/>
