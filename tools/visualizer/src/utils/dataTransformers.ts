@@ -2,7 +2,8 @@ import type {
 	ResearchTree,
 	Entities,
 	Entity,
-} from "@iddle-factory/config/types";
+	Research,
+} from "@iddle-factory/config";
 
 // For react-d3-tree
 export interface TreeNode {
@@ -16,76 +17,45 @@ export interface TreeNode {
 const createRequirementMap = (researchTree: ResearchTree) => {
 	const map = new Map<string, string[]>();
 
-	researchTree.tiers.forEach((tier) => {
-		// Process upgrades
-		tier.upgrades.forEach((upgrade) => {
-			const id = upgrade.id;
-			const requirement = upgrade.requirement;
+	if (!researchTree.tiers || !Array.isArray(researchTree.tiers)) {
+		console.error("Invalid research tree structure:", researchTree);
+		return map;
+	}
 
-			if (requirement) {
-				if (!map.has(requirement)) {
-					map.set(requirement, []);
-				}
-				map.get(requirement)?.push(id);
+	researchTree.tiers.forEach((research) => {
+		const id = research.id;
+		
+		// Check if this research unlocks other research through requirements
+		researchTree.tiers.forEach((potentialDependency) => {
+			// Skip if the requirement is missing or not an array
+			if (!potentialDependency.requirement || !Array.isArray(potentialDependency.requirement)) {
+				return;
 			}
-		});
-
-		// Process unlocks
-		tier.unlocks.forEach((unlock) => {
-			const id = unlock.id;
-			const requirement = unlock.requirement;
-
-			if (requirement) {
-				if (!map.has(requirement)) {
-					map.set(requirement, []);
+			
+			potentialDependency.requirement.forEach(req => {
+				if (req && req.id === id) {
+					if (!map.has(id)) {
+						map.set(id, []);
+					}
+					map.get(id)?.push(potentialDependency.id);
 				}
-				map.get(requirement)?.push(id);
-			}
+			});
 		});
 	});
 
 	return map;
 };
 
-// Collect all research items (upgrades and unlocks)
-const collectAllResearchItems = (researchTree: ResearchTree) => {
-	const items = new Map<
-		string,
-		{
-			type: "upgrade" | "unlock";
-			tier: number;
-			data: any;
-			processed: boolean;
-		}
-	>();
-
-	researchTree.tiers.forEach((tier) => {
-		// Process upgrades
-		tier.upgrades.forEach((upgrade) => {
-			items.set(upgrade.id, {
-				type: "upgrade",
-				tier: tier.tier,
-				data: upgrade,
-				processed: false,
-			});
-		});
-
-		// Process unlocks
-		tier.unlocks.forEach((unlock) => {
-			items.set(unlock.id, {
-				type: "unlock",
-				tier: tier.tier,
-				data: unlock,
-				processed: false,
-			});
-		});
-	});
-
-	return items;
-};
-
 // Transform the research tree to a format suitable for visualization
 export const transformResearchTree = (researchTree: ResearchTree): TreeNode => {
+	console.log("Transforming research tree:", researchTree);
+
+	// Safety check for null/undefined researchTree
+	if (!researchTree) {
+		console.error("Research tree is null or undefined");
+		return { name: "Research Tree (Error)", children: [] };
+	}
+	
 	const root: TreeNode = {
 		name: "Research Tree",
 		children: [],
@@ -93,52 +63,63 @@ export const transformResearchTree = (researchTree: ResearchTree): TreeNode => {
 
 	// Get all research dependencies
 	const requirementMap = createRequirementMap(researchTree);
-	const allResearchItems = collectAllResearchItems(researchTree);
+	
+	// Find starting research items (those with "initial" requirement or no requirements)
+	const startingItems: Research[] = (researchTree.tiers || []).filter((research) => 
+		research?.requirement && Array.isArray(research.requirement) ?
+			research.requirement.some(req => req?.id === "initial") :
+			true // If no requirements, consider it a starting item
+	);
 
-	// Find starting research items (those without requirements or with nonexistent requirements)
-	const startingItems: string[] = [];
-	allResearchItems.forEach((item, name) => {
-		const requirement =
-			item.type === "upgrade" ? item.data.requirement : item.data.requirement;
-
-		if (!requirement || !allResearchItems.has(requirement)) {
-			startingItems.push(name);
+	// Create a map for quick look-up
+	const researchMap = new Map<string, Research>();
+	(researchTree.tiers || []).forEach(research => {
+		if (research && research.id) {
+			researchMap.set(research.id, research);
 		}
 	});
 
 	// Process each starting item and build the tree
-	startingItems.forEach((itemId) => {
-		const processItem = (id: string): TreeNode | undefined => {
-			const item = allResearchItems.get(id);
-			if (!item || item.processed) return undefined;
-
-			// Mark as processed to avoid circular dependencies
-			item.processed = true;
-
+	const processedNodes = new Set<string>();
+	
+	startingItems.forEach((startingItem) => {
+		const processItem = (research: Research): TreeNode => {
+			// Ensure the research object is valid
+			if (!research) {
+				console.error("Invalid research object:", research);
+				return { name: "Unknown Research", children: [] };
+			}
+			
 			const node: TreeNode = {
-				name: item.data.name,
+				name: research.name || "Unnamed Research",
 				attributes: {
-					id: id,
-					type: item.type,
-					tier: item.tier,
-					...item.data,
+					id: research.id || "",
+					type: research.upgrade ? "upgrade" : (research.unlocks ? "unlock" : "research"),
+					hasUpgrade: !!research.upgrade,
+					unlockCount: research.unlocks ? research.unlocks.length : 0,
 				},
 				children: [],
 			};
 
 			// Process dependencies
-			const dependencies = requirementMap.get(id) || [];
+			const dependencies = requirementMap.get(research.id) || [];
 			dependencies.forEach((dependentId) => {
-				const childNode = processItem(dependentId);
-				if (childNode) {
-					node.children?.push(childNode);
+				if (!processedNodes.has(dependentId)) {
+					processedNodes.add(dependentId);
+					const dependentResearch = researchMap.get(dependentId);
+					if (dependentResearch) {
+						const childNode = processItem(dependentResearch);
+						node.children?.push(childNode);
+					}
 				}
 			});
 
 			return node;
 		};
-		const itemNode = processItem(itemId);
-		if (itemNode) {
+		
+		const itemNode = processItem(startingItem);
+		if (!processedNodes.has(startingItem.id)) {
+			processedNodes.add(startingItem.id);
 			root.children?.push(itemNode);
 		}
 	});
@@ -152,23 +133,48 @@ export const connectEntitiesToResearchTree = (
 	entities: Entities,
 ): TreeNode => {
 	const newTreeData = { ...treeData };
+	
+	// Handle case where entities is null or undefined
+	if (!entities || !entities.entities || !Array.isArray(entities.entities)) {
+		console.error("Invalid entities structure:", entities);
+		return newTreeData;
+	}
+	
 	// Helper function to recursively process nodes
 	const processNode = (node: TreeNode): TreeNode => {
+		// Handle case where node is null or undefined
+		if (!node) {
+			return { name: "Unknown Node", children: [] };
+		}
+		
 		const newNode = { ...node };
 
-		// Find entities with tech requirements matching this node's id attribute
+		// Find entities that are unlocked by this research
 		const nodeId = node.attributes?.id as string;
-		const relatedEntities = entities.entities.filter(
-			(entity) => entity.tech_requirement === nodeId,
-		);
+		
+		if (nodeId) {
+			try {
+				// Find related entities that could be unlocked by this research
+				const relatedEntities = entities.entities.filter((entity) => {
+					// Safety check for entity
+					if (!entity) return false;
+					
+					// Check if this research unlocks the entity directly
+					// For now, just check if entity ID matches research ID
+					return entity.id === nodeId; 
+				});
 
-		if (relatedEntities.length > 0) {
-			newNode.entityRefs = relatedEntities;
-			newNode.attributes = {
-				...newNode.attributes,
-				hasEntities: true,
-				entityCount: relatedEntities.length,
-			};
+				if (relatedEntities && relatedEntities.length > 0) {
+					newNode.entityRefs = relatedEntities;
+					newNode.attributes = {
+						...newNode.attributes,
+						hasEntities: true,
+						entityCount: relatedEntities.length,
+					};
+				}
+			} catch (error) {
+				console.error("Error filtering entities:", error);
+			}
 		}
 
 		// Process children recursively

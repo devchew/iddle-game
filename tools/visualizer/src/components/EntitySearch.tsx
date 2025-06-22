@@ -1,233 +1,139 @@
 import React, { useState, useMemo } from "react";
 import {
-	Box,
-	Typography,
-	TextField,
-	Card,
-	CardContent,
-	Grid,
-	Chip,
-	Table,
-	TableBody,
-	TableCell,
-	TableContainer,
-	TableHead,
-	TableRow,
-	Paper,
-	Accordion,
-	AccordionSummary,
-	AccordionDetails,
+  Box,
+  Typography,
+  TextField,
+  Card,
+  CardContent,
+  Chip,
+  Paper
 } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import type { Entity } from "@iddle-factory/config/types";
+import { useNavigate, useParams } from "react-router-dom";
+import type { Entity } from "@iddle-factory/config";
 
 interface EntitySearchProps {
-	entities: Entity[];
+  entities: Entity[];
 }
 
 const EntitySearch: React.FC<EntitySearchProps> = ({ entities }) => {
-	const [searchTerm, setSearchTerm] = useState("");
-	// This function is replaced by finalFilteredEntities with tier filtering
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
+  const { entityId } = useParams();
 
-	const entityTypes = useMemo(() => {
-		return [...new Set(entities.map((entity) => entity.type))];
-	}, [entities]);
-	const [activeTierFilter, setActiveTierFilter] = useState<number | null>(null);
+  const entityTypes = useMemo(() => {
+    return [...new Set(entities.map((entity) => entity.type))];
+  }, [entities]);
+  
+  const [activeTypeFilter, setActiveTypeFilter] = useState<string | null>(null);
+  
+  const handleEntitySelect = (entity: Entity) => {
+    navigate(`/entities/${entity.id}`);
+  };
 
-	const handleTierFilter = (tier: number) => {
-		if (activeTierFilter === tier) {
-			setActiveTierFilter(null);
-		} else {
-			setActiveTierFilter(tier);
-			setSearchTerm("");
-		}
-	};
+  const handleTypeFilter = (type: string) => {
+    if (activeTypeFilter === type) {
+      setActiveTypeFilter(null);
+    } else {
+      setActiveTypeFilter(type);
+      setSearchTerm("");
+    }
+  };
 
-	const clearFilters = () => {
-		setSearchTerm("");
-		setActiveTierFilter(null);
-	};
+  const clearFilters = () => {
+    setSearchTerm("");
+    setActiveTypeFilter(null);
+  };
 
-	const tierFiltered = useMemo(() => {
-		if (activeTierFilter === null) return entities;
-		return entities.filter((entity) => entity.tier === activeTierFilter);
-	}, [entities, activeTierFilter]);
+  const typeFiltered = useMemo(() => {
+    if (activeTypeFilter === null) return entities;
+    return entities.filter((entity) => entity.type === activeTypeFilter);
+  }, [entities, activeTypeFilter]);
 
-	const finalFilteredEntities = useMemo(() => {
-		if (!searchTerm) return tierFiltered;
+  const finalFilteredEntities = useMemo(() => {
+    if (!searchTerm) return typeFiltered;
 
-		return tierFiltered.filter(
-			(entity) =>
-				entity.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-				entity.type.toLowerCase().includes(searchTerm.toLowerCase()) ||
-				entity.function.toLowerCase().includes(searchTerm.toLowerCase()) ||
-				entity.tech_requirement
-					.toLowerCase()
-					.includes(searchTerm.toLowerCase()),
-		);
-	}, [tierFiltered, searchTerm]);
+    return typeFiltered.filter(
+      (entity) =>
+        entity.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        entity.type.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        entity.id.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }, [typeFiltered, searchTerm]);
 
-	return (
-		<Box sx={{ p: 3 }}>
-			<Typography variant="h4" gutterBottom>
-				Entities Explorer
-			</Typography>
-			<Paper sx={{ p: 3, mb: 4, bgcolor: "#f9f9f9" }}>
-				<TextField
-					fullWidth
-					label="Search entities"
-					variant="outlined"
-					value={searchTerm}
-					onChange={(e) => setSearchTerm(e.target.value)}
-					margin="normal"
-					sx={{ mb: 3 }}
-				/>
+  return (
+    <Box>
+      <Paper sx={{ p: 3, mb: 4, bgcolor: "#f9f9f9" }}>
+        <TextField
+          fullWidth
+          label="Search entities"
+          variant="outlined"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          margin="normal"
+          sx={{ mb: 3 }}
+        />
 
-				<Box sx={{ mb: 3 }}>
-					<Typography variant="subtitle1" gutterBottom>
-						Filter by type:
-					</Typography>
-					<Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
-						{entityTypes.map((type) => (
-							<Chip
-								key={type}
-								label={type}
-								onClick={() => setSearchTerm(type)}
-								clickable
-								color={searchTerm === type ? "primary" : "default"}
-							/>
-						))}
-					</Box>
-				</Box>
+        <Box sx={{ mb: 3 }}>
+          <Typography variant="subtitle1" gutterBottom>
+            Filter by type:
+          </Typography>
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
+            {entityTypes.map((type) => (
+              <Chip
+                key={type}
+                label={type}
+                onClick={() => handleTypeFilter(type)}
+                clickable
+                color={activeTypeFilter === type ? "primary" : "default"}
+              />
+            ))}
+          </Box>
+        </Box>
 
-				<Box sx={{ mb: 3 }}>
-					<Typography variant="subtitle1" gutterBottom>
-						Filter by tier:
-					</Typography>
-					<Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
-						{[...new Set(entities.map((e) => e.tier))]
-							.sort((a, b) => a - b)
-							.map((tier) => (
-								<Chip
-									key={tier}
-									label={`Tier ${tier}`}
-									onClick={() => handleTierFilter(tier)}
-									clickable
-									color={activeTierFilter === tier ? "primary" : "default"}
-								/>
-							))}
-					</Box>
-				</Box>
+        {(searchTerm || activeTypeFilter) && (
+          <Chip
+            label="Clear filters"
+            onClick={clearFilters}
+            sx={{ mb: 2 }}
+            color="secondary"
+          />
+        )}
 
-				<Box
-					sx={{
-						display: "flex",
-						justifyContent: "space-between",
-						alignItems: "center",
-					}}
-				>
-					<Typography variant="h6">
-						{finalFilteredEntities.length} Entities Found
-					</Typography>
+        <Typography variant="subtitle2" sx={{ mb: 2 }}>
+          Showing {finalFilteredEntities.length} of {entities.length} entities
+        </Typography>
+      </Paper>
 
-					{(searchTerm || activeTierFilter !== null) && (
-						<Chip
-							label="Clear Filters"
-							color="secondary"
-							onClick={clearFilters}
-						/>
-					)}
-				</Box>
-			</Paper>{" "}
-			<Grid container spacing={3}>
-				{finalFilteredEntities.map((entity) => (
-					<Grid key={entity.name} size={{ xs: 12, sm: 6, md: 4 }}>
-						<Card
-							elevation={3}
-							sx={{
-								height: "100%",
-								display: "flex",
-								flexDirection: "column",
-								transition: "transform 0.2s",
-								"&:hover": {
-									transform: "translateY(-4px)",
-									boxShadow: 6,
-								},
-							}}
-						>
-							<CardContent sx={{ flexGrow: 1 }}>
-								<Typography variant="h6" gutterBottom>
-									{entity.name}
-								</Typography>
-
-								<Box sx={{ display: "flex", gap: 1, mb: 2, flexWrap: "wrap" }}>
-									<Chip
-										label={`Type: ${entity.type}`}
-										size="small"
-										color="primary"
-										variant="outlined"
-									/>
-									<Chip
-										label={`Tier: ${entity.tier}`}
-										size="small"
-										color="secondary"
-									/>
-								</Box>
-
-								<Typography variant="body2" sx={{ mb: 1 }}>
-									<strong>Function:</strong> {entity.function}
-								</Typography>
-
-								<Typography variant="body2" sx={{ mb: 1 }}>
-									<strong>Operation Cost:</strong> {entity.operation_cost}
-								</Typography>
-
-								<Typography variant="body2" sx={{ mb: 1 }}>
-									<strong>Tech Requirement:</strong>{" "}
-									{entity.tech_requirement || "None"}
-								</Typography>
-
-								<Accordion>
-									<AccordionSummary expandIcon={<ExpandMoreIcon />}>
-										<Typography>Cost Details</Typography>
-									</AccordionSummary>
-									<AccordionDetails>
-										<TableContainer component={Paper} variant="outlined">
-											<Table size="small">
-												<TableHead>
-													<TableRow>
-														<TableCell>Item</TableCell>
-														<TableCell align="right">Quantity</TableCell>
-													</TableRow>
-												</TableHead>
-												<TableBody>
-													{entity.cost.map((cost, index) => (
-														<TableRow key={index}>
-															<TableCell>{cost.itemId}</TableCell>
-															<TableCell align="right">{cost.qty}</TableCell>
-														</TableRow>
-													))}
-												</TableBody>
-											</Table>
-										</TableContainer>
-									</AccordionDetails>
-								</Accordion>
-							</CardContent>
-						</Card>
-					</Grid>
-				))}
-				{finalFilteredEntities.length === 0 && (
-					<Grid size={{ xs: 12 }}>
-						<Paper sx={{ p: 4, textAlign: "center" }}>
-							<Typography variant="h6" color="text.secondary">
-								No entities found matching your search criteria
-							</Typography>
-						</Paper>
-					</Grid>
-				)}
-			</Grid>
-		</Box>
-	);
+      <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: 2 }}>
+        {finalFilteredEntities.map((entity) => (
+          <Box key={entity.id}>
+            <Card 
+              elevation={entityId === entity.id ? 4 : 1}
+              onClick={() => handleEntitySelect(entity)}
+              sx={{ 
+                cursor: 'pointer', 
+                transition: 'all 0.2s',
+                bgcolor: entityId === entity.id ? '#f0f7ff' : 'white',
+                '&:hover': { 
+                  transform: 'translateY(-2px)', 
+                  boxShadow: 4 
+                } 
+              }}
+            >
+              <CardContent sx={{ py: 1.5, px: 2, '&:last-child': { pb: 1.5 } }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <Typography variant="subtitle1" noWrap>
+                    {entity.name}
+                  </Typography>
+                  <Chip label={entity.type} color="primary" size="small" />
+                </Box>
+              </CardContent>
+            </Card>
+          </Box>
+        ))}
+      </Box>
+    </Box>
+  );
 };
 
 export default EntitySearch;
