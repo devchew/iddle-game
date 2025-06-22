@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Box, Typography, Paper, Chip, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Card, CardContent } from "@mui/material";
-import { useParams, useNavigate } from "react-router-dom";
-import type { Entity } from "@iddle-factory/config/types";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import type { Entity } from "@iddle-factory/config";
 
 interface EntityDetailProps {
   entities: Entity[];
@@ -73,7 +73,7 @@ const EntityDetail: React.FC<EntityDetailProps> = ({ entities }) => {
                   <TableBody>
                     {selectedEntity.craft_cost.map((cost, idx) => (
                       <TableRow key={idx}>
-                        <TableCell>{cost.id}</TableCell>
+                        <TableCell><Link to={"/entities/" + cost.id}>{cost.id}</Link></TableCell>
                         <TableCell align="right">{cost.amount}</TableCell>
                       </TableRow>
                     ))}

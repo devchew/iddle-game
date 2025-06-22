@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Tree from "react-d3-tree";
 import { Box, Typography, Modal, Paper, Chip, Grid } from "@mui/material";
-import type { Entity } from "@iddle-factory/config/types";
+import type { Entity } from "@iddle-factory/config";
 import { type TreeNode } from "../utils/dataTransformers";
 
 const modalStyle = {
