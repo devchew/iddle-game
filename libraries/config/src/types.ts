@@ -1,6 +1,6 @@
 export type EntityType = 'building' | 'research' | 'fuel' ;
 
-export interface Entity {
+export type Entity = {
 	// Unique identifier for the entity
 	id: string;
 	// Name of the entity
@@ -26,13 +26,11 @@ export interface Entity {
 	}[];
 }
 
-export interface Entities {
+export type Entities = {
 	entities: Entity[];
 }
 
-
-
-export interface Upgrade {
+export type Upgrade = {
 	id: string;
 	name: string;
 	effects: {
@@ -42,11 +40,11 @@ export interface Upgrade {
 	}
 }
 
-export interface Upgrades {
+export type Upgrades = {
 	upgrades: Upgrade[];
 }
 
-export interface Research {
+export type Research = {
 	// Unique identifier for the research
 	id: string;
 	// Name of the research
@@ -69,6 +67,8 @@ export interface Research {
 	
 }
 
-export interface ResearchTree {
+export type ResearchTree = {
 	tiers: Research[];
 }
+
+export type Config = ResearchTree & Entities & Upgrades;
