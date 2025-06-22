@@ -135,3 +135,190 @@ tiers:
     requirement: enriched-alloy
     science_packs: { czerwony: 70, zielony: 70 }
     function: "przechowuje 2000 jedn. surowców"
+- tier: 5
+  upgrades:
+  - id: basic-nuclear-reactor
+    name: Reaktor jądrowy (podstawowy)
+    requirement: enriched-alloy
+    science_packs: { czerwony: 100, zielony: 100, szary: 50 }
+    effect: "Umożliwia wydajną produkcję energii z reakcji atomowych"
+  - id: autonomous-cooling-modules
+    name: Autonomiczne moduły chłodzenia
+    requirement: basic-nuclear-reactor
+    science_packs: { czerwony: 120, zielony: 100, szary: 60 }
+    effect: "+20% czasu pracy reaktora jądrowego"
+  - id: advanced-nuclear-reactor
+    name: Reaktor jądrowy (zaawansowany)
+    requirement: autonomous-cooling-modules
+    science_packs: { czerwony: 150, zielony: 150, szary: 100 }
+    effect: "Podwojona wydajność produkcji energii"
+  - id: nuclear-power-plant
+    name: Elektrownia jądrowa
+    requirement: advanced-nuclear-reactor
+    science_packs: { czerwony: 200, zielony: 200, szary: 150 }
+    effect: "Zintegrowana produkcja energii na skalę przemysłową"
+  - id: autonomous-modules
+    name: Moduły autonomiczne
+    requirement: advanced-nuclear-reactor
+    science_packs: { czerwony: 180, zielony: 180, szary: 120 }
+    effect: "Automatyzacja procesów idle dla zwiększenia wydajności"
+  unlocks:
+  - id: basic-nuclear-reactor
+    name: Reaktor jądrowy (podstawowy)
+    requirement: basic-nuclear-reactor
+    science_packs: { czerwony: 100, zielony: 100, szary: 50 }
+    function: "produkcja energii +50 jedn./s z paliwa jądrowego"
+  - id: autonomous-cooling-modules
+    name: Autonomiczne moduły chłodzenia
+    requirement: autonomous-cooling-modules
+    science_packs: { czerwony: 120, zielony: 100, szary: 60 }
+    function: "+20% czasu pracy reaktora, zmniejszony pobór energii"
+  - id: advanced-nuclear-reactor
+    name: Reaktor jądrowy (zaawansowany)
+    requirement: advanced-nuclear-reactor
+    science_packs: { czerwony: 150, zielony: 150, szary: 100 }
+    function: "produkcja energii +100 jedn./s z paliwa jądrowego"
+  - id: nuclear-power-plant
+    name: Elektrownia jądrowa
+    requirement: nuclear-power-plant
+    science_packs: { czerwony: 200, zielony: 200, szary: 150 }
+    function: "zintegrowany kompleks energetyczny, +200 jedn./s"
+  - id: autonomous-module
+    name: Moduł autonomiczny
+    requirement: autonomous-modules
+    science_packs: { czerwony: 180, zielony: 180, szary: 120 }
+    function: "automatyzacja dowolnego procesu idle"
+- tier: 6
+  upgrades:
+  - id: solar-cells
+    name: Ogniwa słoneczne
+    requirement: autonomous-modules
+    science_packs: { czerwony: 150, zielony: 150, szary: 80 }
+    effect: "Odnawialne źródło energii bazujące na świetle"
+  - id: solar-panel-farm
+    name: Farma paneli słonecznych
+    requirement: solar-cells
+    science_packs: { czerwony: 180, zielony: 180, szary: 100 }
+    effect: "Zautomatyzowana produkcja paneli słonecznych"
+  - id: geothermal-probes
+    name: Geotermiczne sondy
+    requirement: autonomous-modules
+    science_packs: { czerwony: 200, zielony: 200, szary: 120 }
+    effect: "Wykorzystanie energii geotermalnej z głębi planety"
+  - id: idle-artificial-intelligence
+    name: Sztuczna inteligencja idle (AI Core)
+    requirement: autonomous-modules
+    science_packs: { czerwony: 250, zielony: 250, szary: 150, niebieski: 50 }
+    effect: "+20% do wszystkich bonusów idle"
+  - id: ai-server
+    name: Serwer AI
+    requirement: idle-artificial-intelligence
+    science_packs: { czerwony: 300, zielony: 300, szary: 200, niebieski: 100 }
+    effect: "Automatyzacja badań i zwiększenie ich efektywności"
+  unlocks:
+  - id: solar-panel
+    name: Panel słoneczny
+    requirement: solar-cells
+    science_packs: { czerwony: 150, zielony: 150, szary: 80 }
+    function: "produkcja energii w dzień (+10 jedn./s)"
+  - id: solar-panel-farm
+    name: Farma paneli słonecznych
+    requirement: solar-panel-farm
+    science_packs: { czerwony: 180, zielony: 180, szary: 100 }
+    function: "produkcja paneli słonecznych (+2/s)"
+  - id: geothermal-probe
+    name: Sonda geotermiczna
+    requirement: geothermal-probes
+    science_packs: { czerwony: 200, zielony: 200, szary: 120 }
+    function: "zwiększa efektywność wydobycia ciepła o 25%"
+  - id: geothermal-installation
+    name: Instalacja geotermalna
+    requirement: geothermal-probes
+    science_packs: { czerwony: 220, zielony: 220, szary: 150 }
+    function: "pasywna energia geotermalna (+40 jedn./s)"
+  - id: ai-core
+    name: AI Core
+    requirement: idle-artificial-intelligence
+    science_packs: { czerwony: 250, zielony: 250, szary: 150, niebieski: 50 }
+    function: "+20% do wszystkich bonusów idle"
+  - id: ai-server
+    name: Serwer AI
+    requirement: ai-server
+    science_packs: { czerwony: 300, zielony: 300, szary: 200, niebieski: 100 }
+    function: "automatyzuje badania (+25% szybkości)"
+- tier: 7
+  upgrades:
+  - id: rocket-technology
+    name: Technologia rakietowa
+    requirement: ai-server
+    science_packs: { czerwony: 400, zielony: 400, szary: 300, niebieski: 200 }
+    effect: "Umożliwia budowę i wystrzeliwanie rakiet w kosmos"
+  - id: orbital-modules
+    name: Moduły orbitalne
+    requirement: rocket-technology
+    science_packs: { czerwony: 450, zielony: 450, szary: 350, niebieski: 250 }
+    effect: "Produkcja komponentów i modułów dla stacji orbitalnych"
+  - id: satellite-communication-station
+    name: Stacja komunikacji satelitarnej
+    requirement: orbital-modules
+    science_packs: { czerwony: 500, zielony: 500, szary: 400, niebieski: 300 }
+    effect: "Komunikacja z pojazdami kosmicznymi i stacjami orbitalnymi"
+  unlocks:
+  - id: rocket-silo
+    name: Silos rakietowy
+    requirement: rocket-technology
+    science_packs: { czerwony: 400, zielony: 400, szary: 300, niebieski: 200 }
+    function: "wystrzeliwuje rakiety w kosmos"
+  - id: orbital-module-factory
+    name: Fabryka modułów orbitalnych
+    requirement: orbital-modules
+    science_packs: { czerwony: 450, zielony: 450, szary: 350, niebieski: 250 }
+    function: "produkuje moduły orbitalne (1/min)"
+  - id: satellite-communication-station
+    name: Stacja komunikacji satelitarnej
+    requirement: satellite-communication-station
+    science_packs: { czerwony: 500, zielony: 500, szary: 400, niebieski: 300 }
+    function: "+15% badań pasywnie"
+- tier: 8
+  upgrades:
+  - id: life-support-system
+    name: System podtrzymywania życia
+    requirement: satellite-communication-station
+    science_packs: { czerwony: 600, zielony: 600, szary: 500, niebieski: 400, fioletowy: 100 }
+    effect: "Systemy podtrzymujące życie dla załogowych stacji kosmicznych"
+  - id: automatic-docking
+    name: Automatyczne dokowanie
+    requirement: life-support-system
+    science_packs: { czerwony: 700, zielony: 700, szary: 600, niebieski: 500, fioletowy: 200 }
+    effect: "Dokowanie pojazdów kosmicznych bez interwencji człowieka"
+  - id: orbital-research-module
+    name: Moduł badawczy orbitalny
+    requirement: automatic-docking
+    science_packs: { czerwony: 800, zielony: 800, szary: 700, niebieski: 600, fioletowy: 300 }
+    effect: "Zaawansowane badania naukowe w warunkach mikrograwitacji"
+  - id: space-station
+    name: Stacja kosmiczna
+    requirement: orbital-research-module
+    science_packs: { czerwony: 1000, zielony: 1000, szary: 800, niebieski: 700, fioletowy: 500 }
+    effect: "Kompleksowa stacja kosmiczna dla badań i produkcji energii"
+  unlocks:
+  - id: life-support-system
+    name: System podtrzymywania życia
+    requirement: life-support-system
+    science_packs: { czerwony: 600, zielony: 600, szary: 500, niebieski: 400, fioletowy: 100 }
+    function: "+20% do wszystkich efektywności"
+  - id: automatic-docking
+    name: Automatyczne dokowanie
+    requirement: automatic-docking
+    science_packs: { czerwony: 700, zielony: 700, szary: 600, niebieski: 500, fioletowy: 200 }
+    function: "+25% do wszystkich procesów kosmicznych"
+  - id: orbital-research-module
+    name: Moduł badawczy orbitalny
+    requirement: orbital-research-module
+    science_packs: { czerwony: 800, zielony: 800, szary: 700, niebieski: 600, fioletowy: 300 }
+    function: "generuje purple packs (+5/s)"
+  - id: space-station
+    name: Stacja kosmiczna
+    requirement: space-station
+    science_packs: { czerwony: 1000, zielony: 1000, szary: 800, niebieski: 700, fioletowy: 500 }
+    function: "+100 jedn./s energii, +50 purple packs/s"
