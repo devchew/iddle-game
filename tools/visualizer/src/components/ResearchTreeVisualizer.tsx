@@ -100,7 +100,7 @@ const EntityModal: React.FC<EntityModalProps> = ({ open, entity, onClose }) => {
 						</Typography>
 						<Grid container spacing={1}>
 							{entity.operation_cost.map((cost, index) => (
-								<Grid item key={index}>
+								<Grid key={index}>
 									<Chip
 										label={`${cost.type}: ${cost.ammount}`}
 										variant="outlined"
@@ -119,7 +119,7 @@ const EntityModal: React.FC<EntityModalProps> = ({ open, entity, onClose }) => {
 						</Typography>
 						<Grid container spacing={1}>
 							{entity.craft_cost.map((cost, index) => (
-								<Grid item key={index}>
+								<Grid key={index}>
 									<Chip
 										label={`${cost.id}: ${cost.amount}`}
 										variant="outlined"
