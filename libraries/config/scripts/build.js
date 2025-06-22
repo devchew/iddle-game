@@ -23,6 +23,29 @@ const yamlFiles = fs.readdirSync(configsDir)
 // Create a combined object to hold all configuration data
 let combinedConfig = {};
 
+// Custom merge function to handle array concatenation
+function mergeConfigs(target, source) {
+    for (const key in source) {
+        if (Array.isArray(source[key])) {
+            // If key exists in target and is an array, concatenate arrays
+            if (Array.isArray(target[key])) {
+                target[key] = target[key].concat(source[key]);
+            } else {
+                // If key doesn't exist or isn't an array, set it
+                target[key] = source[key];
+            }
+        } else if (typeof source[key] === 'object' && source[key] !== null) {
+            // For nested objects, recursively merge
+            target[key] = target[key] || {};
+            mergeConfigs(target[key], source[key]);
+        } else {
+            // For primitive values, overwrite
+            target[key] = source[key];
+        }
+    }
+    return target;
+}
+
 // Process each YAML file
 yamlFiles.forEach((yamlFile) => {
 	try {
@@ -33,13 +56,10 @@ yamlFiles.forEach((yamlFile) => {
 		const yamlContent = fs.readFileSync(srcPath, "utf8");
 		const data = yaml.load(yamlContent);
 		
-		// Add to combined object under the file's base name as key
-		combinedConfig = {
-			...combinedConfig,
-			...data
-		};
+		// Add to combined object using our custom merge function
+		mergeConfigs(combinedConfig, data);
 		
-		// Also write individual JSON files
+		// Also write individual JSON files if needed
 		// const individualDestPath = path.join(distDir, `${baseName}.json`);
 		// fs.writeFileSync(individualDestPath, JSON.stringify(data, null, 2), "utf8");
 		
