@@ -318,10 +318,12 @@ entities:
   craft_time: 8
   craft_amount: 1
   craft_cost:
-  - id: science-pack-red
-    amount: 1
   - id: electronic-circuit
+    amount: 2
+  - id: gear-wheel
     amount: 1
+  - id: iron-plate
+    amount: 2
   operation_cost: []
 
 - id: science-pack-gray
@@ -330,10 +332,12 @@ entities:
   craft_time: 12
   craft_amount: 1
   craft_cost:
-  - id: science-pack-green
-    amount: 1
   - id: advanced-circuit
     amount: 1
+  - id: steel-plate
+    amount: 2
+  - id: gear-wheel
+    amount: 3
   operation_cost: []
 
 - id: science-pack-blue
@@ -342,10 +346,14 @@ entities:
   craft_time: 16
   craft_amount: 1
   craft_cost:
-  - id: science-pack-gray
-    amount: 1
   - id: processor-unit
     amount: 1
+  - id: electric-engine
+    amount: 1
+  - id: plastic-bar
+    amount: 3
+  - id: advanced-circuit
+    amount: 2
   operation_cost: []
 
 - id: science-pack-purple
@@ -354,10 +362,14 @@ entities:
   craft_time: 25
   craft_amount: 1
   craft_cost:
-  - id: science-pack-blue
-    amount: 1
   - id: composite-materials
+    amount: 2
+  - id: processor-unit
+    amount: 2
+  - id: superconductor
     amount: 1
+  - id: electric-engine
+    amount: 2
   operation_cost: []
 
 # Biomass Materials

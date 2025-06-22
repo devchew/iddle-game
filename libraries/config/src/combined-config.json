@@ -1361,12 +1361,16 @@
       "craft_amount": 1,
       "craft_cost": [
         {
-          "id": "science-pack-red",
+          "id": "electronic-circuit",
+          "amount": 2
+        },
+        {
+          "id": "gear-wheel",
           "amount": 1
         },
         {
-          "id": "electronic-circuit",
-          "amount": 1
+          "id": "iron-plate",
+          "amount": 2
         }
       ],
       "operation_cost": []
@@ -1379,12 +1383,16 @@
       "craft_amount": 1,
       "craft_cost": [
         {
-          "id": "science-pack-green",
+          "id": "advanced-circuit",
           "amount": 1
         },
         {
-          "id": "advanced-circuit",
-          "amount": 1
+          "id": "steel-plate",
+          "amount": 2
+        },
+        {
+          "id": "gear-wheel",
+          "amount": 3
         }
       ],
       "operation_cost": []
@@ -1397,12 +1405,20 @@
       "craft_amount": 1,
       "craft_cost": [
         {
-          "id": "science-pack-gray",
+          "id": "processor-unit",
           "amount": 1
         },
         {
-          "id": "processor-unit",
+          "id": "electric-engine",
           "amount": 1
+        },
+        {
+          "id": "plastic-bar",
+          "amount": 3
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 2
         }
       ],
       "operation_cost": []
@@ -1415,12 +1431,20 @@
       "craft_amount": 1,
       "craft_cost": [
         {
-          "id": "science-pack-blue",
+          "id": "composite-materials",
+          "amount": 2
+        },
+        {
+          "id": "processor-unit",
+          "amount": 2
+        },
+        {
+          "id": "superconductor",
           "amount": 1
         },
         {
-          "id": "composite-materials",
-          "amount": 1
+          "id": "electric-engine",
+          "amount": 2
         }
       ],
       "operation_cost": []
