@@ -188,7 +188,7 @@ const EntitySearch: React.FC<EntitySearchProps> = ({ entities }) => {
                         <TableBody>
                           {entity.cost.map((cost, index) => (
                             <TableRow key={index}>
-                              <TableCell>{cost.item}</TableCell>
+                              <TableCell>{cost.itemId}</TableCell>
                               <TableCell align="right">{cost.qty}</TableCell>
                             </TableRow>
                           ))}

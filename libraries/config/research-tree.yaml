@@ -1,116 +1,137 @@
-# research-tree.yaml
-# Wygenerowane na podstawie docs/research-tree.md
-
 tiers:
-  - tier: 1
-    upgrades:
-      - name: Efektywne górnictwo
-        science_packs: {czerwony: 10}
-        effect: "+10% wydajności koparek"
-      - name: Wzbogacanie rudy
-        requirement: Efektywne górnictwo
-        science_packs: {czerwony: 15}
-        effect: "+5% zysku z jednostki rudy"
-    unlocks:
-      - name: Kopalnia automatyczna
-        requirement: Efektywne górnictwo
-        science_packs: {czerwony: 20}
-        function: "kopalnia pracująca bez nadzoru, +1 rudy/s"
-      - name: Separator rud
-        requirement: Wzbogacanie rudy
-        science_packs: {czerwony: 25}
-        function: "przetwarza rudę w koncentrat (+20% surowca)"
-      - name: Piec kamienny
-        requirement: Początkowa
-        science_packs: {}
-        function: "1 ruda → 1 płytka"
-      - name: Przenośnik Tier 1
-        requirement: Początkowa
-        science_packs: {}
-        function: "transport przedmiotów (5/s)"
-      - name: Magazyn podstawowy
-        requirement: Początkowa
-        science_packs: {}
-        function: "przechowuje 100 jedn. surowców"
-  - tier: 2
-    upgrades:
-      - name: Paternie metalurgiczne
-        requirement: Wzbogacanie rudy
-        science_packs: {czerwony: 20}
-        effect: "+15% przerobu rudy na sztabki"
-      - name: Moduły energetyczne
-        requirement: Efektywne górnictwo
-        science_packs: {czerwony: 20}
-        effect: "+10% produkcji energii pasywnej"
-    unlocks:
-      - name: Hutnia wielkopiecowa
-        requirement: Paternie metalurgiczne
-        science_packs: {czerwony: 30}
-        function: "przetwarza sztabki szybciej, +2 sztabki/s"
-      - name: Generator termosolar
-        requirement: Moduły energetyczne
-        science_packs: {czerwony: 30}
-        function: "pasywna produkcja energii z ciepła (+5 jedn./s)"
-      - name: Przenośnik Tier 2
-        requirement: Paternie metalurgiczne
-        science_packs: {czerwony: 20}
-        function: "transport przedmiotów (10/s)"
-      - name: Magazyn zaawansowany
-        requirement: Paternie metalurgiczne
-        science_packs: {czerwony: 20}
-        function: "przechowuje 500 jedn. surowców"
-      - name: Akumulator energetyczny
-        requirement: Moduły energetyczne
-        science_packs: {czerwony: 20}
-        function: "magazynuje energię (500 kW)"
-  - tier: 3
-    upgrades:
-      - name: Moduły prędkości
-        requirement: Paternie metalurgiczne
-        science_packs: {czerwony: 30, zielony: 30}
-        effect: "+10% prędkości procesów"
-      - name: Moduły wydajności
-        requirement: Moduły prędkości
-        science_packs: {czerwony: 40, zielony: 40}
-        effect: "-5% zużycia surowca"
-      - name: Przyspieszone badania
-        requirement: Moduły prędkości
-        science_packs: {czerwony: 50, zielony: 50}
-        effect: "+20% szybkości badań"
-    unlocks:
-      - name: Laboratorium Super
-        requirement: Przyspieszone badania
-        science_packs: {czerwony: 70, zielony: 70}
-        function: "zwiększa pojemność badań i przyspiesza je o dodatkowe +15%"
-      - name: Reaktor biomasowy
-        requirement: Moduły wydajności
-        science_packs: {czerwony: 60, zielony: 60}
-        function: "pasywna produkcja energii z biomasy (+8 jedn./s)"
-      - name: Assembler Tier 1
-        requirement: Moduły prędkości
-        science_packs: {czerwony: 30, zielony: 30}
-        function: "automatyczna produkcja komponentów (1/s)"
-  - tier: 4
-    upgrades:
-      - name: Katalizatory chemiczne
-        requirement: Moduły wydajności
-        science_packs: {czerwony: 60, zielony: 60}
-        effect: "+15% wydajności procesów chemicznych"
-      - name: Stop wzbogacony
-        requirement: Katalizatory chemiczne
-        science_packs: {czerwony: 70, zielony: 70}
-        effect: "+10% wytrzymałości i efektywności maszyn"
-    unlocks:
-      - name: Zakład chemiczny
-        requirement: Katalizatory chemiczne
-        science_packs: {czerwony: 80, zielony: 80}
-        function: "produkuje katalizatory i chemikalia (+3 jednostki/s)"
-      - name: Walcer metali
-        requirement: Stop wzbogacony
-        science_packs: {czerwony: 90, zielony: 90}
-        function: "automatyczna obróbka metalu, +5 sztabek/s"
-      - name: Magazyn Tier 3
-        requirement: Stop wzbogacony
-        science_packs: {czerwony: 70, zielony: 70}
-        function: "przechowuje 2000 jedn. surowców"
-# ... dalsze tiery analogicznie ...
+- tier: 1
+  upgrades:
+  - id: efficient-mining
+    name: Efektywne górnictwo
+    science_packs: { czerwony: 10 }
+    effect: "+10% wydajności koparek"
+  - id: ore-enrichment
+    name: Wzbogacanie rudy
+    requirement: efficient-mining
+    science_packs: { czerwony: 15 }
+    effect: "+5% zysku z jednostki rudy"
+  unlocks:
+  - id: automatic-mine
+    name: Kopalnia automatyczna
+    requirement: efficient-mining
+    science_packs: { czerwony: 20 }
+    function: "kopalnia pracująca bez nadzoru, +1 rudy/s"
+  - id: ore-separator
+    name: Separator rud
+    requirement: ore-enrichment
+    science_packs: { czerwony: 25 }
+    function: "przetwarza rudę w koncentrat (+20% surowca)"
+  - id: stone-furnace
+    name: Piec kamienny
+    requirement: initial
+    science_packs: {}
+    function: "1 ruda → 1 płytka"
+  - id: conveyor-tier-1
+    name: Przenośnik Tier 1
+    requirement: initial
+    science_packs: {}
+    function: "transport przedmiotów (5/s)"
+  - id: basic-storage
+    name: Magazyn podstawowy
+    requirement: initial
+    science_packs: {}
+    function: "przechowuje 100 jedn. surowców"
+- tier: 2
+  upgrades:
+  - id: metallurgical-patterns
+    name: Paternie metalurgiczne
+    requirement: ore-enrichment
+    science_packs: { czerwony: 20 }
+    effect: "+15% przerobu rudy na sztabki"
+  - id: energy-modules
+    name: Moduły energetyczne
+    requirement: efficient-mining
+    science_packs: { czerwony: 20 }
+    effect: "+10% produkcji energii pasywnej"
+  unlocks:
+  - id: blast-furnace
+    name: Hutnia wielkopiecowa
+    requirement: metallurgical-patterns
+    science_packs: { czerwony: 30 }
+    function: "przetwarza sztabki szybciej, +2 sztabki/s"
+  - id: thermosolar-generator
+    name: Generator termosolar
+    requirement: energy-modules
+    science_packs: { czerwony: 30 }
+    function: "pasywna produkcja energii z ciepła (+5 jedn./s)"
+  - id: conveyor-tier-2
+    name: Przenośnik Tier 2
+    requirement: metallurgical-patterns
+    science_packs: { czerwony: 20 }
+    function: "transport przedmiotów (10/s)"
+  - id: advanced-storage
+    name: Magazyn zaawansowany
+    requirement: metallurgical-patterns
+    science_packs: { czerwony: 20 }
+    function: "przechowuje 500 jedn. surowców"
+  - id: energy-accumulator
+    name: Akumulator energetyczny
+    requirement: energy-modules
+    science_packs: { czerwony: 20 }
+    function: "magazynuje energię (500 kW)"
+- tier: 3
+  upgrades:
+  - id: speed-modules
+    name: Moduły prędkości
+    requirement: metallurgical-patterns
+    science_packs: { czerwony: 30, zielony: 30 }
+    effect: "+10% prędkości procesów"
+  - id: productivity-modules
+    name: Moduły wydajności
+    requirement: speed-modules
+    science_packs: { czerwony: 40, zielony: 40 }
+    effect: "-5% zużycia surowca"
+  - id: accelerated-research
+    name: Przyspieszone badania
+    requirement: speed-modules
+    science_packs: { czerwony: 50, zielony: 50 }
+    effect: "+20% szybkości badań"
+  unlocks:
+  - id: super-laboratory
+    name: Laboratorium Super
+    requirement: accelerated-research
+    science_packs: { czerwony: 70, zielony: 70 }
+    function: "zwiększa pojemność badań i przyspiesza je o dodatkowe +15%"
+  - id: biomass-reactor
+    name: Reaktor biomasowy
+    requirement: productivity-modules
+    science_packs: { czerwony: 60, zielony: 60 }
+    function: "pasywna produkcja energii z biomasy (+8 jedn./s)"
+  - id: assembler-tier-1
+    name: Assembler Tier 1
+    requirement: speed-modules
+    science_packs: { czerwony: 30, zielony: 30 }
+    function: "automatyczna produkcja komponentów (1/s)"
+- tier: 4
+  upgrades:
+  - id: chemical-catalysts
+    name: Katalizatory chemiczne
+    requirement: productivity-modules
+    science_packs: { czerwony: 60, zielony: 60 }
+    effect: "+15% wydajności procesów chemicznych"
+  - id: enriched-alloy
+    name: Stop wzbogacony
+    requirement: chemical-catalysts
+    science_packs: { czerwony: 70, zielony: 70 }
+    effect: "+10% wytrzymałości i efektywności maszyn"
+  unlocks:
+  - id: chemical-plant
+    name: Zakład chemiczny
+    requirement: chemical-catalysts
+    science_packs: { czerwony: 80, zielony: 80 }
+    function: "produkuje katalizatory i chemikalia (+3 jednostki/s)"
+  - id: metal-roller
+    name: Walcer metali
+    requirement: enriched-alloy
+    science_packs: { czerwony: 90, zielony: 90 }
+    function: "automatyczna obróbka metalu, +5 sztabek/s"
+  - id: storage-tier-3
+    name: Magazyn Tier 3
+    requirement: enriched-alloy
+    science_packs: { czerwony: 70, zielony: 70 }
+    function: "przechowuje 2000 jedn. surowców"

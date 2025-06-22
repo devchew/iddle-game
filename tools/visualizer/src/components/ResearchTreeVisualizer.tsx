@@ -95,7 +95,7 @@ const EntityModal: React.FC<EntityModalProps> = ({ open, entity, onClose }) => {
         <ul>
           {entity.cost.map((cost, index) => (
             <li key={index}>
-              {cost.item}: {cost.qty}
+              {cost.itemId}: {cost.qty}
             </li>
           ))}
         </ul>

@@ -15,27 +15,27 @@ const createRequirementMap = (researchTree: ResearchTree) => {
   researchTree.tiers.forEach(tier => {
     // Process upgrades
     tier.upgrades.forEach(upgrade => {
-      const name = upgrade.name;
+      const id = upgrade.id;
       const requirement = upgrade.requirement;
       
       if (requirement) {
         if (!map.has(requirement)) {
           map.set(requirement, []);
         }
-        map.get(requirement)?.push(name);
+        map.get(requirement)?.push(id);
       }
     });
     
     // Process unlocks
     tier.unlocks.forEach(unlock => {
-      const name = unlock.name;
+      const id = unlock.id;
       const requirement = unlock.requirement;
       
       if (requirement) {
         if (!map.has(requirement)) {
           map.set(requirement, []);
         }
-        map.get(requirement)?.push(name);
+        map.get(requirement)?.push(id);
       }
     });
   });
@@ -55,7 +55,7 @@ const collectAllResearchItems = (researchTree: ResearchTree) => {
   researchTree.tiers.forEach(tier => {
     // Process upgrades
     tier.upgrades.forEach(upgrade => {
-      items.set(upgrade.name, { 
+      items.set(upgrade.id, { 
         type: 'upgrade', 
         tier: tier.tier, 
         data: upgrade,
@@ -65,7 +65,7 @@ const collectAllResearchItems = (researchTree: ResearchTree) => {
     
     // Process unlocks
     tier.unlocks.forEach(unlock => {
-      items.set(unlock.name, { 
+      items.set(unlock.id, { 
         type: 'unlock', 
         tier: tier.tier, 
         data: unlock,
@@ -101,17 +101,18 @@ export const transformResearchTree = (researchTree: ResearchTree): TreeNode => {
   });
   
   // Process each starting item and build the tree
-  startingItems.forEach(itemName => {
-    const processItem = (name: string): TreeNode | undefined => {
-      const item = allResearchItems.get(name);
+  startingItems.forEach(itemId => {
+    const processItem = (id: string): TreeNode | undefined => {
+      const item = allResearchItems.get(id);
       if (!item || item.processed) return undefined;
       
       // Mark as processed to avoid circular dependencies
       item.processed = true;
       
       const node: TreeNode = {
-        name: name,
+        name: item.data.name,
         attributes: {
+          id: id,
           type: item.type,
           tier: item.tier,
           ...item.data
@@ -120,9 +121,9 @@ export const transformResearchTree = (researchTree: ResearchTree): TreeNode => {
       };
       
       // Process dependencies
-      const dependencies = requirementMap.get(name) || [];
-      dependencies.forEach(dependentName => {
-        const childNode = processItem(dependentName);
+      const dependencies = requirementMap.get(id) || [];
+      dependencies.forEach(dependentId => {
+        const childNode = processItem(dependentId);
         if (childNode) {
           node.children?.push(childNode);
         }
@@ -130,8 +131,7 @@ export const transformResearchTree = (researchTree: ResearchTree): TreeNode => {
       
       return node;
     };
-    
-    const itemNode = processItem(itemName);
+      const itemNode = processItem(itemId);
     if (itemNode) {
       root.children?.push(itemNode);
     }
@@ -146,14 +146,14 @@ export const connectEntitiesToResearchTree = (
   entities: Entities
 ): TreeNode => {
   const newTreeData = { ...treeData };
-
   // Helper function to recursively process nodes
   const processNode = (node: TreeNode): TreeNode => {
     const newNode = { ...node };
     
-    // Find entities with tech requirements matching this node's name
+    // Find entities with tech requirements matching this node's id attribute
+    const nodeId = node.attributes?.id as string;
     const relatedEntities = entities.entities.filter(
-      entity => entity.tech_requirement === node.name
+      entity => entity.tech_requirement === nodeId
     );
     
     if (relatedEntities.length > 0) {
