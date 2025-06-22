@@ -2,315 +2,550 @@
 # Wygenerowane na podstawie docs/entities.md
 
 entities:
-  - id: basic-mine
-    name: Podstawowa kopalnia
-    tier: 1
-    type: wydobycie
-    cost: [ {itemId: iron-plate, qty: 5} ]
-    function: Wydobywa rudę (0,2/s)
-    operation_cost: 10 kW
-    tech_requirement: initial
+- id: basic-mine
+  name: Podstawowa kopalnia
+  type: building
+  craft_time: 5
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 5
+  operation_cost:
+  - type: fuel
+    ammount: 10
 
-  - id: automatic-mine
-    name: Kopalnia automatyczna
-    tier: 1
-    type: wydobycie
-    cost: [ {itemId: iron-plate, qty: 10}, {itemId: gear-wheel, qty: 5} ]
-    function: Wydobywa rudę (1/s)
-    operation_cost: 50 kW
-    tech_requirement: efficient-mining
+- id: automatic-mine
+  name: Kopalnia automatyczna
+  type: building
+  craft_time: 10
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 10
+  - id: gear-wheel
+    amount: 5
+  operation_cost:
+  - type: fuel
+    ammount: 50
 
-  - id: ore-separator
-    name: Separator rud
-    tier: 1
-    type: wydobycie
-    cost: [ {itemId: iron-plate, qty: 15}, {itemId: gear-wheel, qty: 10}, {itemId: electronic-circuit, qty: 5} ]
-    function: Przetwarza rudę w koncentrat (+20%)
-    operation_cost: 30 kW
-    tech_requirement: ore-enrichment
-  - id: stone-furnace
-    name: Piec kamienny
-    tier: 1
-    type: przetwarzanie
-    cost: [ {itemId: stone, qty: 5} ]
-    function: 1 ruda → 1 płytka
-    operation_cost: Paliwo stałe (węgiel)
-    tech_requirement: initial
+- id: ore-separator
+  name: Separator rud
+  type: building
+  craft_time: 15
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 15
+  - id: gear-wheel
+    amount: 10
+  - id: electronic-circuit
+    amount: 5
+  operation_cost:
+  - type: fuel
+    ammount: 30
 
-  - id: conveyor-tier-1
-    name: Przenośnik Tier 1
-    tier: 1
-    type: transport
-    cost: [ {itemId: iron-plate, qty: 1}, {itemId: gear-wheel, qty: 1} ]
-    function: Transport przedmiotów (5/s)
-    operation_cost: Brak
-    tech_requirement: initial
+- id: stone-furnace
+  name: Piec kamienny
+  type: building
+  craft_time: 5
+  craft_amount: 1
+  craft_cost:
+  - id: stone
+    amount: 5
+  operation_cost:
+  - type: fuel
+    ammount: 15
 
-  - id: basic-storage
-    name: Magazyn podstawowy
-    tier: 1
-    type: magazyn
-    cost: [ {itemId: iron-plate, qty: 5} ]
-    function: Przechowuje 100 jedn. surowców
-    operation_cost: Brak
-    tech_requirement: initial
-  - id: blast-furnace
-    name: Hutnia wielkopiecowa
-    tier: 2
-    type: przetwarzanie
-    cost: [ {itemId: iron-plate, qty: 30}, {itemId: stone, qty: 10}, {itemId: electronic-circuit, qty: 5} ]
-    function: Przetwarza rudę na sztabki szybciej (+2/s)
-    operation_cost: 90 kW
-    tech_requirement: metallurgical-patterns
+- id: conveyor-tier-1
+  name: Przenośnik Tier 1
+  type: building
+  craft_time: 1
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 1
+  - id: gear-wheel
+    amount: 1
+  operation_cost: []
 
-  - id: conveyor-tier-2
-    name: Przenośnik Tier 2
-    tier: 2
-    type: transport
-    cost: [ {itemId: iron-plate, qty: 1}, {itemId: electronic-circuit, qty: 1} ]
-    function: Transport przedmiotów (10/s)
-    operation_cost: Brak
-    tech_requirement: metallurgical-patterns
+- id: basic-storage
+  name: Magazyn podstawowy
+  type: building
+  craft_time: 5
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 5
+  operation_cost: []
 
-  - id: advanced-storage
-    name: Magazyn zaawansowany
-    tier: 2
-    type: magazyn
-    cost: [ {itemId: iron-plate, qty: 10}, {itemId: electronic-circuit, qty: 2} ]
-    function: Przechowuje 500 jedn. surowców
-    operation_cost: Brak
-    tech_requirement: metallurgical-patterns
-  - id: thermosolar-generator
-    name: Generator termosolar
-    tier: 2
-    type: energia
-    cost: [ {itemId: iron-plate, qty: 10}, {itemId: copper-plate, qty: 5}, {itemId: electronic-circuit, qty: 2} ]
-    function: Pasywna produkcja energii (+5 jedn./s)
-    operation_cost: Brak
-    tech_requirement: energy-modules
+- id: blast-furnace
+  name: Hutnia wielkopiecowa
+  type: building
+  craft_time: 30
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 30
+  - id: stone
+    amount: 10
+  - id: electronic-circuit
+    amount: 5
+  operation_cost:
+  - type: fuel
+    ammount: 90
 
-  - id: energy-accumulator
-    name: Akumulator energetyczny
-    tier: 2
-    type: energia
-    cost: [ {itemId: iron-plate, qty: 5}, {itemId: copper-plate, qty: 2} ]
-    function: Magazynuje energię (500 kW)
-    operation_cost: Brak
-    tech_requirement: energy-modules
+- id: conveyor-tier-2
+  name: Przenośnik Tier 2
+  type: building
+  craft_time: 1
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 1
+  - id: electronic-circuit
+    amount: 1
+  operation_cost: []
 
-  - id: assembler-tier-1
-    name: Assembler Tier 1
-    tier: 3
-    type: produkcja
-    cost: [ {itemId: iron-plate, qty: 15}, {itemId: gear-wheel, qty: 5}, {itemId: electronic-circuit, qty: 3} ]
-    function: Automatycznie wytwarza komponenty (1/s)
-    operation_cost: 75 kW
-    tech_requirement: speed-modules
-  - id: biomass-reactor
-    name: Reaktor biomasowy
-    tier: 3
-    type: energia
-    cost: [ {itemId: iron-plate, qty: 20}, {itemId: copper-plate, qty: 10}, {itemId: electronic-circuit, qty: 5} ]
-    function: Produkcja energii z biomasy (+8 jedn./s)
-    operation_cost: Biomasa
-    tech_requirement: productivity-modules
+- id: advanced-storage
+  name: Magazyn zaawansowany
+  type: building
+  craft_time: 10
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 10
+  - id: electronic-circuit
+    amount: 2
+  operation_cost: []
 
-  - id: basic-laboratory
-    name: Laboratorium podstawowe
-    tier: 3
-    type: badania
-    cost: [ {itemId: iron-plate, qty: 10}, {itemId: electronic-circuit, qty: 10}, {itemId: copper-plate, qty: 5} ]
-    function: Konsumpcja pakietów badań (1/s)
-    operation_cost: 60 kW
-    tech_requirement: initial
+- id: thermosolar-generator
+  name: Generator termosolar
+  type: building
+  craft_time: 15
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 10
+  - id: copper-plate
+    amount: 5
+  - id: electronic-circuit
+    amount: 2
+  operation_cost: []
 
-  - id: super-laboratory
-    name: Laboratorium Super
-    tier: 3
-    type: badania
-    cost: [ {itemId: iron-plate, qty: 20}, {itemId: electronic-circuit, qty: 15}, {itemId: steel-plate, qty: 10} ]
-    function: Przyspieszone badania (+15%)
-    operation_cost: 120 kW
-    tech_requirement: accelerated-research
-  - id: chemical-plant
-    name: Zakład chemiczny
-    tier: 4
-    type: chemia
-    cost: [ {itemId: iron-plate, qty: 30}, {itemId: gear-wheel, qty: 10}, {itemId: pipe, qty: 5}, {itemId: electronic-circuit, qty: 5} ]
-    function: Produkcja chemikaliów (+3 jedn./s)
-    operation_cost: 210 kW
-    tech_requirement: chemical-catalysts
+- id: energy-accumulator
+  name: Akumulator energetyczny
+  type: building
+  craft_time: 5
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 5
+  - id: copper-plate
+    amount: 2
+  operation_cost: []
 
-  - id: metal-roller
-    name: Walcer metali
-    tier: 4
-    type: przetwarzanie
-    cost: [ {itemId: iron-plate, qty: 50}, {itemId: steel-plate, qty: 20}, {itemId: gear-wheel, qty: 10}, {itemId: advanced-circuit, qty: 5} ]
-    function: Automatyczna obróbka metalu (+5 sztabek/s)
-    operation_cost: 180 kW
-    tech_requirement: enriched-alloy
+- id: assembler-tier-1
+  name: Assembler Tier 1
+  type: building
+  craft_time: 20
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 15
+  - id: gear-wheel
+    amount: 5
+  - id: electronic-circuit
+    amount: 3
+  operation_cost:
+  - type: fuel
+    ammount: 75
 
-  - id: storage-tier-3
-    name: Magazyn Tier 3
-    tier: 4
-    type: magazyn
-    cost: [ {itemId: steel-plate, qty: 20}, {itemId: advanced-circuit, qty: 5} ]
-    function: Przechowuje 2000 jedn. surowców
-    operation_cost: Brak
-    tech_requirement: enriched-alloy
-  - id: basic-nuclear-reactor
-    name: Reaktor jądrowy (podstawowy)
-    tier: 5
-    type: energia
-    cost: [ {itemId: steel-plate, qty: 100}, {itemId: advanced-circuit, qty: 50}, {itemId: pipe, qty: 20}, {itemId: heat-exchanger, qty: 10} ]
-    function: Produkcja energii (+50 jedn./s)
-    operation_cost: Paliwo jądrowe
-    tech_requirement: basic-nuclear-reactor
+- id: biomass-reactor
+  name: Reaktor biomasowy
+  type: building
+  craft_time: 30
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 20
+  - id: copper-plate
+    amount: 10
+  - id: electronic-circuit
+    amount: 5
+  operation_cost:
+  - type: fuel
+    ammount: 20
 
-  - id: autonomous-cooling-modules
-    name: Autonomiczne moduły chłodzenia
-    tier: 5
-    type: energia
-    cost: [ {itemId: steel-plate, qty: 30}, {itemId: advanced-circuit, qty: 20}, {itemId: pipe, qty: 15} ]
-    function: +20% czasu pracy reaktora
-    operation_cost: 50 kW
-    tech_requirement: autonomous-cooling-modules
+- id: basic-laboratory
+  name: Laboratorium podstawowe
+  type: building
+  craft_time: 20
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 10
+  - id: electronic-circuit
+    amount: 10
+  - id: copper-plate
+    amount: 5
+  operation_cost:
+  - type: fuel
+    ammount: 60
 
-  - id: advanced-nuclear-reactor
-    name: Reaktor jądrowy (zaawansowany)
-    tier: 5
-    type: energia
-    cost: [ {itemId: steel-plate, qty: 200}, {itemId: advanced-circuit, qty: 100}, {itemId: heat-exchanger, qty: 50} ]
-    function: Produkcja energii (+100 jedn./s)
-    operation_cost: Paliwo jądrowe
-    tech_requirement: advanced-nuclear-reactor
-  - id: nuclear-power-plant
-    name: Elektrownia jądrowa
-    tier: 5
-    type: energia
-    cost: [ {itemId: steel-plate, qty: 300}, {itemId: advanced-circuit, qty: 150}, {itemId: heat-exchanger, qty: 100} ]
-    function: Integruje reaktory (+200 jedn./s)
-    operation_cost: Paliwo jądrowe
-    tech_requirement: nuclear-power-plant
+- id: super-laboratory
+  name: Laboratorium Super
+  type: building
+  craft_time: 40
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 20
+  - id: electronic-circuit
+    amount: 15
+  - id: steel-plate
+    amount: 10
+  operation_cost:
+  - type: fuel
+    ammount: 120
 
-  - id: autonomous-module
-    name: Moduł autonomiczny
-    tier: 5
-    type: automatyzacja
-    cost: [ {itemId: steel-plate, qty: 50}, {itemId: advanced-circuit, qty: 30}, {itemId: electric-engine, qty: 20} ]
-    function: Automatyzuje dowolny proces idle
-    operation_cost: 150 kW
-    tech_requirement: autonomous-modules
+- id: chemical-plant
+  name: Zakład chemiczny
+  type: building
+  craft_time: 45
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 30
+  - id: gear-wheel
+    amount: 10
+  - id: pipe
+    amount: 5
+  - id: electronic-circuit
+    amount: 5
+  operation_cost:
+  - type: fuel
+    ammount: 210
 
-  - id: solar-panel
-    name: Panel słoneczny
-    tier: 6
-    type: energia
-    cost: [ {itemId: steel-plate, qty: 15}, {itemId: electronic-circuit, qty: 10}, {itemId: copper-plate, qty: 5} ]
-    function: Produkcja energii w dzień (+10 jedn./s)
-    operation_cost: Brak
-    tech_requirement: solar-cells
-  - id: solar-panel-farm
-    name: Farma paneli słonecznych
-    tier: 6
-    type: produkcja
-    cost: [ {itemId: steel-plate, qty: 50}, {itemId: electronic-circuit, qty: 30}, {itemId: advanced-circuit, qty: 20} ]
-    function: Produkcja paneli słonecznych (+2/s)
-    operation_cost: 100 kW
-    tech_requirement: solar-panel-farm
+- id: metal-roller
+  name: Walcer metali
+  type: building
+  craft_time: 60
+  craft_amount: 1
+  craft_cost:
+  - id: iron-plate
+    amount: 50
+  - id: steel-plate
+    amount: 20
+  - id: gear-wheel
+    amount: 10
+  - id: advanced-circuit
+    amount: 5
+  operation_cost:
+  - type: fuel
+    ammount: 180
 
-  - id: geothermal-probe
-    name: Sonda geotermiczna
-    tier: 6
-    type: energia
-    cost: [ {itemId: steel-plate, qty: 30}, {itemId: pipe, qty: 15}, {itemId: electronic-circuit, qty: 10} ]
-    function: Zwiększa efektywność wydobycia ciepła o 25%
-    operation_cost: 40 kW
-    tech_requirement: geothermal-probes
+- id: storage-tier-3
+  name: Magazyn Tier 3
+  type: building
+  craft_time: 30
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 20
+  - id: advanced-circuit
+    amount: 5
+  operation_cost: []
 
-  - id: geothermal-installation
-    name: Instalacja geotermalna
-    tier: 6
-    type: energia
-    cost: [ {itemId: steel-plate, qty: 80}, {itemId: pipe, qty: 40}, {itemId: advanced-circuit, qty: 30} ]
-    function: Pasywna energia geotermalna (+40 jedn./s)
-    operation_cost: Brak
-    tech_requirement: geothermal-probes
-  - id: ai-core
-    name: AI Core
-    tier: 6
-    type: ai
-    cost: [ {itemId: steel-plate, qty: 100}, {itemId: advanced-circuit, qty: 50}, {itemId: processor-unit, qty: 30} ]
-    function: +20% do wszystkich bonusów idle
-    operation_cost: 200 kW
-    tech_requirement: idle-artificial-intelligence
+- id: basic-nuclear-reactor
+  name: Reaktor jądrowy (podstawowy)
+  type: building
+  craft_time: 120
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 100
+  - id: advanced-circuit
+    amount: 50
+  - id: pipe
+    amount: 20
+  - id: heat-exchanger
+    amount: 10
+  operation_cost:
+  - type: fuel
+    ammount: 500
 
-  - id: ai-server
-    name: Serwer AI
-    tier: 6
-    type: ai
-    cost: [ {itemId: steel-plate, qty: 200}, {itemId: advanced-circuit, qty: 100}, {itemId: processor-unit, qty: 50} ]
-    function: Automatyzuje badania (+25% szybkości)
-    operation_cost: 350 kW
-    tech_requirement: ai-server
+- id: autonomous-cooling-modules
+  name: Autonomiczne moduły chłodzenia
+  type: building
+  craft_time: 60
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 30
+  - id: advanced-circuit
+    amount: 20
+  - id: pipe
+    amount: 15
+  operation_cost:
+  - type: fuel
+    ammount: 50
 
-  - id: rocket-silo
-    name: Silos rakietowy
-    tier: 7
-    type: rakiety
-    cost: [ {itemId: steel-plate, qty: 500}, {itemId: concrete, qty: 100}, {itemId: electric-engine, qty: 100}, {itemId: advanced-circuit, qty: 100} ]
-    function: Wystrzeliwuje rakiety
-    operation_cost: 5 MW podczas startu
-    tech_requirement: rocket-technology
-  - id: orbital-module-factory
-    name: Fabryka modułów orbitalnych
-    tier: 7
-    type: kosmiczne
-    cost: [ {itemId: steel-plate, qty: 100}, {itemId: advanced-circuit, qty: 50}, {itemId: electric-engine, qty: 30} ]
-    function: Produkuje moduły orbitalne (1/min)
-    operation_cost: 400 kW
-    tech_requirement: orbital-modules
+- id: advanced-nuclear-reactor
+  name: Reaktor jądrowy (zaawansowany)
+  type: building
+  craft_time: 180
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 200
+  - id: advanced-circuit
+    amount: 100
+  - id: heat-exchanger
+    amount: 50
+  operation_cost:
+  - type: fuel
+    ammount: 1000
 
-  - id: satellite-communication-station
-    name: Stacja komunikacji satelitarnej
-    tier: 7
-    type: kosmiczne
-    cost: [ {itemId: steel-plate, qty: 200}, {itemId: advanced-circuit, qty: 150}, {itemId: electric-engine, qty: 100}, {itemId: processor-unit, qty: 50} ]
-    function: +15% badań pasywnie
-    operation_cost: 300 kW
-    tech_requirement: satellite-communication-station
+- id: nuclear-power-plant
+  name: Elektrownia jądrowa
+  type: building
+  craft_time: 300
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 300
+  - id: advanced-circuit
+    amount: 150
+  - id: heat-exchanger
+    amount: 100
+  operation_cost:
+  - type: fuel
+    ammount: 2000
 
-  - id: life-support-system
-    name: System podtrzymywania życia
-    tier: 8
-    type: kosmiczne
-    cost: [ {itemId: composite-materials, qty: 300}, {itemId: advanced-circuit, qty: 200}, {itemId: processor-unit, qty: 100} ]
-    function: +20% do wszystkich efektywności
-    operation_cost: 500 kW
-    tech_requirement: life-support-system
-  - id: automatic-docking
-    name: Automatyczne dokowanie
-    tier: 8
-    type: kosmiczne
-    cost: [ {itemId: composite-materials, qty: 400}, {itemId: advanced-circuit, qty: 300}, {itemId: electric-engine, qty: 200}, {itemId: processor-unit, qty: 100} ]
-    function: +25% do wszystkich procesów kosmicznych
-    operation_cost: 600 kW
-    tech_requirement: automatic-docking
+- id: autonomous-module
+  name: Moduł autonomiczny
+  type: building
+  craft_time: 90
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 50
+  - id: advanced-circuit
+    amount: 30
+  - id: electric-engine
+    amount: 20
+  operation_cost:
+  - type: fuel
+    ammount: 150
 
-  - id: orbital-research-module
-    name: Moduł badawczy orbitalny
-    tier: 8
-    type: kosmiczne
-    cost: [ {itemId: composite-materials, qty: 300}, {itemId: advanced-circuit, qty: 250}, {itemId: processor-unit, qty: 150} ]
-    function: Generuje purple packs (+5/s)
-    operation_cost: 800 kW
-    tech_requirement: orbital-research-module
+- id: solar-panel
+  name: Panel słoneczny
+  type: building
+  craft_time: 30
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 15
+  - id: electronic-circuit
+    amount: 10
+  - id: copper-plate
+    amount: 5
+  operation_cost: []
 
-  - id: space-station
-    name: Stacja kosmiczna
-    tier: 8
-    type: kosmiczne
-    cost: [ {itemId: composite-materials, qty: 1000}, {itemId: advanced-circuit, qty: 500}, {itemId: processor-unit, qty: 300}, {itemId: superconductor, qty: 200} ]
-    function: +100 jedn./s energii, +50 purple packs/s
-    operation_cost: 2 MW
-    tech_requirement: space-station
+- id: solar-panel-farm
+  name: Farma paneli słonecznych
+  type: building
+  craft_time: 90
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 50
+  - id: electronic-circuit
+    amount: 30
+  - id: advanced-circuit
+    amount: 20
+  operation_cost:
+  - type: fuel
+    ammount: 100
+
+- id: geothermal-probe
+  name: Sonda geotermiczna
+  type: building
+  craft_time: 45
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 30
+  - id: pipe
+    amount: 15
+  - id: electronic-circuit
+    amount: 10
+  operation_cost:
+  - type: fuel
+    ammount: 40
+
+- id: geothermal-installation
+  name: Instalacja geotermalna
+  type: building
+  craft_time: 120
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 80
+  - id: pipe
+    amount: 40
+  - id: advanced-circuit
+    amount: 30
+  operation_cost: []
+
+- id: ai-core
+  name: AI Core
+  type: building
+  craft_time: 150
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 100
+  - id: advanced-circuit
+    amount: 50
+  - id: processor-unit
+    amount: 30
+  operation_cost:
+  - type: fuel
+    ammount: 200
+
+- id: ai-server
+  name: Serwer AI
+  type: building
+  craft_time: 300
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 200
+  - id: advanced-circuit
+    amount: 100
+  - id: processor-unit
+    amount: 50
+  operation_cost:
+  - type: fuel
+    ammount: 350
+
+- id: rocket-silo
+  name: Silos rakietowy
+  type: building
+  craft_time: 600
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 500
+  - id: concrete
+    amount: 100
+  - id: electric-engine
+    amount: 100
+  - id: advanced-circuit
+    amount: 100
+  operation_cost:
+  - type: fuel
+    ammount: 5000
+
+- id: orbital-module-factory
+  name: Fabryka modułów orbitalnych
+  type: building
+  craft_time: 180
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 100
+  - id: advanced-circuit
+    amount: 50
+  - id: electric-engine
+    amount: 30
+  operation_cost:
+  - type: fuel
+    ammount: 400
+
+- id: satellite-communication-station
+  name: Stacja komunikacji satelitarnej
+  type: building
+  craft_time: 360
+  craft_amount: 1
+  craft_cost:
+  - id: steel-plate
+    amount: 200
+  - id: advanced-circuit
+    amount: 150
+  - id: electric-engine
+    amount: 100
+  - id: processor-unit
+    amount: 50
+  operation_cost:
+  - type: fuel
+    ammount: 300
+
+- id: life-support-system
+  name: System podtrzymywania życia
+  type: building
+  craft_time: 480
+  craft_amount: 1
+  craft_cost:
+  - id: composite-materials
+    amount: 300
+  - id: advanced-circuit
+    amount: 200
+  - id: processor-unit
+    amount: 100
+  operation_cost:
+  - type: fuel
+    ammount: 500
+
+- id: automatic-docking
+  name: Automatyczne dokowanie
+  type: building
+  craft_time: 600
+  craft_amount: 1
+  craft_cost:
+  - id: composite-materials
+    amount: 400
+  - id: advanced-circuit
+    amount: 300
+  - id: electric-engine
+    amount: 200
+  - id: processor-unit
+    amount: 100
+  operation_cost:
+  - type: fuel
+    ammount: 600
+
+- id: orbital-research-module
+  name: Moduł badawczy orbitalny
+  type: building
+  craft_time: 540
+  craft_amount: 1
+  craft_cost:
+  - id: composite-materials
+    amount: 300
+  - id: advanced-circuit
+    amount: 250
+  - id: processor-unit
+    amount: 150
+  operation_cost:
+  - type: fuel
+    ammount: 800
+
+- id: space-station
+  name: Stacja kosmiczna
+  type: building
+  craft_time: 1200
+  craft_amount: 1
+  craft_cost:
+  - id: composite-materials
+    amount: 1000
+  - id: advanced-circuit
+    amount: 500
+  - id: processor-unit
+    amount: 300
+  - id: superconductor
+    amount: 200
+  operation_cost:
+  - type: fuel
+    ammount: 2000

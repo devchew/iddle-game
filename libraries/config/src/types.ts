@@ -37,7 +37,7 @@ export type Upgrade = {
 		id: string; // ID of the entity or research this upgrade affects
 		element: string; // The element to modify (e.g., 'craft_time', 'craft_amount')
 		amount: number; // The amount to modify the element by
-	}
+	}[]
 }
 
 export type Upgrades = {

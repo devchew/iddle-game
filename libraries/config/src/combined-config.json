@@ -1,1514 +1,1723 @@
 {
-  "entities": {
-    "entities": [
-      {
-        "id": "basic-mine",
-        "name": "Podstawowa kopalnia",
-        "tier": 1,
-        "type": "wydobycie",
-        "cost": [
-          {
-            "itemId": "iron-plate",
-            "qty": 5
-          }
-        ],
-        "function": "Wydobywa rudę (0,2/s)",
-        "operation_cost": "10 kW",
-        "tech_requirement": "initial"
-      },
-      {
-        "id": "automatic-mine",
-        "name": "Kopalnia automatyczna",
-        "tier": 1,
-        "type": "wydobycie",
-        "cost": [
-          {
-            "itemId": "iron-plate",
-            "qty": 10
-          },
-          {
-            "itemId": "gear-wheel",
-            "qty": 5
-          }
-        ],
-        "function": "Wydobywa rudę (1/s)",
-        "operation_cost": "50 kW",
-        "tech_requirement": "efficient-mining"
-      },
-      {
-        "id": "ore-separator",
-        "name": "Separator rud",
-        "tier": 1,
-        "type": "wydobycie",
-        "cost": [
-          {
-            "itemId": "iron-plate",
-            "qty": 15
-          },
-          {
-            "itemId": "gear-wheel",
-            "qty": 10
-          },
-          {
-            "itemId": "electronic-circuit",
-            "qty": 5
-          }
-        ],
-        "function": "Przetwarza rudę w koncentrat (+20%)",
-        "operation_cost": "30 kW",
-        "tech_requirement": "ore-enrichment"
-      },
-      {
-        "id": "stone-furnace",
-        "name": "Piec kamienny",
-        "tier": 1,
-        "type": "przetwarzanie",
-        "cost": [
-          {
-            "itemId": "stone",
-            "qty": 5
-          }
-        ],
-        "function": "1 ruda → 1 płytka",
-        "operation_cost": "Paliwo stałe (węgiel)",
-        "tech_requirement": "initial"
-      },
-      {
-        "id": "conveyor-tier-1",
-        "name": "Przenośnik Tier 1",
-        "tier": 1,
-        "type": "transport",
-        "cost": [
-          {
-            "itemId": "iron-plate",
-            "qty": 1
-          },
-          {
-            "itemId": "gear-wheel",
-            "qty": 1
-          }
-        ],
-        "function": "Transport przedmiotów (5/s)",
-        "operation_cost": "Brak",
-        "tech_requirement": "initial"
-      },
-      {
-        "id": "basic-storage",
-        "name": "Magazyn podstawowy",
-        "tier": 1,
-        "type": "magazyn",
-        "cost": [
-          {
-            "itemId": "iron-plate",
-            "qty": 5
-          }
-        ],
-        "function": "Przechowuje 100 jedn. surowców",
-        "operation_cost": "Brak",
-        "tech_requirement": "initial"
-      },
-      {
-        "id": "blast-furnace",
-        "name": "Hutnia wielkopiecowa",
-        "tier": 2,
-        "type": "przetwarzanie",
-        "cost": [
-          {
-            "itemId": "iron-plate",
-            "qty": 30
-          },
-          {
-            "itemId": "stone",
-            "qty": 10
-          },
-          {
-            "itemId": "electronic-circuit",
-            "qty": 5
-          }
-        ],
-        "function": "Przetwarza rudę na sztabki szybciej (+2/s)",
-        "operation_cost": "90 kW",
-        "tech_requirement": "metallurgical-patterns"
-      },
-      {
-        "id": "conveyor-tier-2",
-        "name": "Przenośnik Tier 2",
-        "tier": 2,
-        "type": "transport",
-        "cost": [
-          {
-            "itemId": "iron-plate",
-            "qty": 1
-          },
-          {
-            "itemId": "electronic-circuit",
-            "qty": 1
-          }
-        ],
-        "function": "Transport przedmiotów (10/s)",
-        "operation_cost": "Brak",
-        "tech_requirement": "metallurgical-patterns"
-      },
-      {
-        "id": "advanced-storage",
-        "name": "Magazyn zaawansowany",
-        "tier": 2,
-        "type": "magazyn",
-        "cost": [
-          {
-            "itemId": "iron-plate",
-            "qty": 10
-          },
-          {
-            "itemId": "electronic-circuit",
-            "qty": 2
-          }
-        ],
-        "function": "Przechowuje 500 jedn. surowców",
-        "operation_cost": "Brak",
-        "tech_requirement": "metallurgical-patterns"
-      },
-      {
-        "id": "thermosolar-generator",
-        "name": "Generator termosolar",
-        "tier": 2,
-        "type": "energia",
-        "cost": [
-          {
-            "itemId": "iron-plate",
-            "qty": 10
-          },
-          {
-            "itemId": "copper-plate",
-            "qty": 5
-          },
-          {
-            "itemId": "electronic-circuit",
-            "qty": 2
-          }
-        ],
-        "function": "Pasywna produkcja energii (+5 jedn./s)",
-        "operation_cost": "Brak",
-        "tech_requirement": "energy-modules"
-      },
-      {
-        "id": "energy-accumulator",
-        "name": "Akumulator energetyczny",
-        "tier": 2,
-        "type": "energia",
-        "cost": [
-          {
-            "itemId": "iron-plate",
-            "qty": 5
-          },
-          {
-            "itemId": "copper-plate",
-            "qty": 2
-          }
-        ],
-        "function": "Magazynuje energię (500 kW)",
-        "operation_cost": "Brak",
-        "tech_requirement": "energy-modules"
-      },
-      {
-        "id": "assembler-tier-1",
-        "name": "Assembler Tier 1",
-        "tier": 3,
-        "type": "produkcja",
-        "cost": [
-          {
-            "itemId": "iron-plate",
-            "qty": 15
-          },
-          {
-            "itemId": "gear-wheel",
-            "qty": 5
-          },
-          {
-            "itemId": "electronic-circuit",
-            "qty": 3
-          }
-        ],
-        "function": "Automatycznie wytwarza komponenty (1/s)",
-        "operation_cost": "75 kW",
-        "tech_requirement": "speed-modules"
-      },
-      {
-        "id": "biomass-reactor",
-        "name": "Reaktor biomasowy",
-        "tier": 3,
-        "type": "energia",
-        "cost": [
-          {
-            "itemId": "iron-plate",
-            "qty": 20
-          },
-          {
-            "itemId": "copper-plate",
-            "qty": 10
-          },
-          {
-            "itemId": "electronic-circuit",
-            "qty": 5
-          }
-        ],
-        "function": "Produkcja energii z biomasy (+8 jedn./s)",
-        "operation_cost": "Biomasa",
-        "tech_requirement": "productivity-modules"
-      },
-      {
-        "id": "basic-laboratory",
-        "name": "Laboratorium podstawowe",
-        "tier": 3,
-        "type": "badania",
-        "cost": [
-          {
-            "itemId": "iron-plate",
-            "qty": 10
-          },
-          {
-            "itemId": "electronic-circuit",
-            "qty": 10
-          },
-          {
-            "itemId": "copper-plate",
-            "qty": 5
-          }
-        ],
-        "function": "Konsumpcja pakietów badań (1/s)",
-        "operation_cost": "60 kW",
-        "tech_requirement": "initial"
-      },
-      {
-        "id": "super-laboratory",
-        "name": "Laboratorium Super",
-        "tier": 3,
-        "type": "badania",
-        "cost": [
-          {
-            "itemId": "iron-plate",
-            "qty": 20
-          },
-          {
-            "itemId": "electronic-circuit",
-            "qty": 15
-          },
-          {
-            "itemId": "steel-plate",
-            "qty": 10
-          }
-        ],
-        "function": "Przyspieszone badania (+15%)",
-        "operation_cost": "120 kW",
-        "tech_requirement": "accelerated-research"
-      },
-      {
-        "id": "chemical-plant",
-        "name": "Zakład chemiczny",
-        "tier": 4,
-        "type": "chemia",
-        "cost": [
-          {
-            "itemId": "iron-plate",
-            "qty": 30
-          },
-          {
-            "itemId": "gear-wheel",
-            "qty": 10
-          },
-          {
-            "itemId": "pipe",
-            "qty": 5
-          },
-          {
-            "itemId": "electronic-circuit",
-            "qty": 5
-          }
-        ],
-        "function": "Produkcja chemikaliów (+3 jedn./s)",
-        "operation_cost": "210 kW",
-        "tech_requirement": "chemical-catalysts"
-      },
-      {
-        "id": "metal-roller",
-        "name": "Walcer metali",
-        "tier": 4,
-        "type": "przetwarzanie",
-        "cost": [
-          {
-            "itemId": "iron-plate",
-            "qty": 50
-          },
-          {
-            "itemId": "steel-plate",
-            "qty": 20
-          },
-          {
-            "itemId": "gear-wheel",
-            "qty": 10
-          },
-          {
-            "itemId": "advanced-circuit",
-            "qty": 5
-          }
-        ],
-        "function": "Automatyczna obróbka metalu (+5 sztabek/s)",
-        "operation_cost": "180 kW",
-        "tech_requirement": "enriched-alloy"
-      },
-      {
-        "id": "storage-tier-3",
-        "name": "Magazyn Tier 3",
-        "tier": 4,
-        "type": "magazyn",
-        "cost": [
-          {
-            "itemId": "steel-plate",
-            "qty": 20
-          },
-          {
-            "itemId": "advanced-circuit",
-            "qty": 5
-          }
-        ],
-        "function": "Przechowuje 2000 jedn. surowców",
-        "operation_cost": "Brak",
-        "tech_requirement": "enriched-alloy"
-      },
-      {
-        "id": "basic-nuclear-reactor",
-        "name": "Reaktor jądrowy (podstawowy)",
-        "tier": 5,
-        "type": "energia",
-        "cost": [
-          {
-            "itemId": "steel-plate",
-            "qty": 100
-          },
-          {
-            "itemId": "advanced-circuit",
-            "qty": 50
-          },
-          {
-            "itemId": "pipe",
-            "qty": 20
-          },
-          {
-            "itemId": "heat-exchanger",
-            "qty": 10
-          }
-        ],
-        "function": "Produkcja energii (+50 jedn./s)",
-        "operation_cost": "Paliwo jądrowe",
-        "tech_requirement": "basic-nuclear-reactor"
-      },
-      {
-        "id": "autonomous-cooling-modules",
-        "name": "Autonomiczne moduły chłodzenia",
-        "tier": 5,
-        "type": "energia",
-        "cost": [
-          {
-            "itemId": "steel-plate",
-            "qty": 30
-          },
-          {
-            "itemId": "advanced-circuit",
-            "qty": 20
-          },
-          {
-            "itemId": "pipe",
-            "qty": 15
-          }
-        ],
-        "function": "+20% czasu pracy reaktora",
-        "operation_cost": "50 kW",
-        "tech_requirement": "autonomous-cooling-modules"
-      },
-      {
-        "id": "advanced-nuclear-reactor",
-        "name": "Reaktor jądrowy (zaawansowany)",
-        "tier": 5,
-        "type": "energia",
-        "cost": [
-          {
-            "itemId": "steel-plate",
-            "qty": 200
-          },
-          {
-            "itemId": "advanced-circuit",
-            "qty": 100
-          },
-          {
-            "itemId": "heat-exchanger",
-            "qty": 50
-          }
-        ],
-        "function": "Produkcja energii (+100 jedn./s)",
-        "operation_cost": "Paliwo jądrowe",
-        "tech_requirement": "advanced-nuclear-reactor"
-      },
-      {
-        "id": "nuclear-power-plant",
-        "name": "Elektrownia jądrowa",
-        "tier": 5,
-        "type": "energia",
-        "cost": [
-          {
-            "itemId": "steel-plate",
-            "qty": 300
-          },
-          {
-            "itemId": "advanced-circuit",
-            "qty": 150
-          },
-          {
-            "itemId": "heat-exchanger",
-            "qty": 100
-          }
-        ],
-        "function": "Integruje reaktory (+200 jedn./s)",
-        "operation_cost": "Paliwo jądrowe",
-        "tech_requirement": "nuclear-power-plant"
-      },
-      {
-        "id": "autonomous-module",
-        "name": "Moduł autonomiczny",
-        "tier": 5,
-        "type": "automatyzacja",
-        "cost": [
-          {
-            "itemId": "steel-plate",
-            "qty": 50
-          },
-          {
-            "itemId": "advanced-circuit",
-            "qty": 30
-          },
-          {
-            "itemId": "electric-engine",
-            "qty": 20
-          }
-        ],
-        "function": "Automatyzuje dowolny proces idle",
-        "operation_cost": "150 kW",
-        "tech_requirement": "autonomous-modules"
-      },
-      {
-        "id": "solar-panel",
-        "name": "Panel słoneczny",
-        "tier": 6,
-        "type": "energia",
-        "cost": [
-          {
-            "itemId": "steel-plate",
-            "qty": 15
-          },
-          {
-            "itemId": "electronic-circuit",
-            "qty": 10
-          },
-          {
-            "itemId": "copper-plate",
-            "qty": 5
-          }
-        ],
-        "function": "Produkcja energii w dzień (+10 jedn./s)",
-        "operation_cost": "Brak",
-        "tech_requirement": "solar-cells"
-      },
-      {
-        "id": "solar-panel-farm",
-        "name": "Farma paneli słonecznych",
-        "tier": 6,
-        "type": "produkcja",
-        "cost": [
-          {
-            "itemId": "steel-plate",
-            "qty": 50
-          },
-          {
-            "itemId": "electronic-circuit",
-            "qty": 30
-          },
-          {
-            "itemId": "advanced-circuit",
-            "qty": 20
-          }
-        ],
-        "function": "Produkcja paneli słonecznych (+2/s)",
-        "operation_cost": "100 kW",
-        "tech_requirement": "solar-panel-farm"
-      },
-      {
-        "id": "geothermal-probe",
-        "name": "Sonda geotermiczna",
-        "tier": 6,
-        "type": "energia",
-        "cost": [
-          {
-            "itemId": "steel-plate",
-            "qty": 30
-          },
-          {
-            "itemId": "pipe",
-            "qty": 15
-          },
-          {
-            "itemId": "electronic-circuit",
-            "qty": 10
-          }
-        ],
-        "function": "Zwiększa efektywność wydobycia ciepła o 25%",
-        "operation_cost": "40 kW",
-        "tech_requirement": "geothermal-probes"
-      },
-      {
-        "id": "geothermal-installation",
-        "name": "Instalacja geotermalna",
-        "tier": 6,
-        "type": "energia",
-        "cost": [
-          {
-            "itemId": "steel-plate",
-            "qty": 80
-          },
-          {
-            "itemId": "pipe",
-            "qty": 40
-          },
-          {
-            "itemId": "advanced-circuit",
-            "qty": 30
-          }
-        ],
-        "function": "Pasywna energia geotermalna (+40 jedn./s)",
-        "operation_cost": "Brak",
-        "tech_requirement": "geothermal-probes"
-      },
-      {
-        "id": "ai-core",
-        "name": "AI Core",
-        "tier": 6,
-        "type": "ai",
-        "cost": [
-          {
-            "itemId": "steel-plate",
-            "qty": 100
-          },
-          {
-            "itemId": "advanced-circuit",
-            "qty": 50
-          },
-          {
-            "itemId": "processor-unit",
-            "qty": 30
-          }
-        ],
-        "function": "+20% do wszystkich bonusów idle",
-        "operation_cost": "200 kW",
-        "tech_requirement": "idle-artificial-intelligence"
-      },
-      {
-        "id": "ai-server",
-        "name": "Serwer AI",
-        "tier": 6,
-        "type": "ai",
-        "cost": [
-          {
-            "itemId": "steel-plate",
-            "qty": 200
-          },
-          {
-            "itemId": "advanced-circuit",
-            "qty": 100
-          },
-          {
-            "itemId": "processor-unit",
-            "qty": 50
-          }
-        ],
-        "function": "Automatyzuje badania (+25% szybkości)",
-        "operation_cost": "350 kW",
-        "tech_requirement": "ai-server"
-      },
-      {
-        "id": "rocket-silo",
-        "name": "Silos rakietowy",
-        "tier": 7,
-        "type": "rakiety",
-        "cost": [
-          {
-            "itemId": "steel-plate",
-            "qty": 500
-          },
-          {
-            "itemId": "concrete",
-            "qty": 100
-          },
-          {
-            "itemId": "electric-engine",
-            "qty": 100
-          },
-          {
-            "itemId": "advanced-circuit",
-            "qty": 100
-          }
-        ],
-        "function": "Wystrzeliwuje rakiety",
-        "operation_cost": "5 MW podczas startu",
-        "tech_requirement": "rocket-technology"
-      },
-      {
-        "id": "orbital-module-factory",
-        "name": "Fabryka modułów orbitalnych",
-        "tier": 7,
-        "type": "kosmiczne",
-        "cost": [
-          {
-            "itemId": "steel-plate",
-            "qty": 100
-          },
-          {
-            "itemId": "advanced-circuit",
-            "qty": 50
-          },
-          {
-            "itemId": "electric-engine",
-            "qty": 30
-          }
-        ],
-        "function": "Produkuje moduły orbitalne (1/min)",
-        "operation_cost": "400 kW",
-        "tech_requirement": "orbital-modules"
-      },
-      {
-        "id": "satellite-communication-station",
-        "name": "Stacja komunikacji satelitarnej",
-        "tier": 7,
-        "type": "kosmiczne",
-        "cost": [
-          {
-            "itemId": "steel-plate",
-            "qty": 200
-          },
-          {
-            "itemId": "advanced-circuit",
-            "qty": 150
-          },
-          {
-            "itemId": "electric-engine",
-            "qty": 100
-          },
-          {
-            "itemId": "processor-unit",
-            "qty": 50
-          }
-        ],
-        "function": "+15% badań pasywnie",
-        "operation_cost": "300 kW",
-        "tech_requirement": "satellite-communication-station"
-      },
-      {
-        "id": "life-support-system",
-        "name": "System podtrzymywania życia",
-        "tier": 8,
-        "type": "kosmiczne",
-        "cost": [
-          {
-            "itemId": "composite-materials",
-            "qty": 300
-          },
-          {
-            "itemId": "advanced-circuit",
-            "qty": 200
-          },
-          {
-            "itemId": "processor-unit",
-            "qty": 100
-          }
-        ],
-        "function": "+20% do wszystkich efektywności",
-        "operation_cost": "500 kW",
-        "tech_requirement": "life-support-system"
-      },
-      {
-        "id": "automatic-docking",
-        "name": "Automatyczne dokowanie",
-        "tier": 8,
-        "type": "kosmiczne",
-        "cost": [
-          {
-            "itemId": "composite-materials",
-            "qty": 400
-          },
-          {
-            "itemId": "advanced-circuit",
-            "qty": 300
-          },
-          {
-            "itemId": "electric-engine",
-            "qty": 200
-          },
-          {
-            "itemId": "processor-unit",
-            "qty": 100
-          }
-        ],
-        "function": "+25% do wszystkich procesów kosmicznych",
-        "operation_cost": "600 kW",
-        "tech_requirement": "automatic-docking"
-      },
-      {
-        "id": "orbital-research-module",
-        "name": "Moduł badawczy orbitalny",
-        "tier": 8,
-        "type": "kosmiczne",
-        "cost": [
-          {
-            "itemId": "composite-materials",
-            "qty": 300
-          },
-          {
-            "itemId": "advanced-circuit",
-            "qty": 250
-          },
-          {
-            "itemId": "processor-unit",
-            "qty": 150
-          }
-        ],
-        "function": "Generuje purple packs (+5/s)",
-        "operation_cost": "800 kW",
-        "tech_requirement": "orbital-research-module"
-      },
-      {
-        "id": "space-station",
-        "name": "Stacja kosmiczna",
-        "tier": 8,
-        "type": "kosmiczne",
-        "cost": [
-          {
-            "itemId": "composite-materials",
-            "qty": 1000
-          },
-          {
-            "itemId": "advanced-circuit",
-            "qty": 500
-          },
-          {
-            "itemId": "processor-unit",
-            "qty": 300
-          },
-          {
-            "itemId": "superconductor",
-            "qty": 200
-          }
-        ],
-        "function": "+100 jedn./s energii, +50 purple packs/s",
-        "operation_cost": "2 MW",
-        "tech_requirement": "space-station"
+  "entities": [
+    {
+      "id": "basic-mine",
+      "name": "Podstawowa kopalnia",
+      "type": "building",
+      "craft_time": 5,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 5
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 10
+        }
+      ]
+    },
+    {
+      "id": "automatic-mine",
+      "name": "Kopalnia automatyczna",
+      "type": "building",
+      "craft_time": 10,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 10
+        },
+        {
+          "id": "gear-wheel",
+          "amount": 5
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 50
+        }
+      ]
+    },
+    {
+      "id": "ore-separator",
+      "name": "Separator rud",
+      "type": "building",
+      "craft_time": 15,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 15
+        },
+        {
+          "id": "gear-wheel",
+          "amount": 10
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 5
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 30
+        }
+      ]
+    },
+    {
+      "id": "stone-furnace",
+      "name": "Piec kamienny",
+      "type": "building",
+      "craft_time": 5,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "stone",
+          "amount": 5
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 15
+        }
+      ]
+    },
+    {
+      "id": "conveyor-tier-1",
+      "name": "Przenośnik Tier 1",
+      "type": "building",
+      "craft_time": 1,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 1
+        },
+        {
+          "id": "gear-wheel",
+          "amount": 1
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "basic-storage",
+      "name": "Magazyn podstawowy",
+      "type": "building",
+      "craft_time": 5,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 5
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "blast-furnace",
+      "name": "Hutnia wielkopiecowa",
+      "type": "building",
+      "craft_time": 30,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 30
+        },
+        {
+          "id": "stone",
+          "amount": 10
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 5
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 90
+        }
+      ]
+    },
+    {
+      "id": "conveyor-tier-2",
+      "name": "Przenośnik Tier 2",
+      "type": "building",
+      "craft_time": 1,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 1
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 1
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "advanced-storage",
+      "name": "Magazyn zaawansowany",
+      "type": "building",
+      "craft_time": 10,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 10
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 2
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "thermosolar-generator",
+      "name": "Generator termosolar",
+      "type": "building",
+      "craft_time": 15,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 10
+        },
+        {
+          "id": "copper-plate",
+          "amount": 5
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 2
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "energy-accumulator",
+      "name": "Akumulator energetyczny",
+      "type": "building",
+      "craft_time": 5,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 5
+        },
+        {
+          "id": "copper-plate",
+          "amount": 2
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "assembler-tier-1",
+      "name": "Assembler Tier 1",
+      "type": "building",
+      "craft_time": 20,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 15
+        },
+        {
+          "id": "gear-wheel",
+          "amount": 5
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 3
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 75
+        }
+      ]
+    },
+    {
+      "id": "biomass-reactor",
+      "name": "Reaktor biomasowy",
+      "type": "building",
+      "craft_time": 30,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 20
+        },
+        {
+          "id": "copper-plate",
+          "amount": 10
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 5
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 20
+        }
+      ]
+    },
+    {
+      "id": "basic-laboratory",
+      "name": "Laboratorium podstawowe",
+      "type": "building",
+      "craft_time": 20,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 10
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 10
+        },
+        {
+          "id": "copper-plate",
+          "amount": 5
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 60
+        }
+      ]
+    },
+    {
+      "id": "super-laboratory",
+      "name": "Laboratorium Super",
+      "type": "building",
+      "craft_time": 40,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 20
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 15
+        },
+        {
+          "id": "steel-plate",
+          "amount": 10
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 120
+        }
+      ]
+    },
+    {
+      "id": "chemical-plant",
+      "name": "Zakład chemiczny",
+      "type": "building",
+      "craft_time": 45,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 30
+        },
+        {
+          "id": "gear-wheel",
+          "amount": 10
+        },
+        {
+          "id": "pipe",
+          "amount": 5
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 5
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 210
+        }
+      ]
+    },
+    {
+      "id": "metal-roller",
+      "name": "Walcer metali",
+      "type": "building",
+      "craft_time": 60,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "iron-plate",
+          "amount": 50
+        },
+        {
+          "id": "steel-plate",
+          "amount": 20
+        },
+        {
+          "id": "gear-wheel",
+          "amount": 10
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 5
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 180
+        }
+      ]
+    },
+    {
+      "id": "storage-tier-3",
+      "name": "Magazyn Tier 3",
+      "type": "building",
+      "craft_time": 30,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 20
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 5
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "basic-nuclear-reactor",
+      "name": "Reaktor jądrowy (podstawowy)",
+      "type": "building",
+      "craft_time": 120,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 100
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 50
+        },
+        {
+          "id": "pipe",
+          "amount": 20
+        },
+        {
+          "id": "heat-exchanger",
+          "amount": 10
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 500
+        }
+      ]
+    },
+    {
+      "id": "autonomous-cooling-modules",
+      "name": "Autonomiczne moduły chłodzenia",
+      "type": "building",
+      "craft_time": 60,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 30
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 20
+        },
+        {
+          "id": "pipe",
+          "amount": 15
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 50
+        }
+      ]
+    },
+    {
+      "id": "advanced-nuclear-reactor",
+      "name": "Reaktor jądrowy (zaawansowany)",
+      "type": "building",
+      "craft_time": 180,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 200
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 100
+        },
+        {
+          "id": "heat-exchanger",
+          "amount": 50
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 1000
+        }
+      ]
+    },
+    {
+      "id": "nuclear-power-plant",
+      "name": "Elektrownia jądrowa",
+      "type": "building",
+      "craft_time": 300,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 300
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 150
+        },
+        {
+          "id": "heat-exchanger",
+          "amount": 100
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 2000
+        }
+      ]
+    },
+    {
+      "id": "autonomous-module",
+      "name": "Moduł autonomiczny",
+      "type": "building",
+      "craft_time": 90,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 50
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 30
+        },
+        {
+          "id": "electric-engine",
+          "amount": 20
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 150
+        }
+      ]
+    },
+    {
+      "id": "solar-panel",
+      "name": "Panel słoneczny",
+      "type": "building",
+      "craft_time": 30,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 15
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 10
+        },
+        {
+          "id": "copper-plate",
+          "amount": 5
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "solar-panel-farm",
+      "name": "Farma paneli słonecznych",
+      "type": "building",
+      "craft_time": 90,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 50
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 30
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 20
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 100
+        }
+      ]
+    },
+    {
+      "id": "geothermal-probe",
+      "name": "Sonda geotermiczna",
+      "type": "building",
+      "craft_time": 45,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 30
+        },
+        {
+          "id": "pipe",
+          "amount": 15
+        },
+        {
+          "id": "electronic-circuit",
+          "amount": 10
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 40
+        }
+      ]
+    },
+    {
+      "id": "geothermal-installation",
+      "name": "Instalacja geotermalna",
+      "type": "building",
+      "craft_time": 120,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 80
+        },
+        {
+          "id": "pipe",
+          "amount": 40
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 30
+        }
+      ],
+      "operation_cost": []
+    },
+    {
+      "id": "ai-core",
+      "name": "AI Core",
+      "type": "building",
+      "craft_time": 150,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 100
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 50
+        },
+        {
+          "id": "processor-unit",
+          "amount": 30
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 200
+        }
+      ]
+    },
+    {
+      "id": "ai-server",
+      "name": "Serwer AI",
+      "type": "building",
+      "craft_time": 300,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 200
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 100
+        },
+        {
+          "id": "processor-unit",
+          "amount": 50
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 350
+        }
+      ]
+    },
+    {
+      "id": "rocket-silo",
+      "name": "Silos rakietowy",
+      "type": "building",
+      "craft_time": 600,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 500
+        },
+        {
+          "id": "concrete",
+          "amount": 100
+        },
+        {
+          "id": "electric-engine",
+          "amount": 100
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 100
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 5000
+        }
+      ]
+    },
+    {
+      "id": "orbital-module-factory",
+      "name": "Fabryka modułów orbitalnych",
+      "type": "building",
+      "craft_time": 180,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 100
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 50
+        },
+        {
+          "id": "electric-engine",
+          "amount": 30
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 400
+        }
+      ]
+    },
+    {
+      "id": "satellite-communication-station",
+      "name": "Stacja komunikacji satelitarnej",
+      "type": "building",
+      "craft_time": 360,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "steel-plate",
+          "amount": 200
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 150
+        },
+        {
+          "id": "electric-engine",
+          "amount": 100
+        },
+        {
+          "id": "processor-unit",
+          "amount": 50
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 300
+        }
+      ]
+    },
+    {
+      "id": "life-support-system",
+      "name": "System podtrzymywania życia",
+      "type": "building",
+      "craft_time": 480,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "composite-materials",
+          "amount": 300
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 200
+        },
+        {
+          "id": "processor-unit",
+          "amount": 100
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 500
+        }
+      ]
+    },
+    {
+      "id": "automatic-docking",
+      "name": "Automatyczne dokowanie",
+      "type": "building",
+      "craft_time": 600,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "composite-materials",
+          "amount": 400
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 300
+        },
+        {
+          "id": "electric-engine",
+          "amount": 200
+        },
+        {
+          "id": "processor-unit",
+          "amount": 100
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 600
+        }
+      ]
+    },
+    {
+      "id": "orbital-research-module",
+      "name": "Moduł badawczy orbitalny",
+      "type": "building",
+      "craft_time": 540,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "composite-materials",
+          "amount": 300
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 250
+        },
+        {
+          "id": "processor-unit",
+          "amount": 150
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 800
+        }
+      ]
+    },
+    {
+      "id": "space-station",
+      "name": "Stacja kosmiczna",
+      "type": "building",
+      "craft_time": 1200,
+      "craft_amount": 1,
+      "craft_cost": [
+        {
+          "id": "composite-materials",
+          "amount": 1000
+        },
+        {
+          "id": "advanced-circuit",
+          "amount": 500
+        },
+        {
+          "id": "processor-unit",
+          "amount": 300
+        },
+        {
+          "id": "superconductor",
+          "amount": 200
+        }
+      ],
+      "operation_cost": [
+        {
+          "type": "fuel",
+          "ammount": 2000
+        }
+      ]
+    }
+  ],
+  "tiers": [
+    {
+      "id": "efficient-mining",
+      "name": "Efektywne górnictwo",
+      "requirement": [
+        {
+          "id": "initial",
+          "ammount": 1
+        }
+      ],
+      "unlocks": [
+        {
+          "id": "automatic-mine"
+        }
+      ]
+    },
+    {
+      "id": "ore-enrichment",
+      "name": "Wzbogacanie rudy",
+      "requirement": [
+        {
+          "id": "efficient-mining",
+          "ammount": 1
+        }
+      ],
+      "unlocks": [
+        {
+          "id": "ore-separator"
+        }
+      ]
+    },
+    {
+      "id": "stone-furnace",
+      "name": "Piec kamienny",
+      "requirement": [
+        {
+          "id": "initial",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "conveyor-tier-1",
+      "name": "Przenośnik Tier 1",
+      "requirement": [
+        {
+          "id": "initial",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "basic-storage",
+      "name": "Magazyn podstawowy",
+      "requirement": [
+        {
+          "id": "initial",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "metallurgical-patterns",
+      "name": "Paternie metalurgiczne",
+      "requirement": [
+        {
+          "id": "ore-enrichment",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "metallurgical-patterns"
       }
-    ]
-  },
-  "research-tree": {
-    "tiers": [
-      {
-        "tier": 1,
-        "upgrades": [
-          {
-            "id": "efficient-mining",
-            "name": "Efektywne górnictwo",
-            "science_packs": {
-              "czerwony": 10
-            },
-            "effect": "+10% wydajności koparek"
-          },
-          {
-            "id": "ore-enrichment",
-            "name": "Wzbogacanie rudy",
-            "requirement": "efficient-mining",
-            "science_packs": {
-              "czerwony": 15
-            },
-            "effect": "+5% zysku z jednostki rudy"
-          }
-        ],
-        "unlocks": [
-          {
-            "id": "automatic-mine",
-            "name": "Kopalnia automatyczna",
-            "requirement": "efficient-mining",
-            "science_packs": {
-              "czerwony": 20
-            },
-            "function": "kopalnia pracująca bez nadzoru, +1 rudy/s"
-          },
-          {
-            "id": "ore-separator",
-            "name": "Separator rud",
-            "requirement": "ore-enrichment",
-            "science_packs": {
-              "czerwony": 25
-            },
-            "function": "przetwarza rudę w koncentrat (+20% surowca)"
-          },
-          {
-            "id": "stone-furnace",
-            "name": "Piec kamienny",
-            "requirement": "initial",
-            "science_packs": {},
-            "function": "1 ruda → 1 płytka"
-          },
-          {
-            "id": "conveyor-tier-1",
-            "name": "Przenośnik Tier 1",
-            "requirement": "initial",
-            "science_packs": {},
-            "function": "transport przedmiotów (5/s)"
-          },
-          {
-            "id": "basic-storage",
-            "name": "Magazyn podstawowy",
-            "requirement": "initial",
-            "science_packs": {},
-            "function": "przechowuje 100 jedn. surowców"
-          }
-        ]
-      },
-      {
-        "tier": 2,
-        "upgrades": [
-          {
-            "id": "metallurgical-patterns",
-            "name": "Paternie metalurgiczne",
-            "requirement": "ore-enrichment",
-            "science_packs": {
-              "czerwony": 20
-            },
-            "effect": "+15% przerobu rudy na sztabki"
-          },
-          {
-            "id": "energy-modules",
-            "name": "Moduły energetyczne",
-            "requirement": "efficient-mining",
-            "science_packs": {
-              "czerwony": 20
-            },
-            "effect": "+10% produkcji energii pasywnej"
-          }
-        ],
-        "unlocks": [
-          {
-            "id": "blast-furnace",
-            "name": "Hutnia wielkopiecowa",
-            "requirement": "metallurgical-patterns",
-            "science_packs": {
-              "czerwony": 30
-            },
-            "function": "przetwarza sztabki szybciej, +2 sztabki/s"
-          },
-          {
-            "id": "thermosolar-generator",
-            "name": "Generator termosolar",
-            "requirement": "energy-modules",
-            "science_packs": {
-              "czerwony": 30
-            },
-            "function": "pasywna produkcja energii z ciepła (+5 jedn./s)"
-          },
-          {
-            "id": "conveyor-tier-2",
-            "name": "Przenośnik Tier 2",
-            "requirement": "metallurgical-patterns",
-            "science_packs": {
-              "czerwony": 20
-            },
-            "function": "transport przedmiotów (10/s)"
-          },
-          {
-            "id": "advanced-storage",
-            "name": "Magazyn zaawansowany",
-            "requirement": "metallurgical-patterns",
-            "science_packs": {
-              "czerwony": 20
-            },
-            "function": "przechowuje 500 jedn. surowców"
-          },
-          {
-            "id": "energy-accumulator",
-            "name": "Akumulator energetyczny",
-            "requirement": "energy-modules",
-            "science_packs": {
-              "czerwony": 20
-            },
-            "function": "magazynuje energię (500 kW)"
-          }
-        ]
-      },
-      {
-        "tier": 3,
-        "upgrades": [
-          {
-            "id": "speed-modules",
-            "name": "Moduły prędkości",
-            "requirement": "metallurgical-patterns",
-            "science_packs": {
-              "czerwony": 30,
-              "zielony": 30
-            },
-            "effect": "+10% prędkości procesów"
-          },
-          {
-            "id": "productivity-modules",
-            "name": "Moduły wydajności",
-            "requirement": "speed-modules",
-            "science_packs": {
-              "czerwony": 40,
-              "zielony": 40
-            },
-            "effect": "-5% zużycia surowca"
-          },
-          {
-            "id": "accelerated-research",
-            "name": "Przyspieszone badania",
-            "requirement": "speed-modules",
-            "science_packs": {
-              "czerwony": 50,
-              "zielony": 50
-            },
-            "effect": "+20% szybkości badań"
-          }
-        ],
-        "unlocks": [
-          {
-            "id": "super-laboratory",
-            "name": "Laboratorium Super",
-            "requirement": "accelerated-research",
-            "science_packs": {
-              "czerwony": 70,
-              "zielony": 70
-            },
-            "function": "zwiększa pojemność badań i przyspiesza je o dodatkowe +15%"
-          },
-          {
-            "id": "biomass-reactor",
-            "name": "Reaktor biomasowy",
-            "requirement": "productivity-modules",
-            "science_packs": {
-              "czerwony": 60,
-              "zielony": 60
-            },
-            "function": "pasywna produkcja energii z biomasy (+8 jedn./s)"
-          },
-          {
-            "id": "assembler-tier-1",
-            "name": "Assembler Tier 1",
-            "requirement": "speed-modules",
-            "science_packs": {
-              "czerwony": 30,
-              "zielony": 30
-            },
-            "function": "automatyczna produkcja komponentów (1/s)"
-          }
-        ]
-      },
-      {
-        "tier": 4,
-        "upgrades": [
-          {
-            "id": "chemical-catalysts",
-            "name": "Katalizatory chemiczne",
-            "requirement": "productivity-modules",
-            "science_packs": {
-              "czerwony": 60,
-              "zielony": 60
-            },
-            "effect": "+15% wydajności procesów chemicznych"
-          },
-          {
-            "id": "enriched-alloy",
-            "name": "Stop wzbogacony",
-            "requirement": "chemical-catalysts",
-            "science_packs": {
-              "czerwony": 70,
-              "zielony": 70
-            },
-            "effect": "+10% wytrzymałości i efektywności maszyn"
-          }
-        ],
-        "unlocks": [
-          {
-            "id": "chemical-plant",
-            "name": "Zakład chemiczny",
-            "requirement": "chemical-catalysts",
-            "science_packs": {
-              "czerwony": 80,
-              "zielony": 80
-            },
-            "function": "produkuje katalizatory i chemikalia (+3 jednostki/s)"
-          },
-          {
-            "id": "metal-roller",
-            "name": "Walcer metali",
-            "requirement": "enriched-alloy",
-            "science_packs": {
-              "czerwony": 90,
-              "zielony": 90
-            },
-            "function": "automatyczna obróbka metalu, +5 sztabek/s"
-          },
-          {
-            "id": "storage-tier-3",
-            "name": "Magazyn Tier 3",
-            "requirement": "enriched-alloy",
-            "science_packs": {
-              "czerwony": 70,
-              "zielony": 70
-            },
-            "function": "przechowuje 2000 jedn. surowców"
-          }
-        ]
-      },
-      {
-        "tier": 5,
-        "upgrades": [
-          {
-            "id": "basic-nuclear-reactor",
-            "name": "Reaktor jądrowy (podstawowy)",
-            "requirement": "enriched-alloy",
-            "science_packs": {
-              "czerwony": 100,
-              "zielony": 100,
-              "szary": 50
-            },
-            "effect": "Umożliwia wydajną produkcję energii z reakcji atomowych"
-          },
-          {
-            "id": "autonomous-cooling-modules",
-            "name": "Autonomiczne moduły chłodzenia",
-            "requirement": "basic-nuclear-reactor",
-            "science_packs": {
-              "czerwony": 120,
-              "zielony": 100,
-              "szary": 60
-            },
-            "effect": "+20% czasu pracy reaktora jądrowego"
-          },
-          {
-            "id": "advanced-nuclear-reactor",
-            "name": "Reaktor jądrowy (zaawansowany)",
-            "requirement": "autonomous-cooling-modules",
-            "science_packs": {
-              "czerwony": 150,
-              "zielony": 150,
-              "szary": 100
-            },
-            "effect": "Podwojona wydajność produkcji energii"
-          },
-          {
-            "id": "nuclear-power-plant",
-            "name": "Elektrownia jądrowa",
-            "requirement": "advanced-nuclear-reactor",
-            "science_packs": {
-              "czerwony": 200,
-              "zielony": 200,
-              "szary": 150
-            },
-            "effect": "Zintegrowana produkcja energii na skalę przemysłową"
-          },
-          {
-            "id": "autonomous-modules",
-            "name": "Moduły autonomiczne",
-            "requirement": "advanced-nuclear-reactor",
-            "science_packs": {
-              "czerwony": 180,
-              "zielony": 180,
-              "szary": 120
-            },
-            "effect": "Automatyzacja procesów idle dla zwiększenia wydajności"
-          }
-        ],
-        "unlocks": [
-          {
-            "id": "basic-nuclear-reactor",
-            "name": "Reaktor jądrowy (podstawowy)",
-            "requirement": "basic-nuclear-reactor",
-            "science_packs": {
-              "czerwony": 100,
-              "zielony": 100,
-              "szary": 50
-            },
-            "function": "produkcja energii +50 jedn./s z paliwa jądrowego"
-          },
-          {
-            "id": "autonomous-cooling-modules",
-            "name": "Autonomiczne moduły chłodzenia",
-            "requirement": "autonomous-cooling-modules",
-            "science_packs": {
-              "czerwony": 120,
-              "zielony": 100,
-              "szary": 60
-            },
-            "function": "+20% czasu pracy reaktora, zmniejszony pobór energii"
-          },
-          {
-            "id": "advanced-nuclear-reactor",
-            "name": "Reaktor jądrowy (zaawansowany)",
-            "requirement": "advanced-nuclear-reactor",
-            "science_packs": {
-              "czerwony": 150,
-              "zielony": 150,
-              "szary": 100
-            },
-            "function": "produkcja energii +100 jedn./s z paliwa jądrowego"
-          },
-          {
-            "id": "nuclear-power-plant",
-            "name": "Elektrownia jądrowa",
-            "requirement": "nuclear-power-plant",
-            "science_packs": {
-              "czerwony": 200,
-              "zielony": 200,
-              "szary": 150
-            },
-            "function": "zintegrowany kompleks energetyczny, +200 jedn./s"
-          },
-          {
-            "id": "autonomous-module",
-            "name": "Moduł autonomiczny",
-            "requirement": "autonomous-modules",
-            "science_packs": {
-              "czerwony": 180,
-              "zielony": 180,
-              "szary": 120
-            },
-            "function": "automatyzacja dowolnego procesu idle"
-          }
-        ]
-      },
-      {
-        "tier": 6,
-        "upgrades": [
-          {
-            "id": "solar-cells",
-            "name": "Ogniwa słoneczne",
-            "requirement": "autonomous-modules",
-            "science_packs": {
-              "czerwony": 150,
-              "zielony": 150,
-              "szary": 80
-            },
-            "effect": "Odnawialne źródło energii bazujące na świetle"
-          },
-          {
-            "id": "solar-panel-farm",
-            "name": "Farma paneli słonecznych",
-            "requirement": "solar-cells",
-            "science_packs": {
-              "czerwony": 180,
-              "zielony": 180,
-              "szary": 100
-            },
-            "effect": "Zautomatyzowana produkcja paneli słonecznych"
-          },
-          {
-            "id": "geothermal-probes",
-            "name": "Geotermiczne sondy",
-            "requirement": "autonomous-modules",
-            "science_packs": {
-              "czerwony": 200,
-              "zielony": 200,
-              "szary": 120
-            },
-            "effect": "Wykorzystanie energii geotermalnej z głębi planety"
-          },
-          {
-            "id": "idle-artificial-intelligence",
-            "name": "Sztuczna inteligencja idle (AI Core)",
-            "requirement": "autonomous-modules",
-            "science_packs": {
-              "czerwony": 250,
-              "zielony": 250,
-              "szary": 150,
-              "niebieski": 50
-            },
-            "effect": "+20% do wszystkich bonusów idle"
-          },
-          {
-            "id": "ai-server",
-            "name": "Serwer AI",
-            "requirement": "idle-artificial-intelligence",
-            "science_packs": {
-              "czerwony": 300,
-              "zielony": 300,
-              "szary": 200,
-              "niebieski": 100
-            },
-            "effect": "Automatyzacja badań i zwiększenie ich efektywności"
-          }
-        ],
-        "unlocks": [
-          {
-            "id": "solar-panel",
-            "name": "Panel słoneczny",
-            "requirement": "solar-cells",
-            "science_packs": {
-              "czerwony": 150,
-              "zielony": 150,
-              "szary": 80
-            },
-            "function": "produkcja energii w dzień (+10 jedn./s)"
-          },
-          {
-            "id": "solar-panel-farm",
-            "name": "Farma paneli słonecznych",
-            "requirement": "solar-panel-farm",
-            "science_packs": {
-              "czerwony": 180,
-              "zielony": 180,
-              "szary": 100
-            },
-            "function": "produkcja paneli słonecznych (+2/s)"
-          },
-          {
-            "id": "geothermal-probe",
-            "name": "Sonda geotermiczna",
-            "requirement": "geothermal-probes",
-            "science_packs": {
-              "czerwony": 200,
-              "zielony": 200,
-              "szary": 120
-            },
-            "function": "zwiększa efektywność wydobycia ciepła o 25%"
-          },
-          {
-            "id": "geothermal-installation",
-            "name": "Instalacja geotermalna",
-            "requirement": "geothermal-probes",
-            "science_packs": {
-              "czerwony": 220,
-              "zielony": 220,
-              "szary": 150
-            },
-            "function": "pasywna energia geotermalna (+40 jedn./s)"
-          },
-          {
-            "id": "ai-core",
-            "name": "AI Core",
-            "requirement": "idle-artificial-intelligence",
-            "science_packs": {
-              "czerwony": 250,
-              "zielony": 250,
-              "szary": 150,
-              "niebieski": 50
-            },
-            "function": "+20% do wszystkich bonusów idle"
-          },
-          {
-            "id": "ai-server",
-            "name": "Serwer AI",
-            "requirement": "ai-server",
-            "science_packs": {
-              "czerwony": 300,
-              "zielony": 300,
-              "szary": 200,
-              "niebieski": 100
-            },
-            "function": "automatyzuje badania (+25% szybkości)"
-          }
-        ]
-      },
-      {
-        "tier": 7,
-        "upgrades": [
-          {
-            "id": "rocket-technology",
-            "name": "Technologia rakietowa",
-            "requirement": "ai-server",
-            "science_packs": {
-              "czerwony": 400,
-              "zielony": 400,
-              "szary": 300,
-              "niebieski": 200
-            },
-            "effect": "Umożliwia budowę i wystrzeliwanie rakiet w kosmos"
-          },
-          {
-            "id": "orbital-modules",
-            "name": "Moduły orbitalne",
-            "requirement": "rocket-technology",
-            "science_packs": {
-              "czerwony": 450,
-              "zielony": 450,
-              "szary": 350,
-              "niebieski": 250
-            },
-            "effect": "Produkcja komponentów i modułów dla stacji orbitalnych"
-          },
-          {
-            "id": "satellite-communication-station",
-            "name": "Stacja komunikacji satelitarnej",
-            "requirement": "orbital-modules",
-            "science_packs": {
-              "czerwony": 500,
-              "zielony": 500,
-              "szary": 400,
-              "niebieski": 300
-            },
-            "effect": "Komunikacja z pojazdami kosmicznymi i stacjami orbitalnymi"
-          }
-        ],
-        "unlocks": [
-          {
-            "id": "rocket-silo",
-            "name": "Silos rakietowy",
-            "requirement": "rocket-technology",
-            "science_packs": {
-              "czerwony": 400,
-              "zielony": 400,
-              "szary": 300,
-              "niebieski": 200
-            },
-            "function": "wystrzeliwuje rakiety w kosmos"
-          },
-          {
-            "id": "orbital-module-factory",
-            "name": "Fabryka modułów orbitalnych",
-            "requirement": "orbital-modules",
-            "science_packs": {
-              "czerwony": 450,
-              "zielony": 450,
-              "szary": 350,
-              "niebieski": 250
-            },
-            "function": "produkuje moduły orbitalne (1/min)"
-          },
-          {
-            "id": "satellite-communication-station",
-            "name": "Stacja komunikacji satelitarnej",
-            "requirement": "satellite-communication-station",
-            "science_packs": {
-              "czerwony": 500,
-              "zielony": 500,
-              "szary": 400,
-              "niebieski": 300
-            },
-            "function": "+15% badań pasywnie"
-          }
-        ]
-      },
-      {
-        "tier": 8,
-        "upgrades": [
-          {
-            "id": "life-support-system",
-            "name": "System podtrzymywania życia",
-            "requirement": "satellite-communication-station",
-            "science_packs": {
-              "czerwony": 600,
-              "zielony": 600,
-              "szary": 500,
-              "niebieski": 400,
-              "fioletowy": 100
-            },
-            "effect": "Systemy podtrzymujące życie dla załogowych stacji kosmicznych"
-          },
-          {
-            "id": "automatic-docking",
-            "name": "Automatyczne dokowanie",
-            "requirement": "life-support-system",
-            "science_packs": {
-              "czerwony": 700,
-              "zielony": 700,
-              "szary": 600,
-              "niebieski": 500,
-              "fioletowy": 200
-            },
-            "effect": "Dokowanie pojazdów kosmicznych bez interwencji człowieka"
-          },
-          {
-            "id": "orbital-research-module",
-            "name": "Moduł badawczy orbitalny",
-            "requirement": "automatic-docking",
-            "science_packs": {
-              "czerwony": 800,
-              "zielony": 800,
-              "szary": 700,
-              "niebieski": 600,
-              "fioletowy": 300
-            },
-            "effect": "Zaawansowane badania naukowe w warunkach mikrograwitacji"
-          },
-          {
-            "id": "space-station",
-            "name": "Stacja kosmiczna",
-            "requirement": "orbital-research-module",
-            "science_packs": {
-              "czerwony": 1000,
-              "zielony": 1000,
-              "szary": 800,
-              "niebieski": 700,
-              "fioletowy": 500
-            },
-            "effect": "Kompleksowa stacja kosmiczna dla badań i produkcji energii"
-          }
-        ],
-        "unlocks": [
-          {
-            "id": "life-support-system",
-            "name": "System podtrzymywania życia",
-            "requirement": "life-support-system",
-            "science_packs": {
-              "czerwony": 600,
-              "zielony": 600,
-              "szary": 500,
-              "niebieski": 400,
-              "fioletowy": 100
-            },
-            "function": "+20% do wszystkich efektywności"
-          },
-          {
-            "id": "automatic-docking",
-            "name": "Automatyczne dokowanie",
-            "requirement": "automatic-docking",
-            "science_packs": {
-              "czerwony": 700,
-              "zielony": 700,
-              "szary": 600,
-              "niebieski": 500,
-              "fioletowy": 200
-            },
-            "function": "+25% do wszystkich procesów kosmicznych"
-          },
-          {
-            "id": "orbital-research-module",
-            "name": "Moduł badawczy orbitalny",
-            "requirement": "orbital-research-module",
-            "science_packs": {
-              "czerwony": 800,
-              "zielony": 800,
-              "szary": 700,
-              "niebieski": 600,
-              "fioletowy": 300
-            },
-            "function": "generuje purple packs (+5/s)"
-          },
-          {
-            "id": "space-station",
-            "name": "Stacja kosmiczna",
-            "requirement": "space-station",
-            "science_packs": {
-              "czerwony": 1000,
-              "zielony": 1000,
-              "szary": 800,
-              "niebieski": 700,
-              "fioletowy": 500
-            },
-            "function": "+100 jedn./s energii, +50 purple packs/s"
-          }
-        ]
+    },
+    {
+      "id": "energy-modules",
+      "name": "Moduły energetyczne",
+      "requirement": [
+        {
+          "id": "efficient-mining",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "energy-modules"
       }
-    ]
-  }
+    },
+    {
+      "id": "blast-furnace",
+      "name": "Hutnia wielkopiecowa",
+      "requirement": [
+        {
+          "id": "metallurgical-patterns",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "thermosolar-generator",
+      "name": "Generator termosolar",
+      "requirement": [
+        {
+          "id": "energy-modules",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "conveyor-tier-2",
+      "name": "Przenośnik Tier 2",
+      "requirement": [
+        {
+          "id": "metallurgical-patterns",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "advanced-storage",
+      "name": "Magazyn zaawansowany",
+      "requirement": [
+        {
+          "id": "metallurgical-patterns",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "energy-accumulator",
+      "name": "Akumulator energetyczny",
+      "requirement": [
+        {
+          "id": "energy-modules",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "speed-modules",
+      "name": "Moduły prędkości",
+      "requirement": [
+        {
+          "id": "metallurgical-patterns",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "speed-modules"
+      }
+    },
+    {
+      "id": "productivity-modules",
+      "name": "Moduły wydajności",
+      "requirement": [
+        {
+          "id": "speed-modules",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "productivity-modules"
+      }
+    },
+    {
+      "id": "accelerated-research",
+      "name": "Przyspieszone badania",
+      "requirement": [
+        {
+          "id": "speed-modules",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "accelerated-research"
+      }
+    },
+    {
+      "id": "super-laboratory",
+      "name": "Laboratorium Super",
+      "requirement": [
+        {
+          "id": "accelerated-research",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "biomass-reactor",
+      "name": "Reaktor biomasowy",
+      "requirement": [
+        {
+          "id": "productivity-modules",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "assembler-tier-1",
+      "name": "Assembler Tier 1",
+      "requirement": [
+        {
+          "id": "speed-modules",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "chemical-catalysts",
+      "name": "Katalizatory chemiczne",
+      "requirement": [
+        {
+          "id": "productivity-modules",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "chemical-catalysts"
+      }
+    },
+    {
+      "id": "enriched-alloy",
+      "name": "Stop wzbogacony",
+      "requirement": [
+        {
+          "id": "chemical-catalysts",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "enriched-alloy"
+      }
+    },
+    {
+      "id": "chemical-plant",
+      "name": "Zakład chemiczny",
+      "requirement": [
+        {
+          "id": "chemical-catalysts",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "metal-roller",
+      "name": "Walcer metali",
+      "requirement": [
+        {
+          "id": "enriched-alloy",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "storage-tier-3",
+      "name": "Magazyn Tier 3",
+      "requirement": [
+        {
+          "id": "enriched-alloy",
+          "ammount": 1
+        }
+      ]
+    },
+    {
+      "id": "basic-nuclear-reactor",
+      "name": "Reaktor jądrowy (podstawowy)",
+      "requirement": [
+        {
+          "id": "enriched-alloy",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "basic-nuclear-reactor"
+      }
+    },
+    {
+      "id": "autonomous-cooling-modules",
+      "name": "Autonomiczne moduły chłodzenia",
+      "requirement": [
+        {
+          "id": "basic-nuclear-reactor",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "autonomous-cooling-modules"
+      }
+    },
+    {
+      "id": "advanced-nuclear-reactor",
+      "name": "Reaktor jądrowy (zaawansowany)",
+      "requirement": [
+        {
+          "id": "autonomous-cooling-modules",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "advanced-nuclear-reactor"
+      }
+    },
+    {
+      "id": "nuclear-power-plant",
+      "name": "Elektrownia jądrowa",
+      "requirement": [
+        {
+          "id": "advanced-nuclear-reactor",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "nuclear-power-plant"
+      }
+    },
+    {
+      "id": "autonomous-modules",
+      "name": "Moduły autonomiczne",
+      "requirement": [
+        {
+          "id": "advanced-nuclear-reactor",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "autonomous-modules"
+      }
+    },
+    {
+      "id": "solar-cells",
+      "name": "Ogniwa słoneczne",
+      "requirement": [
+        {
+          "id": "autonomous-modules",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "solar-cells"
+      }
+    },
+    {
+      "id": "solar-panel-farm",
+      "name": "Farma paneli słonecznych",
+      "requirement": [
+        {
+          "id": "solar-cells",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "solar-panel-farm"
+      }
+    },
+    {
+      "id": "geothermal-probes",
+      "name": "Geotermiczne sondy",
+      "requirement": [
+        {
+          "id": "autonomous-modules",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "geothermal-probes"
+      }
+    },
+    {
+      "id": "idle-artificial-intelligence",
+      "name": "Sztuczna inteligencja idle (AI Core)",
+      "requirement": [
+        {
+          "id": "autonomous-modules",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "idle-artificial-intelligence"
+      }
+    },
+    {
+      "id": "ai-server",
+      "name": "Serwer AI",
+      "requirement": [
+        {
+          "id": "idle-artificial-intelligence",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "ai-server"
+      }
+    },
+    {
+      "id": "rocket-technology",
+      "name": "Technologia rakietowa",
+      "requirement": [
+        {
+          "id": "ai-server",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "rocket-technology"
+      }
+    },
+    {
+      "id": "orbital-modules",
+      "name": "Moduły orbitalne",
+      "requirement": [
+        {
+          "id": "rocket-technology",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "orbital-modules"
+      }
+    },
+    {
+      "id": "satellite-communication-station",
+      "name": "Stacja komunikacji satelitarnej",
+      "requirement": [
+        {
+          "id": "orbital-modules",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "satellite-communication-station"
+      }
+    },
+    {
+      "id": "life-support-system",
+      "name": "System podtrzymywania życia",
+      "requirement": [
+        {
+          "id": "satellite-communication-station",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "life-support-system"
+      }
+    },
+    {
+      "id": "automatic-docking",
+      "name": "Automatyczne dokowanie",
+      "requirement": [
+        {
+          "id": "life-support-system",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "automatic-docking"
+      }
+    },
+    {
+      "id": "orbital-research-module",
+      "name": "Moduł badawczy orbitalny",
+      "requirement": [
+        {
+          "id": "automatic-docking",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "orbital-research-module"
+      }
+    },
+    {
+      "id": "space-station",
+      "name": "Stacja kosmiczna",
+      "requirement": [
+        {
+          "id": "orbital-research-module",
+          "ammount": 1
+        }
+      ],
+      "upgrade": {
+        "id": "space-station"
+      }
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "efficient-mining",
+      "name": "Efektywne górnictwo",
+      "effects": [
+        {
+          "id": "basic-mine",
+          "element": "craft_amount",
+          "amount": 0.1
+        },
+        {
+          "id": "automatic-mine",
+          "element": "craft_amount",
+          "amount": 0.1
+        }
+      ]
+    },
+    {
+      "id": "ore-enrichment",
+      "name": "Wzbogacanie rudy",
+      "effects": [
+        {
+          "id": "ore-separator",
+          "element": "craft_amount",
+          "amount": 0.05
+        }
+      ]
+    },
+    {
+      "id": "metallurgical-patterns",
+      "name": "Paternie metalurgiczne",
+      "effects": [
+        {
+          "id": "stone-furnace",
+          "element": "craft_amount",
+          "amount": 0.15
+        },
+        {
+          "id": "blast-furnace",
+          "element": "craft_amount",
+          "amount": 0.15
+        }
+      ]
+    },
+    {
+      "id": "energy-modules",
+      "name": "Moduły energetyczne",
+      "effects": [
+        {
+          "id": "thermosolar-generator",
+          "element": "craft_amount",
+          "amount": 0.1
+        }
+      ]
+    },
+    {
+      "id": "speed-modules",
+      "name": "Moduły prędkości",
+      "effects": [
+        {
+          "id": "assembler-tier-1",
+          "element": "craft_time",
+          "amount": -0.1
+        },
+        {
+          "id": "chemical-plant",
+          "element": "craft_time",
+          "amount": -0.1
+        },
+        {
+          "id": "metal-roller",
+          "element": "craft_time",
+          "amount": -0.1
+        }
+      ]
+    },
+    {
+      "id": "productivity-modules",
+      "name": "Moduły wydajności",
+      "effects": [
+        {
+          "id": "blast-furnace",
+          "element": "craft_cost",
+          "amount": -0.05
+        },
+        {
+          "id": "chemical-plant",
+          "element": "craft_cost",
+          "amount": -0.05
+        }
+      ]
+    },
+    {
+      "id": "accelerated-research",
+      "name": "Przyspieszone badania",
+      "effects": [
+        {
+          "id": "basic-laboratory",
+          "element": "craft_amount",
+          "amount": 0.2
+        },
+        {
+          "id": "super-laboratory",
+          "element": "craft_amount",
+          "amount": 0.2
+        }
+      ]
+    },
+    {
+      "id": "chemical-catalysts",
+      "name": "Katalizatory chemiczne",
+      "effects": [
+        {
+          "id": "chemical-plant",
+          "element": "craft_amount",
+          "amount": 0.15
+        }
+      ]
+    },
+    {
+      "id": "enriched-alloy",
+      "name": "Stop wzbogacony",
+      "effects": [
+        {
+          "id": "metal-roller",
+          "element": "craft_amount",
+          "amount": 0.1
+        },
+        {
+          "id": "storage-tier-3",
+          "element": "craft_amount",
+          "amount": 0.1
+        }
+      ]
+    },
+    {
+      "id": "basic-nuclear-reactor",
+      "name": "Reaktor jądrowy (podstawowy)",
+      "effects": [
+        {
+          "id": "basic-nuclear-reactor",
+          "element": "craft_amount",
+          "amount": 0.1
+        }
+      ]
+    },
+    {
+      "id": "autonomous-cooling-modules",
+      "name": "Autonomiczne moduły chłodzenia",
+      "effects": [
+        {
+          "id": "basic-nuclear-reactor",
+          "element": "craft_time",
+          "amount": 0.2
+        }
+      ]
+    },
+    {
+      "id": "advanced-nuclear-reactor",
+      "name": "Reaktor jądrowy (zaawansowany)",
+      "effects": [
+        {
+          "id": "advanced-nuclear-reactor",
+          "element": "craft_amount",
+          "amount": 0.2
+        }
+      ]
+    },
+    {
+      "id": "nuclear-power-plant",
+      "name": "Elektrownia jądrowa",
+      "effects": [
+        {
+          "id": "nuclear-power-plant",
+          "element": "craft_amount",
+          "amount": 0.25
+        }
+      ]
+    },
+    {
+      "id": "autonomous-modules",
+      "name": "Moduły autonomiczne",
+      "effects": [
+        {
+          "id": "autonomous-module",
+          "element": "craft_amount",
+          "amount": 0.2
+        }
+      ]
+    },
+    {
+      "id": "solar-cells",
+      "name": "Ogniwa słoneczne",
+      "effects": [
+        {
+          "id": "solar-panel",
+          "element": "craft_amount",
+          "amount": 0.15
+        }
+      ]
+    },
+    {
+      "id": "solar-panel-farm",
+      "name": "Farma paneli słonecznych",
+      "effects": [
+        {
+          "id": "solar-panel-farm",
+          "element": "craft_amount",
+          "amount": 0.1
+        }
+      ]
+    },
+    {
+      "id": "geothermal-probes",
+      "name": "Geotermiczne sondy",
+      "effects": [
+        {
+          "id": "geothermal-probe",
+          "element": "craft_amount",
+          "amount": 0.25
+        },
+        {
+          "id": "geothermal-installation",
+          "element": "craft_amount",
+          "amount": 0.15
+        }
+      ]
+    },
+    {
+      "id": "idle-artificial-intelligence",
+      "name": "Sztuczna inteligencja idle (AI Core)",
+      "effects": [
+        {
+          "id": "ai-core",
+          "element": "craft_amount",
+          "amount": 0.2
+        }
+      ]
+    },
+    {
+      "id": "ai-server",
+      "name": "Serwer AI",
+      "effects": [
+        {
+          "id": "ai-server",
+          "element": "craft_amount",
+          "amount": 0.25
+        }
+      ]
+    },
+    {
+      "id": "rocket-technology",
+      "name": "Technologia rakietowa",
+      "effects": [
+        {
+          "id": "rocket-silo",
+          "element": "craft_time",
+          "amount": -0.15
+        }
+      ]
+    },
+    {
+      "id": "orbital-modules",
+      "name": "Moduły orbitalne",
+      "effects": [
+        {
+          "id": "orbital-module-factory",
+          "element": "craft_amount",
+          "amount": 0.2
+        }
+      ]
+    },
+    {
+      "id": "satellite-communication-station",
+      "name": "Stacja komunikacji satelitarnej",
+      "effects": [
+        {
+          "id": "satellite-communication-station",
+          "element": "craft_amount",
+          "amount": 0.15
+        }
+      ]
+    },
+    {
+      "id": "life-support-system",
+      "name": "System podtrzymywania życia",
+      "effects": [
+        {
+          "id": "life-support-system",
+          "element": "craft_amount",
+          "amount": 0.2
+        }
+      ]
+    },
+    {
+      "id": "automatic-docking",
+      "name": "Automatyczne dokowanie",
+      "effects": [
+        {
+          "id": "automatic-docking",
+          "element": "craft_amount",
+          "amount": 0.25
+        }
+      ]
+    },
+    {
+      "id": "orbital-research-module",
+      "name": "Moduł badawczy orbitalny",
+      "effects": [
+        {
+          "id": "orbital-research-module",
+          "element": "craft_amount",
+          "amount": 0.15
+        }
+      ]
+    },
+    {
+      "id": "space-station",
+      "name": "Stacja kosmiczna",
+      "effects": [
+        {
+          "id": "space-station",
+          "element": "craft_amount",
+          "amount": 0.2
+        }
+      ]
+    }
+  ]
 }

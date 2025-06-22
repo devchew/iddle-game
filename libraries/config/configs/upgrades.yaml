@@ -1,0 +1,209 @@
+# upgrades.yaml
+# Contains all game upgrades and their effects on entities
+
+upgrades:
+- id: efficient-mining
+  name: Efektywne górnictwo
+  effects:
+  - id: basic-mine
+    element: craft_amount
+    amount: 0.1
+  - id: automatic-mine
+    element: craft_amount
+    amount: 0.1
+
+- id: ore-enrichment
+  name: Wzbogacanie rudy
+  effects:
+  - id: ore-separator
+    element: craft_amount
+    amount: 0.05
+
+- id: metallurgical-patterns
+  name: Paternie metalurgiczne
+  effects:
+  - id: stone-furnace
+    element: craft_amount
+    amount: 0.15
+  - id: blast-furnace
+    element: craft_amount
+    amount: 0.15
+
+- id: energy-modules
+  name: Moduły energetyczne
+  effects:
+  - id: thermosolar-generator
+    element: craft_amount
+    amount: 0.1
+
+- id: speed-modules
+  name: Moduły prędkości
+  effects:
+  - id: assembler-tier-1
+    element: craft_time
+    amount: -0.1
+  - id: chemical-plant
+    element: craft_time
+    amount: -0.1
+  - id: metal-roller
+    element: craft_time
+    amount: -0.1
+
+- id: productivity-modules
+  name: Moduły wydajności
+  effects:
+  - id: blast-furnace
+    element: craft_cost
+    amount: -0.05
+  - id: chemical-plant
+    element: craft_cost
+    amount: -0.05
+
+- id: accelerated-research
+  name: Przyspieszone badania
+  effects:
+  - id: basic-laboratory
+    element: craft_amount
+    amount: 0.2
+  - id: super-laboratory
+    element: craft_amount
+    amount: 0.2
+
+- id: chemical-catalysts
+  name: Katalizatory chemiczne
+  effects:
+  - id: chemical-plant
+    element: craft_amount
+    amount: 0.15
+
+- id: enriched-alloy
+  name: Stop wzbogacony
+  effects:
+  - id: metal-roller
+    element: craft_amount
+    amount: 0.1
+  - id: storage-tier-3
+    element: craft_amount
+    amount: 0.1
+
+- id: basic-nuclear-reactor
+  name: Reaktor jądrowy (podstawowy)
+  effects:
+  - id: basic-nuclear-reactor
+    element: craft_amount
+    amount: 0.1
+
+- id: autonomous-cooling-modules
+  name: Autonomiczne moduły chłodzenia
+  effects:
+  - id: basic-nuclear-reactor
+    element: craft_time
+    amount: 0.2
+
+- id: advanced-nuclear-reactor
+  name: Reaktor jądrowy (zaawansowany)
+  effects:
+  - id: advanced-nuclear-reactor
+    element: craft_amount
+    amount: 0.2
+
+- id: nuclear-power-plant
+  name: Elektrownia jądrowa
+  effects:
+  - id: nuclear-power-plant
+    element: craft_amount
+    amount: 0.25
+
+- id: autonomous-modules
+  name: Moduły autonomiczne
+  effects:
+  - id: autonomous-module
+    element: craft_amount
+    amount: 0.2
+
+- id: solar-cells
+  name: Ogniwa słoneczne
+  effects:
+  - id: solar-panel
+    element: craft_amount
+    amount: 0.15
+
+- id: solar-panel-farm
+  name: Farma paneli słonecznych
+  effects:
+  - id: solar-panel-farm
+    element: craft_amount
+    amount: 0.1
+
+- id: geothermal-probes
+  name: Geotermiczne sondy
+  effects:
+  - id: geothermal-probe
+    element: craft_amount
+    amount: 0.25
+  - id: geothermal-installation
+    element: craft_amount
+    amount: 0.15
+
+- id: idle-artificial-intelligence
+  name: Sztuczna inteligencja idle (AI Core)
+  effects:
+  - id: ai-core
+    element: craft_amount
+    amount: 0.2
+
+- id: ai-server
+  name: Serwer AI
+  effects:
+  - id: ai-server
+    element: craft_amount
+    amount: 0.25
+
+- id: rocket-technology
+  name: Technologia rakietowa
+  effects:
+  - id: rocket-silo
+    element: craft_time
+    amount: -0.15
+
+- id: orbital-modules
+  name: Moduły orbitalne
+  effects:
+  - id: orbital-module-factory
+    element: craft_amount
+    amount: 0.2
+
+- id: satellite-communication-station
+  name: Stacja komunikacji satelitarnej
+  effects:
+  - id: satellite-communication-station
+    element: craft_amount
+    amount: 0.15
+
+- id: life-support-system
+  name: System podtrzymywania życia
+  effects:
+  - id: life-support-system
+    element: craft_amount
+    amount: 0.2
+
+- id: automatic-docking
+  name: Automatyczne dokowanie
+  effects:
+  - id: automatic-docking
+    element: craft_amount
+    amount: 0.25
+
+- id: orbital-research-module
+  name: Moduł badawczy orbitalny
+  effects:
+  - id: orbital-research-module
+    element: craft_amount
+    amount: 0.15
+
+- id: space-station
+  name: Stacja kosmiczna
+  effects:
+  - id: space-station
+    element: craft_amount
+    amount: 0.2

@@ -21,7 +21,7 @@ const yamlFiles = fs.readdirSync(configsDir)
 	.filter(file => file.endsWith('.yaml') || file.endsWith('.yml'));
 
 // Create a combined object to hold all configuration data
-const combinedConfig = {};
+let combinedConfig = {};
 
 // Process each YAML file
 yamlFiles.forEach((yamlFile) => {
@@ -34,7 +34,10 @@ yamlFiles.forEach((yamlFile) => {
 		const data = yaml.load(yamlContent);
 		
 		// Add to combined object under the file's base name as key
-		combinedConfig[baseName] = data;
+		combinedConfig = {
+			...combinedConfig,
+			...data
+		};
 		
 		// Also write individual JSON files
 		// const individualDestPath = path.join(distDir, `${baseName}.json`);
